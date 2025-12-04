@@ -1,0 +1,11 @@
+# Site settings
+title: "Bakker Technologies"
+description: "Information about Bakker Technologies"
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# GitHub Pages settings
+github: [metadata]

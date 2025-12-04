@@ -1,0 +1,14 @@
+# Jekyll build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/bundle/
+Gemfile.lock
+
+# OS files
+.DS_Store
+Thumbs.db
