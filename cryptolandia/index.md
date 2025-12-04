@@ -18,8 +18,8 @@ Cryptolandia is an iOS app for tracking cryptocurrency prices, viewing charts, a
 
 Cryptolandia is built with privacy in mind. We don't collect personal data, and your usage stays on your device.
 
-- [Privacy Policy](/cryptolandia/privacy)
-- [Support & FAQ](/support)
+- [Privacy Policy]({{ '/cryptolandia/privacy' | relative_url }})
+- [Support & FAQ]({{ '/support' | relative_url }})
 
 ---
 

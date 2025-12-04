@@ -17,11 +17,11 @@ We offer IT consultancy services to help businesses solve technical challenges, 
 
 ## Our Projects
 
-### [Cryptolandia](/cryptolandia)
+### [Cryptolandia]({{ '/cryptolandia' | relative_url }})
 
 A modern iOS app for tracking cryptocurrency prices, viewing charts, and staying updated with crypto news. Built with a focus on simplicity and performance.
 
-[Learn more about Cryptolandia →](/cryptolandia)
+[Learn more about Cryptolandia →]({{ '/cryptolandia' | relative_url }})
 
 ---
 
