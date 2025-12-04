@@ -1,3 +1,8 @@
+---
+layout: default
+title: Privacy Policy - Cryptolandia
+---
+
 # Privacy Policy for Cryptolandia
 
 _Last updated: 2025-12-04_
@@ -57,7 +62,7 @@ If you enable Face ID or Touch ID inside the app, this authentication:
 
 ---
 
-## Children’s Privacy
+## Children's Privacy
 
 Cryptolandia does not collect personal information from anyone, including children under 13.  
 The app is safe for users of all ages.
@@ -66,10 +71,10 @@ The app is safe for users of all ages.
 
 ## Changes to This Privacy Policy
 
-If the app’s functionality changes in a way that affects privacy, this Privacy Policy will be updated.  
+If the app's functionality changes in a way that affects privacy, this Privacy Policy will be updated.  
 You will always find the latest version at:
 
-https://github.com/yourusername/cryptolandia/privacy
+https://info.bakkertechnologies.no/cryptolandia/privacy
 
 ---
 

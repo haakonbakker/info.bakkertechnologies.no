@@ -1,3 +1,8 @@
+---
+layout: default
+title: Support
+---
+
 # Cryptolandia – Support
 
 Welcome to the support page for **Cryptolandia**, the iOS app for tracking cryptocurrency prices, charts, and news.
