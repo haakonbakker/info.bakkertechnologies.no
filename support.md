@@ -1,7 +1,3 @@
-layout: page
-title: "support"
-permalink: /URL-PATH
-
 # Cryptolandia – Support
 
 Welcome to the support page for **Cryptolandia**, the iOS app for tracking cryptocurrency prices, charts, and news.
