@@ -6,7 +6,7 @@ title: Cryptolandia
 <style>
   /* Modern Apple-inspired marketing layout */
   .cl-hero {
-    padding: 80px 0 120px;
+    padding: 80px 0 60px;
     text-align: center;
   }
   
@@ -203,7 +203,7 @@ title: Cryptolandia
   }
 
   .cl-section {
-    margin-top: 120px;
+    margin-top: 80px;
     padding-top: 0;
   }
   
