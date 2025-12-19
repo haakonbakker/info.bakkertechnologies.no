@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% seo %}
     <style>
         * {
             margin: 0;
@@ -15,171 +16,326 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            color: #e5e7eb;
+            background: radial-gradient(1200px 800px at 20% 0%, rgba(99, 102, 241, 0.22), transparent 60%),
+                        radial-gradient(900px 600px at 90% 10%, rgba(34, 211, 238, 0.14), transparent 55%),
+                        radial-gradient(1000px 700px at 50% 100%, rgba(16, 185, 129, 0.10), transparent 60%),
+                        linear-gradient(180deg, #050710 0%, #070a12 45%, #050710 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            min-height: calc(100vh - 120px);
+        :root {
+            --bg: #050710;
+            --panel: rgba(255, 255, 255, 0.06);
+            --panel-strong: rgba(255, 255, 255, 0.09);
+            --border: rgba(255, 255, 255, 0.10);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text: #e5e7eb;
+            --muted: rgba(229, 231, 235, 0.72);
+            --muted-2: rgba(229, 231, 235, 0.56);
+            --link: #93c5fd;
+            --link-strong: #bfdbfe;
+            --accent: #6366f1;
+            --accent-2: #22d3ee;
+            --accent-3: #10b981;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+            --radius: 18px;
+            --radius-sm: 12px;
+            --maxw: 1120px;
         }
-        
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 2rem;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #222;
-        }
-        
-        header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        main {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        main h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #222;
-        }
-        
-        main h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        main h3 {
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #444;
-        }
-        
-        main p {
-            margin-bottom: 1rem;
-        }
-        
-        main ul, main ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        main li {
-            margin-bottom: 0.5rem;
-        }
-        
-        main a {
-            color: #0066cc;
+
+        a {
+            color: var(--link);
             text-decoration: none;
         }
-        
-        main a:hover {
+        a:hover {
+            color: var(--link-strong);
             text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
         }
-        
-        main hr {
-            border: none;
-            border-top: 1px solid #e0e0e0;
-            margin: 2rem 0;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid #e0e0e0;
-            background: white;
-        }
-        
-        footer nav {
+
+        .page {
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+            flex-direction: column;
         }
-        
-        footer nav a {
-            color: #666;
+
+        .container {
+            width: 100%;
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: rgba(5, 7, 16, 0.68);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .site-header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 0;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .brand:hover {
+            text-decoration: none;
+        }
+
+        .brand__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.15);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav a {
+            color: var(--muted);
+            padding: 8px 10px;
+            border-radius: 10px;
             text-decoration: none;
             font-size: 0.95rem;
         }
-        
-        footer nav a:hover {
-            color: #0066cc;
-            text-decoration: underline;
-        }
-        
-        .project-link {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: #0066cc;
-            color: white;
+
+        .nav a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.06);
             text-decoration: none;
-            border-radius: 4px;
-            margin-top: 0.5rem;
-            transition: background 0.2s;
         }
-        
-        .project-link:hover {
-            background: #0052a3;
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
             text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.22);
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .button--primary {
+            border: 1px solid rgba(99, 102, 241, 0.55);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(34, 211, 238, 0.75));
+            color: #061018;
+            font-weight: 700;
+        }
+
+        .button--primary:hover {
+            border-color: rgba(191, 219, 254, 0.75);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(34, 211, 238, 0.75));
+            color: #061018;
+        }
+
+        .site-main {
+            flex: 1;
+            padding: 28px 0 64px;
+        }
+
+        .content {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .content__inner {
+            padding: 28px;
+        }
+
+        .content h1,
+        .content h2,
+        .content h3 {
+            letter-spacing: -0.02em;
+        }
+
+        .content h1 {
+            font-size: clamp(1.75rem, 1.2rem + 2vw, 2.4rem);
+            margin-bottom: 14px;
+        }
+
+        .content h2 {
+            font-size: clamp(1.25rem, 1.0rem + 1vw, 1.65rem);
+            margin-top: 26px;
+            margin-bottom: 12px;
+            color: rgba(229, 231, 235, 0.92);
+        }
+
+        .content h3 {
+            font-size: 1.1rem;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            color: rgba(229, 231, 235, 0.9);
+        }
+
+        .content p {
+            margin-bottom: 14px;
+            color: var(--muted);
+        }
+
+        .content ul,
+        .content ol {
+            margin-left: 1.2rem;
+            margin-bottom: 14px;
+            color: var(--muted);
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .content hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            margin: 22px 0;
+        }
+
+        .site-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(5, 7, 16, 0.65);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .site-footer__inner {
+            padding: 22px 0;
+        }
+
+        .site-footer nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px 18px;
+        }
+
+        .site-footer nav a {
+            color: var(--muted-2);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        .site-footer nav a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        /* Optional helper for markdown pages that want wider/full-bleed sections */
+        .bleed {
+            width: 100%;
         }
         
         @media (max-width: 600px) {
             .container {
-                padding: 1rem;
+                padding: 0 16px;
             }
-            
-            header h1 {
-                font-size: 2rem;
+
+            .site-header__inner {
+                padding: 12px 0;
             }
-            
-            main {
-                padding: 1.5rem;
+
+            .nav {
+                gap: 6px;
             }
-            
-            footer nav {
-                flex-direction: column;
-                gap: 0.75rem;
+
+            .nav a {
+                padding: 7px 9px;
+            }
+
+            .content__inner {
+                padding: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>{{ site.title }}</h1>
-            <p>{{ site.description }}</p>
+    <div class="page">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header__inner">
+                    <a class="brand" href="{{ '/' | relative_url }}">
+                        <span class="brand__dot" aria-hidden="true"></span>
+                        <span>{{ site.title }}</span>
+                    </a>
+                    <nav class="nav" aria-label="Primary">
+                        <a href="{{ '/' | relative_url }}">Home</a>
+                        <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
+                        <a href="{{ '/support' | relative_url }}">Support</a>
+                        <a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy</a>
+                        <a href="{{ '/cryptolandia/terms' | relative_url }}">Terms</a>
+                    </nav>
+                </div>
+            </div>
         </header>
-        
-        <main>
-            {{ content }}
+
+        <main class="site-main">
+            <div class="container">
+                <div class="content">
+                    <div class="content__inner">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
         </main>
+        
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer__inner">
+                    <nav aria-label="Footer">
+                        <a href="{{ '/' | relative_url }}">Home</a>
+                        <a href="{{ '/support' | relative_url }}">Support</a>
+                        <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
+                        <a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy Policy</a>
+                        <a href="{{ '/cryptolandia/terms' | relative_url }}">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
     </div>
-    
-    <footer>
-        <nav>
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/support' | relative_url }}">Support</a>
-            <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
-            <a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy Policy</a>
-            <a href="{{ '/cryptolandia/terms' | relative_url }}">Terms of Service</a>
-        </nav>
-    </footer>
 </body>
 </html>
