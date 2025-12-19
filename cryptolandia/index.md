@@ -79,6 +79,22 @@ title: Cryptolandia
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
   
+  .cl-appstore-badge {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cl-appstore-badge:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+  
+  .cl-appstore-badge img {
+    height: 54px;
+    width: auto;
+    display: block;
+  }
+  
   .cl-meta {
     color: rgba(229, 231, 235, 0.5);
     font-size: 1rem;
@@ -318,6 +334,8 @@ title: Cryptolandia
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
   .cl-split__side h3 {
@@ -376,11 +394,8 @@ title: Cryptolandia
   </p>
 
   <div class="cl-cta">
-    <a class="button button--primary" href="https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265" target="_blank" rel="noopener noreferrer">
-      Download on the App Store
-    </a>
-    <a class="button" href="{{ '/cryptolandia/privacy' | relative_url }}">
-      Privacy Policy
+    <a class="cl-appstore-badge" href="https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/cryptolandia/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg' | relative_url }}" alt="Download on the App Store">
     </a>
   </div>
 
@@ -452,27 +467,27 @@ title: Cryptolandia
 </div>
 
 <div class="cl-section">
-  <h2>Go Pro for more</h2>
+  <h2>Take it further with Pro.</h2>
   <div class="cl-split">
     <div class="cl-split__main">
       <p>
-        Upgrade to Pro for enhanced features like additional watchlists and premium list styles. The free version is fully featured—Pro simply unlocks more ways to customize your experience.
+        Start free. Upgrade when you're ready. Pro unlocks advanced features designed for power users who want more control and customization.
       </p>
       <ul>
-        <li>Multiple watchlists to organize your favorites</li>
-        <li>Enhanced list styles for denser information</li>
-        <li>Early access to new features as they arrive</li>
+        <li>Unlimited watchlists</li>
+        <li>Premium list styles</li>
+        <li>Early access to new features</li>
       </ul>
       <p class="cl-meta">
-        Subscription details available in the app and App Store.
+        Try free. Upgrade anytime. Cancel anytime.
       </p>
     </div>
     <div class="cl-split__side">
       <h3>Get started</h3>
-      <p>Download Cryptolandia and start tracking in seconds.</p>
+      <p>Download and start tracking in seconds.</p>
       <p style="margin: 0;">
-        <a class="button button--primary" href="https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265" target="_blank" rel="noopener noreferrer">
-          Download on the App Store
+        <a class="cl-appstore-badge" href="https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265" target="_blank" rel="noopener noreferrer">
+          <img src="{{ '/cryptolandia/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg' | relative_url }}" alt="Download on the App Store">
         </a>
       </p>
     </div>
