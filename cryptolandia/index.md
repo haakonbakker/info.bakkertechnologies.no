@@ -10,6 +10,26 @@ title: Cryptolandia
     text-align: center;
   }
   
+  .cl-hero__logo {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 24px;
+    border-radius: 22.5%;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .cl-hero__logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .cl-hero__logo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
   .cl-hero__kicker {
     color: rgba(229, 231, 235, 0.6);
     font-weight: 600;
@@ -87,11 +107,83 @@ title: Cryptolandia
     font-weight: 500;
     white-space: nowrap;
     transition: all 0.3s ease;
+    cursor: help;
+    position: relative;
   }
   
   .cl-pill:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.25);
+  }
+  
+  /* Enhanced tooltip styling */
+  .cl-pill[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.95);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    white-space: normal;
+    max-width: min(480px, calc(100vw - 32px));
+    width: max-content;
+    text-align: center;
+    z-index: 10000;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    animation: tooltipFadeIn 0.2s ease;
+    line-height: 1.4;
+  }
+  
+  /* First pill - align tooltip to the left */
+  .cl-pill:first-child[title]:hover::after {
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .cl-pill:first-child[title]:hover::before {
+    left: 24px;
+    transform: translateX(0);
+  }
+  
+  /* Last pill - align tooltip to the right */
+  .cl-pill:last-child[title]:hover::after {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+  }
+  
+  .cl-pill:last-child[title]:hover::before {
+    left: auto;
+    right: 24px;
+    transform: translateX(0);
+  }
+  
+  .cl-pill[title]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    pointer-events: none;
+    animation: tooltipFadeIn 0.2s ease;
+  }
+  
+  @keyframes tooltipFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .cl-section {
@@ -274,6 +366,9 @@ title: Cryptolandia
 </style>
 
 <div class="cl-hero">
+  <div class="cl-hero__logo">
+    <img src="{{ '/cryptolandia/images/logo.png' | relative_url }}" alt="Cryptolandia App Icon">
+  </div>
   <div class="cl-hero__kicker">iPhone & iPad</div>
   <h1 class="cl-hero__title">Track crypto. Stay informed. Done beautifully.</h1>
   <p class="cl-hero__subtitle">
@@ -290,11 +385,11 @@ title: Cryptolandia
   </div>
 
   <div class="cl-pillrow" aria-label="Highlights">
-    <span class="cl-pill">Live prices</span>
-    <span class="cl-pill">Interactive charts</span>
-    <span class="cl-pill">Multi-source news</span>
-    <span class="cl-pill">Face ID / Touch ID</span>
-    <span class="cl-pill">Light & Dark mode</span>
+    <span class="cl-pill" title="Real-time cryptocurrency prices that update automatically, with color-coded changes to track market movements instantly">Live prices</span>
+    <span class="cl-pill" title="Smooth, responsive charts with pinch-to-zoom and multiple timeframes to explore price history effortlessly">Interactive charts</span>
+    <span class="cl-pill" title="Curated cryptocurrency news from multiple trusted sources, all in one clean feed">Multi-source news</span>
+    <span class="cl-pill" title="Quick and secure access with biometric authentication—your privacy stays protected">Face ID / Touch ID</span>
+    <span class="cl-pill" title="Seamlessly switch between light and dark themes to match your preference">Light & Dark mode</span>
   </div>
 
   <p class="cl-meta">
