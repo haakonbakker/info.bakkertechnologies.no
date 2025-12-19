@@ -74,7 +74,7 @@ The app is safe for users of all ages.
 If the app's functionality changes in a way that affects privacy, this Privacy Policy will be updated.  
 You will always find the latest version at:
 
-https://haakonbakker.github.io/info.bakkertechnologies.no/cryptolandia/privacy
+{{ '/cryptolandia/privacy' | absolute_url }}
 
 ---
 
