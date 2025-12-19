@@ -418,6 +418,14 @@ title: Cryptolandia
       <h3>Private & secure</h3>
       <p>No trackers. No ads. No data collection. Optional biometric lock for quick, secure access.</p>
     </div>
+    <div class="cl-card">
+      <h3>Your currency, your choice</h3>
+      <p>Switch between 11 major currencies anytime. Everything updates instantly—from USD to EUR, GBP, JPY, CAD, AUD, CHF, CNY, SEK, NOK, and DKK.</p>
+    </div>
+    <div class="cl-card">
+      <h3>Customize your view</h3>
+      <p>Choose from multiple list styles to match your preference: simple, compact, enhanced, or showcase. Display exactly the information you want, exactly how you want it.</p>
+    </div>
   </div>
 </div>
 
@@ -441,13 +449,6 @@ title: Cryptolandia
       <figcaption>Stay informed with a beautiful news reader built for speed.</figcaption>
     </figure>
   </div>
-</div>
-
-<div class="cl-section">
-  <h2>Your currency, your choice</h2>
-  <p>
-    Switch between 11 major currencies anytime. Everything updates instantly—from USD to EUR, GBP, JPY, CAD, AUD, CHF, CNY, SEK, NOK, and DKK.
-  </p>
 </div>
 
 <div class="cl-section">
