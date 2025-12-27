@@ -1,7 +1,35 @@
 ---
 layout: default
-title: Cryptolandia
+title: "Cryptolandia – Crypto Tracker App for iPhone & iPad"
+description: "Cryptolandia is a privacy-first iOS crypto tracker app with live cryptocurrency prices, interactive charts, and curated crypto news—built for iPhone and iPad."
+image: "/cryptolandia/images/logo.png"
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Cryptolandia",
+  "operatingSystem": "iOS",
+  "applicationCategory": "FinanceApplication",
+  "description": "Privacy-first iOS crypto tracker app with live cryptocurrency prices, interactive charts, and curated crypto news.",
+  "url": "{{ '/cryptolandia/' | absolute_url }}",
+  "downloadUrl": "https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bakker Technologies",
+    "url": "{{ '/' | absolute_url }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "category": "Free"
+  },
+  "privacyPolicy": "{{ '/cryptolandia/privacy' | absolute_url }}",
+  "termsOfService": "{{ '/cryptolandia/terms' | absolute_url }}"
+}
+</script>
 
 <style>
   /* Modern Apple-inspired marketing layout */
@@ -388,7 +416,7 @@ title: Cryptolandia
     <img src="{{ '/cryptolandia/images/logo.png' | relative_url }}" alt="Cryptolandia App Icon">
   </div>
   <div class="cl-hero__kicker">iPhone & iPad</div>
-  <h1 class="cl-hero__title">Track crypto. Stay informed. Done beautifully.</h1>
+  <h1 class="cl-hero__title">Cryptolandia: a crypto tracker app for iPhone & iPad.</h1>
   <p class="cl-hero__subtitle">
     Real-time prices, smooth charts, and curated news—all in a clean, modern design. Whether you're actively trading or staying curious, Cryptolandia keeps the market at your fingertips.
   </p>
@@ -492,6 +520,21 @@ title: Cryptolandia
       </p>
     </div>
   </div>
+</div>
+
+<div class="cl-section">
+  <h2>FAQ</h2>
+  <h3>Is Cryptolandia a crypto tracker app?</h3>
+  <p>Yes. Cryptolandia is an iOS app that helps you track cryptocurrency prices, view interactive charts, and read crypto news in one place.</p>
+
+  <h3>Does Cryptolandia collect personal data?</h3>
+  <p>No. Cryptolandia is built to be privacy-first and does not collect personal information or track you.</p>
+
+  <h3>Does the app include crypto news?</h3>
+  <p>Yes. Cryptolandia includes a curated crypto news feed from multiple sources, designed to be fast and easy to read.</p>
+
+  <h3>Does it work on iPad?</h3>
+  <p>Yes. Cryptolandia is built for iPhone and iPad.</p>
 </div>
 
 <div class="cl-section">

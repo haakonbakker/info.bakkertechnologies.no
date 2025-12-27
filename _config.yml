@@ -1,13 +1,24 @@
 # Site settings
 title: "Bakker Technologies"
-description: "Information about Bakker Technologies"
+description: "Bakker Technologies builds Cryptolandia — a privacy-first iOS crypto tracker app with real-time prices, charts, and curated crypto news."
 baseurl: ""
 url: "https://bakkertechnologies.no"
+lang: "en"
+permalink: pretty
+
+# Default social preview image (used by jekyll-seo-tag)
+logo: "/cryptolandia/images/logo.png"
+image: "/cryptolandia/images/logo.png"
+
+author:
+  name: "Bakker Technologies"
+  email: "support@bakkertechnologies.no"
 
 # Build settings
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # GitHub Pages settings
 github: [metadata]
