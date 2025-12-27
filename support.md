@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Support
+title: "Cryptolandia Support & FAQ"
+description: "Get help with Cryptolandia, the iOS crypto tracker app. Support, FAQ, troubleshooting for prices/charts, and contact details."
+image: "/cryptolandia/images/logo.png"
 ---
 
 # Cryptolandia – Support
@@ -42,7 +44,7 @@ Try the following steps:
 
 ## Privacy
 
-Cryptolandia does not collect personal data beyond what is necessary for the app to function.  
+Cryptolandia does not collect, store, or share personal information.  
 
 ---
 
@@ -52,5 +54,5 @@ Latest app version: **1.0.0**
 
 ---
 
-Thank you for using **Cryptolandia**! 🚀
+Thank you for using **Cryptolandia**!
 If you have feedback or feature ideas, I’d love to hear from you.

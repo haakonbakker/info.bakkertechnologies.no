@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Home
+title: "Bakker Technologies – iOS Apps (Cryptolandia Crypto Tracker)"
+description: "Bakker Technologies builds iOS apps, including Cryptolandia: a privacy-first crypto tracker app for iPhone with live prices, charts, and crypto news."
+image: "/cryptolandia/images/logo.png"
 ---
 
 # Welcome to Bakker Technologies
