@@ -13,6 +13,15 @@
             box-sizing: border-box;
         }
         
+        /* Prevent breakpoint “jitter” between pages due to scrollbar width differences */
+        @supports (scrollbar-gutter: stable) {
+            html { scrollbar-gutter: stable; }
+        }
+        @supports not (scrollbar-gutter: stable) {
+            /* Fallback: always reserve scrollbar space */
+            html { overflow-y: scroll; }
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
