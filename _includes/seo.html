@@ -1,0 +1,109 @@
+{% comment %}
+  Lightweight SEO helper:
+  - Default: use jekyll-seo-tag
+  - Coin pages: custom meta + canonical + OG + JSON-LD (WebPage + FAQPage)
+  - Guide/compare pages: optional custom meta + canonical + FAQ JSON-LD
+{% endcomment %}
+
+{% assign app_store_url = "https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265" %}
+
+{% if page.coin_id %}
+  {% assign coin = site.data.coins | where: "id", page.coin_id | first %}
+  {% if coin %}
+    {% assign canonical_url = page.url | absolute_url %}
+    {% assign meta_title = coin.name | append: " (" | append: coin.symbol | append: ") — Calm overview & tracking in Cryptolandia" %}
+    {% assign meta_description = coin.metaDescription | default: coin.oneLiner %}
+
+    <title>{{ meta_title }}</title>
+    <meta name="description" content="{{ meta_description | escape }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    <meta property="og:title" content="{{ meta_title | escape }}">
+    <meta property="og:description" content="{{ meta_description | escape }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ site.image | default: site.logo | absolute_url }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ meta_title | escape }}">
+    <meta name="twitter:description" content="{{ meta_description | escape }}">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "{{ canonical_url }}#webpage",
+          "url": "{{ canonical_url }}",
+          "name": {{ meta_title | jsonify }},
+          "description": {{ meta_description | jsonify }},
+          "inLanguage": {{ site.lang | default: "en" | jsonify }},
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "{{ '/' | absolute_url }}#website",
+            "url": "{{ '/' | absolute_url }}",
+            "name": {{ site.title | jsonify }}
+          },
+          "about": {
+            "@type": "Thing",
+            "name": {{ coin.name | jsonify }}
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "{{ canonical_url }}#faq",
+          "mainEntity": [
+            {% for item in coin.faq %}
+            {
+              "@type": "Question",
+              "name": {{ item.q | jsonify }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ item.a | jsonify }}
+              }
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }
+      ]
+    }
+    </script>
+  {% else %}
+    {% seo %}
+  {% endif %}
+
+{% elsif page.faq and page.custom_seo %}
+  {% assign canonical_url = page.url | absolute_url %}
+  <title>{{ page.title }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  {% if page.description %}<meta property="og:description" content="{{ page.description | escape }}">{% endif %}
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="{{ site.image | default: site.logo | absolute_url }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for item in page.faq %}
+      {
+        "@type": "Question",
+        "name": {{ item.q | jsonify }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ item.a | jsonify }}
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+  </script>
+
+{% else %}
+  {% seo %}
+{% endif %}
+
