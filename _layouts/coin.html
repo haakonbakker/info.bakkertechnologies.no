@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+{% assign app_store_url = "https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265" %}
+{% assign coin = site.data.coins | where: "id", page.coin_id | first %}
+
+{% if coin %}
+  <h1>{{ coin.name }} ({{ coin.symbol }})</h1>
+
+  <p>{{ coin.intro }}</p>
+
+  <div class="card">
+    <div class="cta">
+      <a class="button button--primary" href="{{ app_store_url }}" target="_blank" rel="noopener noreferrer">
+        Track {{ coin.symbol }} in Cryptolandia
+      </a>
+      <a class="button" href="{{ '/coins' | relative_url }}">Explore the market</a>
+    </div>
+    <p class="muted" style="margin-top: 10px;">
+      Calm, clarity-first tracking on iOS. No predictions, no hype.
+    </p>
+  </div>
+
+  <h2>What is {{ coin.name }}?</h2>
+  <p>{{ coin.description }}</p>
+
+  <h2>Common use cases</h2>
+  <ul>
+    {% for item in coin.useCases %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Why track {{ coin.symbol }} with Cryptolandia?</h2>
+  <ul>
+    {% for item in coin.whyTrack %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>FAQ</h2>
+  {% for item in coin.faq %}
+    <h3>{{ item.q }}</h3>
+    <p>{{ item.a }}</p>
+  {% endfor %}
+
+  <h2>Related assets</h2>
+  <div class="grid grid--3">
+    {% for related_id in coin.related %}
+      {% assign related_coin = site.data.coins | where: "id", related_id | first %}
+      {% if related_coin %}
+        <a class="card" href="{{ '/coins/' | append: related_coin.id | append: '/' | relative_url }}">
+          <strong style="display:block; color: var(--text); margin-bottom: 4px;">{{ related_coin.name }} ({{ related_coin.symbol }})</strong>
+          <span class="muted">{{ related_coin.oneLiner }}</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <hr>
+
+  <div class="card">
+    <h2 style="margin-top: 0;">Track {{ coin.symbol }} with less noise</h2>
+    <p>
+      If you’re comparing assets, news, and charts, Cryptolandia is built to stay readable even on busy days.
+    </p>
+    <div class="cta">
+      <a class="button button--primary" href="{{ app_store_url }}" target="_blank" rel="noopener noreferrer">
+        Track {{ coin.symbol }} in Cryptolandia
+      </a>
+      <a class="button" href="{{ '/cryptolandia' | relative_url }}">Learn about the app</a>
+    </div>
+  </div>
+{% else %}
+  <h1>Coin not found</h1>
+  <p>
+    This page doesn’t match a supported asset yet. You can browse the full list on the
+    <a href="{{ '/coins' | relative_url }}">Coins</a> page.
+  </p>
+{% endif %}
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% seo %}
+    {% include seo.html %}
     <link rel="icon" href="{{ site.logo | default: '/cryptolandia/images/logo.png' | relative_url }}">
     <link rel="apple-touch-icon" href="{{ site.logo | default: '/cryptolandia/images/logo.png' | relative_url }}">
     <style>
@@ -233,6 +233,49 @@
             margin: 22px 0;
         }
 
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 14px;
+        }
+        .grid--2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .grid--3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(0, 0, 0, 0.25);
+            color: var(--text);
+            outline: none;
+        }
+        .input::placeholder {
+            color: rgba(229, 231, 235, 0.55);
+        }
+
+        .muted {
+            color: var(--muted-2);
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
         .site-footer {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(5, 7, 16, 0.65);
@@ -290,6 +333,11 @@
             .content__inner {
                 padding: 18px;
             }
+
+            .grid--2,
+            .grid--3 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -305,6 +353,7 @@
                     <nav class="nav" aria-label="Primary">
                         <a href="{{ '/' | relative_url }}">Home</a>
                         <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
+                        <a href="{{ '/coins' | relative_url }}">Coins</a>
                         <a href="{{ '/support' | relative_url }}">Support</a>
                         <a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy</a>
                         <a href="{{ '/cryptolandia/terms' | relative_url }}">Terms</a>
@@ -330,6 +379,7 @@
                         <a href="{{ '/' | relative_url }}">Home</a>
                         <a href="{{ '/support' | relative_url }}">Support</a>
                         <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
+                        <a href="{{ '/coins' | relative_url }}">Coins</a>
                         <a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy Policy</a>
                         <a href="{{ '/cryptolandia/terms' | relative_url }}">Terms of Service</a>
                     </nav>

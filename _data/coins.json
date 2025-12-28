@@ -1,0 +1,353 @@
+[
+  {
+    "id": "bitcoin",
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "oneLiner": "The original cryptocurrency, built for peer‑to‑peer value transfer on a public network.",
+    "metaDescription": "Learn what Bitcoin (BTC) is, what it’s used for, and common questions—then track BTC with a calmer, clarity-first view in Cryptolandia for iOS.",
+    "intro": "Bitcoin is the first widely used cryptocurrency and the asset many people use as a reference point for the broader market. It runs on a public network where transactions are recorded and verified without a central operator.",
+    "description": "Bitcoin is a digital asset and payment network introduced in 2009. It uses a public ledger (the blockchain) where transactions are grouped into blocks and secured through a proof‑of‑work process. The supply is capped by the protocol, and new bitcoin is issued on a fixed schedule to participants who contribute computing power to secure the network. In practice, Bitcoin is often discussed as a neutral, globally accessible way to move and hold value, but it can also be volatile and subject to changing regulations and market structure. Because Bitcoin is widely traded and frequently referenced in market news, it often acts as a “baseline” asset when comparing the movement of other coins. If you track crypto at all, keeping a clear view of Bitcoin’s price action and major network events can help you stay oriented without overreacting to noise.",
+    "useCases": [
+      "Transferring value directly between wallets, without a bank in the middle",
+      "Holding an asset with a fixed supply schedule defined by software",
+      "Using BTC as collateral on certain trading or lending venues (where supported)",
+      "Comparing broader crypto market movement against a widely referenced benchmark"
+    ],
+    "whyTrack": [
+      "BTC often sets the tone for overall market volatility and sentiment",
+      "A clear chart view helps separate short-term noise from larger trend shifts",
+      "Tracking BTC alongside related assets can make correlations easier to spot"
+    ],
+    "faq": [
+      {
+        "q": "What secures the Bitcoin network?",
+        "a": "Bitcoin is secured by proof of work: miners compete to add new blocks, and the cost of computing makes rewriting history difficult."
+      },
+      {
+        "q": "Is Bitcoin anonymous?",
+        "a": "Bitcoin is pseudonymous. Addresses are not names, but transactions are public and can sometimes be linked to real-world identities."
+      },
+      {
+        "q": "Why does Bitcoin have a fixed supply?",
+        "a": "The protocol defines a capped issuance schedule. New BTC is created as block rewards, and the rate decreases over time."
+      }
+    ],
+    "related": ["ethereum", "solana", "xrp", "avalanche", "chainlink", "polygon"]
+  },
+  {
+    "id": "ethereum",
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "oneLiner": "A programmable blockchain that powers smart contracts, tokens, and many decentralized applications.",
+    "metaDescription": "Ethereum (ETH) explained: what it is, how it’s used, and quick FAQs. Track ETH and related tokens with a calmer crypto tracker—Cryptolandia for iOS.",
+    "intro": "Ethereum is a blockchain designed for programmable applications, not just transfers. It’s commonly used for tokens, stablecoins, NFTs, and many on-chain services that run via smart contracts.",
+    "description": "Ethereum is a public blockchain that lets developers run smart contracts—programs that execute on-chain. This enables a wide range of crypto activity, from token issuance and stablecoins to on-chain exchanges and lending protocols. Ethereum’s native asset, ETH, is used to pay for network usage (“gas”) and is also held and traded like other major cryptocurrencies. Since many assets and applications share Ethereum as a base layer, Ethereum network conditions (activity, fees, upgrades, and ecosystem news) can influence a broad set of markets. Ethereum has gone through major protocol changes over time, including a shift to proof of stake for block production. For tracking, ETH can be useful as a “market infrastructure” signal: when Ethereum is busy, it often means on-chain demand is rising somewhere. A calm tracker helps you keep ETH in context—alongside other large assets—without turning every headline into a decision point.",
+    "useCases": [
+      "Paying network fees to use applications built on Ethereum",
+      "Transferring and interacting with tokens (including many stablecoins)",
+      "Supporting decentralized apps through smart contract activity",
+      "Using ETH as a base asset in trading pairs across exchanges"
+    ],
+    "whyTrack": [
+      "ETH is tied to broader on-chain activity and application demand",
+      "Clear price + news tracking helps contextualize ecosystem upgrades and events",
+      "Watching ETH with other majors makes market rotation easier to recognize"
+    ],
+    "faq": [
+      {
+        "q": "What are smart contracts on Ethereum?",
+        "a": "They’re programs stored on the blockchain that can hold assets and execute logic when called, without a central server."
+      },
+      {
+        "q": "What does ETH pay for?",
+        "a": "ETH is used to pay gas fees, which cover the computational and storage resources consumed by transactions and smart contracts."
+      },
+      {
+        "q": "Is Ethereum only for NFTs?",
+        "a": "No. NFTs are one use case, but Ethereum also supports stablecoins, token trading, lending, governance, and many other apps."
+      }
+    ],
+    "related": ["bitcoin", "chainlink", "polygon", "solana", "avalanche", "bnb"]
+  },
+  {
+    "id": "solana",
+    "symbol": "SOL",
+    "name": "Solana",
+    "oneLiner": "A high-throughput blockchain focused on fast transactions and low fees for consumer-style apps.",
+    "metaDescription": "What is Solana (SOL)? Learn common uses and FAQs, then track SOL with a calmer view in Cryptolandia—an iOS crypto tracker built for clarity and speed.",
+    "intro": "Solana is a blockchain aimed at fast finality and low-cost transactions. It’s often used for consumer-facing apps, token launches, and high-frequency on-chain activity.",
+    "description": "Solana is a public blockchain built to support high transaction throughput with relatively low fees. It uses a combination of mechanisms (including a time-keeping approach sometimes described as proof of history, alongside proof of stake) to coordinate the network and keep blocks moving quickly. The SOL asset is used for transaction fees and can be involved in staking and ecosystem incentives, depending on how participants use the network. Solana’s ecosystem includes tokens, exchanges, NFTs, and applications where speed and cost matter—such as trading, gaming-style interactions, and payments experiments. Like other networks, Solana’s real-world experience depends on factors such as validator distribution, software upgrades, and periods of peak demand. When tracking SOL, it’s helpful to watch it next to other “platform” assets, because market narratives often rotate between ecosystems. A calmer tracker keeps your view anchored to the essentials: price movement, context, and related assets.",
+    "useCases": [
+      "Using fast, low-fee transactions for on-chain apps and transfers",
+      "Interacting with Solana-based tokens and decentralized exchanges",
+      "Participating in network staking or validator ecosystems (where supported)",
+      "Exploring consumer-oriented crypto apps that benefit from quick finality"
+    ],
+    "whyTrack": [
+      "SOL can move with shifts in attention between smart contract ecosystems",
+      "A clean chart helps you judge momentum without chasing every spike",
+      "Comparing SOL with ETH and other platforms highlights relative strength"
+    ],
+    "faq": [
+      {
+        "q": "Why is Solana known for speed?",
+        "a": "Its design aims to keep block production and transaction processing fast, reducing the time between submitting and confirming transactions."
+      },
+      {
+        "q": "What is SOL used for?",
+        "a": "SOL is used to pay transaction fees on the network, and it can also be used in staking-related participation depending on the setup."
+      },
+      {
+        "q": "Are Solana transactions always cheap?",
+        "a": "Fees are typically low, but network conditions can change with demand and software updates."
+      }
+    ],
+    "related": ["ethereum", "avalanche", "polygon", "bitcoin", "chainlink", "bnb"]
+  },
+  {
+    "id": "bnb",
+    "symbol": "BNB",
+    "name": "BNB",
+    "oneLiner": "An ecosystem token used across Binance-related products and the BNB Chain network.",
+    "metaDescription": "BNB explained: what it is, common uses, and FAQs. Track BNB with a calmer, clarity-first crypto tracker—Cryptolandia for iOS—alongside related assets.",
+    "intro": "BNB is closely tied to the Binance ecosystem and is used on BNB Chain for network fees and other functions. It’s widely tracked because it connects exchange activity with an on-chain platform.",
+    "description": "BNB is a cryptocurrency originally associated with the Binance exchange ecosystem and later used across a broader set of products and services. It is also the native asset for BNB Chain, a blockchain used for token transfers and smart contract applications. On BNB Chain, BNB commonly functions as the fee token for transactions and contract interactions. Because BNB sits at the intersection of a large exchange brand and a smart contract network, its market behavior can be influenced by both on-chain usage and ecosystem-specific news. As with any major crypto asset, price and sentiment can shift quickly in response to headlines, regulatory developments, or changes in platform activity. Tracking BNB with a calm interface helps you separate ecosystem events from broader market movement and compare it with other large platform assets. The goal isn’t to react to every update—it’s to stay oriented and informed.",
+    "useCases": [
+      "Paying transaction fees on BNB Chain",
+      "Using BNB in certain exchange-related utilities or fee programs (where applicable)",
+      "Interacting with tokens and apps that run on BNB Chain",
+      "Tracking an ecosystem token that often reflects platform-related sentiment"
+    ],
+    "whyTrack": [
+      "BNB can reflect both on-chain usage and exchange ecosystem signals",
+      "Side-by-side tracking helps distinguish platform headlines from market-wide moves",
+      "A calmer view makes it easier to focus on the bigger picture over time"
+    ],
+    "faq": [
+      {
+        "q": "Is BNB the same as BNB Chain?",
+        "a": "BNB is the asset. BNB Chain is the blockchain network where BNB is commonly used for fees and other on-chain functions."
+      },
+      {
+        "q": "What is BNB used for on-chain?",
+        "a": "On BNB Chain, BNB is typically used to pay gas fees for transactions and smart contract interactions."
+      },
+      {
+        "q": "Does BNB move with the broader market?",
+        "a": "Often yes, but it can also move on ecosystem-specific news or changes in platform activity."
+      }
+    ],
+    "related": ["ethereum", "solana", "polygon", "bitcoin", "avalanche", "xrp"]
+  },
+  {
+    "id": "xrp",
+    "symbol": "XRP",
+    "name": "XRP",
+    "oneLiner": "A digital asset associated with the XRP Ledger, designed for fast settlement and transfers.",
+    "metaDescription": "What is XRP? Get a calm overview of XRP and the XRP Ledger, common uses, and FAQs—then track XRP with a clarity-first iOS crypto tracker: Cryptolandia.",
+    "intro": "XRP is the native asset of the XRP Ledger, a public network built for fast transaction settlement. It’s often discussed in the context of payments and infrastructure-style crypto use cases.",
+    "description": "XRP is a cryptocurrency used on the XRP Ledger (XRPL), a public blockchain network designed for quick and low-cost transfers. The ledger supports a range of features such as payments and token-like functionality, and it has long been positioned around settlement efficiency. XRP’s market attention is also shaped by ecosystem news, exchange listings, and ongoing discussion about regulation and compliance in parts of the industry. That mix—payments narrative plus headline sensitivity—can make XRP’s price action feel unusually news-driven at times. When you track XRP, it helps to keep it alongside other large-cap assets to understand whether a move is specific to XRP or part of a broader market shift. In a calmer tracker, the goal is simple: see what changed, keep context, and avoid being pulled into rapid-fire speculation.",
+    "useCases": [
+      "Transferring value quickly on the XRP Ledger",
+      "Using XRPL for payment-style flows where speed and cost matter",
+      "Tracking an asset that can react strongly to ecosystem and regulatory news",
+      "Comparing infrastructure-focused narratives against smart contract platforms"
+    ],
+    "whyTrack": [
+      "XRP can show sharp, headline-driven moves that are easier to assess with context",
+      "A clean view helps you compare XRP’s movement against BTC and ETH",
+      "Following XRP alongside related assets reduces “one-coin tunnel vision”"
+    ],
+    "faq": [
+      {
+        "q": "What is the XRP Ledger?",
+        "a": "The XRP Ledger is a public network optimized for fast settlement and transfers, with its own consensus approach distinct from proof of work."
+      },
+      {
+        "q": "Is XRP a payment coin?",
+        "a": "It’s often associated with payment and settlement use cases, but like many crypto assets it is also traded and held for market exposure."
+      },
+      {
+        "q": "Why does XRP react to headlines?",
+        "a": "XRP has a long history of ecosystem and regulatory coverage, which can influence sentiment and liquidity."
+      }
+    ],
+    "related": ["bitcoin", "ethereum", "bnb", "cardano", "polygon", "avalanche"]
+  },
+  {
+    "id": "cardano",
+    "symbol": "ADA",
+    "name": "Cardano",
+    "oneLiner": "A proof‑of‑stake blockchain focused on structured upgrades and smart contract functionality.",
+    "metaDescription": "Cardano (ADA) overview: what it is, common uses, and FAQs—written for clarity, not hype. Track ADA with Cryptolandia, a calmer crypto tracker for iOS.",
+    "intro": "Cardano is a smart contract platform that emphasizes a methodical approach to protocol design and upgrades. ADA is the network’s native asset and is used for fees and participation.",
+    "description": "Cardano is a public blockchain platform that supports smart contracts and token transfers, using a proof‑of‑stake design. Its ecosystem includes decentralized applications, governance-related initiatives, and a community that often focuses on long-term roadmap milestones. ADA is the native cryptocurrency used to pay transaction fees, and it can also be involved in network participation depending on how users interact with staking and delegation features. Like other platform assets, ADA’s market cycles can be shaped by both broader crypto sentiment and project-specific developments such as upgrades, tooling, and application adoption. Because narratives around “platforms” can rotate quickly, tracking ADA is usually most useful in comparison with other smart contract networks. A calmer tracker helps you stay grounded: what did the chart do, what’s the context, and how does it compare to similar assets—without turning every update into a rush.",
+    "useCases": [
+      "Paying network fees for transfers and smart contract interactions",
+      "Participating in proof-of-stake delegation (where supported by your setup)",
+      "Using Cardano-based tokens and applications",
+      "Following platform upgrade milestones and ecosystem growth signals"
+    ],
+    "whyTrack": [
+      "ADA often moves with broader “platform” rotations across ecosystems",
+      "A steady view makes it easier to evaluate upgrades without hype cycles",
+      "Comparing ADA to ETH, SOL, and AVAX adds useful context"
+    ],
+    "faq": [
+      {
+        "q": "What is ADA used for?",
+        "a": "ADA is used for transaction fees on Cardano and can also be used in participation mechanisms like delegation, depending on tools and custody."
+      },
+      {
+        "q": "Is Cardano proof of stake?",
+        "a": "Yes. Cardano uses a proof-of-stake approach to secure the network and produce blocks."
+      },
+      {
+        "q": "Does Cardano support smart contracts?",
+        "a": "Yes. Cardano supports smart contract functionality, and its ecosystem includes apps and tokens built on-chain."
+      }
+    ],
+    "related": ["ethereum", "solana", "avalanche", "polygon", "bitcoin", "xrp"]
+  },
+  {
+    "id": "dogecoin",
+    "symbol": "DOGE",
+    "name": "Dogecoin",
+    "oneLiner": "A long-running cryptocurrency known for low-friction transfers and a strong internet-native community.",
+    "metaDescription": "Dogecoin (DOGE) explained: what it is, common uses, and quick FAQs. Track DOGE with a calmer, clarity-first iOS crypto tracker—Cryptolandia.",
+    "intro": "Dogecoin started as a lighthearted project and became a widely recognized crypto asset with an active community. It’s often used as a simple transfer coin and as a market sentiment signal.",
+    "description": "Dogecoin is a cryptocurrency that launched in 2013 and became known for its meme-driven origins and large online community. Over time, DOGE has also developed a practical identity as a straightforward, low-friction transfer asset in some contexts. Its market behavior can be heavily influenced by social attention and broader sentiment, which can lead to rapid swings compared with more infrastructure-focused coins. DOGE does not try to be a full smart contract platform; instead, it’s usually discussed as a simpler currency-style asset with strong cultural visibility. For tracking purposes, Dogecoin can act as a “temperature check” on retail attention and short-term risk appetite in the crypto market. A calmer tracker helps you monitor DOGE without getting pulled into the loudest narratives—keeping the essentials visible: price movement, context, and how it behaves relative to larger assets.",
+    "useCases": [
+      "Making low-friction transfers where DOGE is accepted",
+      "Following a sentiment-sensitive asset with strong social visibility",
+      "Comparing “meme coin” dynamics against larger market benchmarks",
+      "Using DOGE as a reference point for retail attention cycles"
+    ],
+    "whyTrack": [
+      "DOGE can reflect shifts in short-term sentiment across crypto markets",
+      "A clean view helps you see volatility clearly without overreacting",
+      "Tracking DOGE alongside BTC and ETH adds grounding context"
+    ],
+    "faq": [
+      {
+        "q": "Was Dogecoin created as a joke?",
+        "a": "Dogecoin started with a playful theme, but it has remained active for years and built a large community and market presence."
+      },
+      {
+        "q": "Is DOGE a smart contract platform?",
+        "a": "No. DOGE is generally treated as a currency-style asset rather than a general-purpose smart contract network."
+      },
+      {
+        "q": "Why is DOGE so volatile?",
+        "a": "Price moves can be amplified by social attention, news cycles, and changing liquidity conditions."
+      }
+    ],
+    "related": ["bitcoin", "ethereum", "xrp", "solana", "polygon", "avalanche"]
+  },
+  {
+    "id": "polygon",
+    "symbol": "POL",
+    "name": "Polygon",
+    "oneLiner": "A scaling ecosystem that supports faster, cheaper transactions for Ethereum-compatible applications.",
+    "metaDescription": "Polygon (POL) in plain English: what it is, common uses, and FAQs. Track POL and related assets with Cryptolandia—a calmer, clarity-first iOS crypto tracker.",
+    "intro": "Polygon is an ecosystem of scaling networks that aim to make Ethereum-style apps cheaper and faster to use. Its token has evolved over time; today it’s commonly referenced as POL in that ecosystem.",
+    "description": "Polygon is best known as an Ethereum scaling ecosystem that helps applications and users reduce transaction costs and improve responsiveness compared to the Ethereum main chain alone. Polygon has supported multiple approaches to scaling, and its networks are used for tokens, NFTs, gaming-like interactions, and other apps that benefit from lower fees. The ecosystem’s token is commonly referenced as POL (and historically as MATIC), and it is used for network fees and other protocol functions depending on the specific Polygon network. Because Polygon is closely linked to Ethereum’s application landscape, it can sometimes move with broader Ethereum ecosystem narratives—especially when scaling, fees, and user activity become a focus. When tracking Polygon, it helps to compare it with ETH and other scaling or platform assets to understand whether moves are specific or market-wide. A calmer tracker keeps your view practical: what’s changing, and what’s just noise.",
+    "useCases": [
+      "Using lower-fee, Ethereum-compatible networks for app interactions",
+      "Transferring and trading tokens on Polygon-supported networks",
+      "Supporting consumer apps where lower transaction costs matter",
+      "Tracking scaling narratives tied to Ethereum ecosystem activity"
+    ],
+    "whyTrack": [
+      "POL is often discussed alongside Ethereum scaling and fee dynamics",
+      "A clear view helps you compare scaling tokens without headline overload",
+      "Watching POL with ETH, SOL, and AVAX adds useful cross-ecosystem context"
+    ],
+    "faq": [
+      {
+        "q": "Is Polygon the same as Ethereum?",
+        "a": "No. Polygon is a separate ecosystem designed to scale Ethereum-style applications, but it is closely linked to Ethereum compatibility."
+      },
+      {
+        "q": "Why do people use Polygon?",
+        "a": "Many use it to access apps with lower fees and faster interactions than they might see on Ethereum mainnet during busy periods."
+      },
+      {
+        "q": "Why is the token sometimes called MATIC?",
+        "a": "MATIC is the historical token name; POL is used in current Polygon ecosystem discussions. Different venues may still show legacy naming."
+      }
+    ],
+    "related": ["ethereum", "chainlink", "avalanche", "solana", "bitcoin", "bnb"]
+  },
+  {
+    "id": "chainlink",
+    "symbol": "LINK",
+    "name": "Chainlink",
+    "oneLiner": "A decentralized oracle network that helps blockchains access real-world data and services.",
+    "metaDescription": "Chainlink (LINK) explained: what oracles do, common uses, and FAQs. Track LINK with Cryptolandia—a calmer iOS crypto tracker focused on clarity, not hype.",
+    "intro": "Chainlink is best known for “oracles”—infrastructure that connects blockchains to data and services outside the chain. LINK is the asset associated with paying for and coordinating that oracle work.",
+    "description": "Chainlink is a decentralized oracle network designed to bring external data into smart contracts. Blockchains are good at verifying on-chain state, but many applications need inputs like market data, identity signals, or event outcomes that originate elsewhere. Oracles provide that bridge, and Chainlink is a widely referenced approach used across multiple ecosystems. LINK is the associated token used within the network’s economics for paying for services and coordinating participants, depending on how specific oracle services are structured. Because Chainlink is infrastructure rather than a single app, its adoption is often discussed through integrations, ecosystem partnerships, and the growth of on-chain applications that rely on reliable data. For tracking, LINK can behave differently from pure platform coins: it may move with “DeFi infrastructure” attention or with broad market cycles. A calmer tracker helps you keep LINK in context and follow the bigger narrative without getting lost in announcements.",
+    "useCases": [
+      "Providing price feeds and data inputs to decentralized applications",
+      "Connecting smart contracts to off-chain events and services",
+      "Supporting cross-chain messaging and infrastructure-style crypto tooling",
+      "Tracking “picks-and-shovels” demand for on-chain applications"
+    ],
+    "whyTrack": [
+      "LINK often reflects infrastructure narratives across multiple ecosystems",
+      "A clear tracker helps you relate integrations to real market movement",
+      "Watching LINK with ETH and major platforms can highlight ecosystem shifts"
+    ],
+    "faq": [
+      {
+        "q": "What is an oracle in crypto?",
+        "a": "An oracle brings external data into a blockchain context so smart contracts can use information the chain can’t produce by itself."
+      },
+      {
+        "q": "What is LINK used for?",
+        "a": "LINK is used in the Chainlink network’s service economics, including paying for certain oracle services and coordinating participants."
+      },
+      {
+        "q": "Does Chainlink run its own blockchain?",
+        "a": "Chainlink is primarily an oracle network that supports many blockchains; it’s best thought of as infrastructure rather than a single base chain."
+      }
+    ],
+    "related": ["ethereum", "bitcoin", "polygon", "solana", "avalanche", "bnb"]
+  },
+  {
+    "id": "avalanche",
+    "symbol": "AVAX",
+    "name": "Avalanche",
+    "oneLiner": "A smart contract platform designed for fast finality and customizable blockchain networks.",
+    "metaDescription": "Avalanche (AVAX) explained: what it is, common uses, and FAQs—written calmly and clearly. Track AVAX with Cryptolandia, a clarity-first iOS crypto tracker.",
+    "intro": "Avalanche is a smart contract ecosystem focused on speed and flexibility. AVAX is the network’s native asset and is used for fees and other protocol functions across the ecosystem.",
+    "description": "Avalanche is a public blockchain ecosystem that supports smart contracts and aims for quick transaction finality. It is often described as a platform that can support multiple networks or “subnets,” which can be used to customize blockchain environments for specific applications. AVAX is the native cryptocurrency used for transaction fees and other network-level functions. Like other platform assets, Avalanche’s market narrative can be shaped by developer activity, new applications, and broader shifts in how users distribute attention across ecosystems. When on-chain usage grows, platform tokens can react; when liquidity thins, they can also swing sharply. That’s why tracking AVAX alongside other smart contract platforms can be useful: it helps you understand whether movement is ecosystem-specific or part of the wider market. A calmer tracker helps you follow Avalanche without treating every ecosystem update as a signal—keeping the view simple, comparable, and grounded.",
+    "useCases": [
+      "Paying fees for Avalanche transactions and smart contract interactions",
+      "Using applications built in the Avalanche ecosystem",
+      "Exploring customizable network environments for specific app needs (where applicable)",
+      "Comparing performance and narratives across smart contract platforms"
+    ],
+    "whyTrack": [
+      "AVAX often moves with platform rotations across the market",
+      "A clean view helps you compare AVAX vs ETH/SOL without narrative whiplash",
+      "Tracking related assets keeps ecosystem moves in broader context"
+    ],
+    "faq": [
+      {
+        "q": "What is AVAX used for?",
+        "a": "AVAX is used for network fees and other protocol-level functions across the Avalanche ecosystem, depending on how the network is used."
+      },
+      {
+        "q": "What does “subnet” mean on Avalanche?",
+        "a": "It typically refers to customizable network environments that can be configured for specific applications or requirements."
+      },
+      {
+        "q": "Is Avalanche an Ethereum competitor?",
+        "a": "It’s often compared to other smart contract platforms, but each ecosystem has different design choices, developer communities, and usage patterns."
+      }
+    ],
+    "related": ["ethereum", "solana", "polygon", "bitcoin", "chainlink", "bnb"]
+  }
+]
+
