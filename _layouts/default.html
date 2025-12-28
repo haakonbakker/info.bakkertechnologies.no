@@ -119,6 +119,67 @@
             justify-content: flex-end;
         }
 
+        .nav-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+            transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        .nav-toggle:focus-visible {
+            outline: 2px solid rgba(147, 197, 253, 0.75);
+            outline-offset: 2px;
+        }
+
+        .nav-toggle__icon {
+            width: 20px;
+            height: 14px;
+            position: relative;
+        }
+
+        .nav-toggle__icon::before,
+        .nav-toggle__icon::after,
+        .nav-toggle__icon span {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: rgba(229, 231, 235, 0.92);
+            transition: transform 0.18s ease, top 0.18s ease, opacity 0.18s ease;
+        }
+
+        .nav-toggle__icon::before { top: 0; }
+        .nav-toggle__icon span { top: 6px; }
+        .nav-toggle__icon::after { top: 12px; }
+
+        .nav-toggle[aria-expanded="true"] .nav-toggle__icon::before {
+            top: 6px;
+            transform: rotate(45deg);
+        }
+        .nav-toggle[aria-expanded="true"] .nav-toggle__icon span {
+            opacity: 0;
+        }
+        .nav-toggle[aria-expanded="true"] .nav-toggle__icon::after {
+            top: 6px;
+            transform: rotate(-45deg);
+        }
+
         .nav a {
             color: var(--muted);
             padding: 8px 10px;
@@ -320,14 +381,39 @@
 
             .site-header__inner {
                 padding: 12px 0;
+                position: relative;
             }
 
             .nav {
-                gap: 6px;
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+                margin-top: 12px;
+                padding: 10px;
+                gap: 4px;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                background: rgba(5, 7, 16, 0.92);
+                border: 1px solid rgba(255, 255, 255, 0.10);
+                border-radius: 16px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
             }
 
             .nav a {
-                padding: 7px 9px;
+                padding: 10px 10px;
+                width: 100%;
+            }
+
+            .nav.is-open {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
             }
 
             .content__inner {
@@ -350,7 +436,10 @@
                         <span class="brand__dot" aria-hidden="true"></span>
                         <span>{{ site.title }}</span>
                     </a>
-                    <nav class="nav" aria-label="Primary">
+                    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+                        <span class="nav-toggle__icon" aria-hidden="true"><span></span></span>
+                    </button>
+                    <nav id="primary-nav" class="nav" aria-label="Primary">
                         <a href="{{ '/' | relative_url }}">Home</a>
                         <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
                         <a href="{{ '/coins' | relative_url }}">Coins</a>
@@ -387,5 +476,37 @@
             </div>
         </footer>
     </div>
+    <script>
+        (function () {
+            var toggle = document.querySelector(".nav-toggle");
+            var nav = document.getElementById("primary-nav");
+            if (!toggle || !nav) return;
+
+            function setOpen(isOpen) {
+                toggle.setAttribute("aria-expanded", String(isOpen));
+                toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+                nav.classList.toggle("is-open", isOpen);
+            }
+
+            toggle.addEventListener("click", function () {
+                var isOpen = toggle.getAttribute("aria-expanded") === "true";
+                setOpen(!isOpen);
+            });
+
+            // Close after selecting a link (mobile UX)
+            nav.addEventListener("click", function (e) {
+                var target = e.target;
+                if (target && target.tagName === "A") setOpen(false);
+            });
+
+            // Close on Escape for accessibility
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") setOpen(false);
+            });
+
+            // If JS is enabled, ensure default state is closed
+            setOpen(false);
+        })();
+    </script>
 </body>
 </html>
