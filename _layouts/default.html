@@ -13,9 +13,13 @@
             box-sizing: border-box;
         }
         
-        html {
-            /* Prevent breakpoint “jitter” between pages due to scrollbar width differences */
-            scrollbar-gutter: stable;
+        /* Prevent breakpoint “jitter” between pages due to scrollbar width differences */
+        @supports (scrollbar-gutter: stable) {
+            html { scrollbar-gutter: stable; }
+        }
+        @supports not (scrollbar-gutter: stable) {
+            /* Fallback: always reserve scrollbar space */
+            html { overflow-y: scroll; }
         }
 
         body {
