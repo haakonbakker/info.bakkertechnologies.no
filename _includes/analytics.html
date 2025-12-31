@@ -1,0 +1,87 @@
+{% comment %}
+  Analytics include (production only).
+
+  - Configured via _config.yml:
+      analytics:
+        google_measurement_id: "G-XXXXXXX"
+        honor_dnt: true
+
+  - Can be disabled per-page with front matter:
+      no_analytics: true
+
+  Notes:
+  - GA measurement IDs are not secrets; safe in a public repo.
+  - Depending on your jurisdiction (e.g. EU/EEA), you may need a consent banner
+    before loading GA. This include only honors Do Not Track by default.
+{% endcomment %}
+
+{% assign ga_id = site.analytics.google_measurement_id | default: site.google_analytics_id %}
+
+{% if jekyll.environment == "production" and ga_id and ga_id != "" and page.no_analytics != true %}
+  {% assign require_consent = site.analytics.require_consent | default: true %}
+  {% assign consent_key = site.analytics.consent_storage_key | default: "bt_consent_v1" %}
+
+  <script>
+    (function () {
+      var honorDnt = {{ site.analytics.honor_dnt | default: true | jsonify }};
+      var requireConsent = {{ require_consent | jsonify }};
+      var KEY = {{ consent_key | jsonify }};
+      var GA_ID = {{ ga_id | jsonify }};
+      var loaded = false;
+
+      function hasConsent() {
+        if (!requireConsent) return true;
+        try {
+          var raw = localStorage.getItem(KEY);
+          if (!raw) return false;
+          var parsed = JSON.parse(raw);
+          return !!(parsed && typeof parsed === "object" && parsed.analytics === true);
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function dntEnabled() {
+        if (!honorDnt) return false;
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        return (dnt === "1" || dnt === "yes");
+      }
+
+      function loadGa() {
+        if (loaded) return;
+        if (dntEnabled()) return;
+        if (!hasConsent()) return;
+        loaded = true;
+
+        // Google tag (gtag.js) - injected only after consent.
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = window.gtag || gtag;
+
+        gtag("js", new Date());
+        gtag("config", GA_ID, {
+          // Reduce advertising-related collection.
+          "allow_google_signals": false,
+          "allow_ad_personalization_signals": false,
+          // Harmless if ignored by GA4.
+          "anonymize_ip": true
+        });
+      }
+
+      // Try immediately (covers return visitors).
+      loadGa();
+
+      // Try again when user updates consent.
+      window.addEventListener("bt:consent", function (e) {
+        try {
+          if (e && e.detail && e.detail.analytics === true) loadGa();
+        } catch (err) {}
+      });
+    })();
+  </script>
+{% endif %}

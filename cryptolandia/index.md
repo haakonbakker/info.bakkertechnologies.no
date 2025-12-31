@@ -540,7 +540,7 @@ image: "/cryptolandia/images/logo.png"
 <div class="cl-section">
   <h2>Privacy, terms & support</h2>
   <p>
-    Privacy is fundamental to how we build. <strong>No data collected. Ever.</strong> For complete details, visit:
+    Privacy is fundamental to how we build. <strong>The Cryptolandia app collects no personal data.</strong> For complete details, visit:
   </p>
   <ul>
     <li><a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy Policy</a></li>

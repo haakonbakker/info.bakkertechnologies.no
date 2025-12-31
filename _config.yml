@@ -22,3 +22,12 @@ plugins:
 
 # GitHub Pages settings
 github: [metadata]
+
+# Analytics (optional)
+# - GA4 measurement IDs (G-XXXX...) are not secrets, so it's fine in a public repo.
+# - If you set this, consider whether you need consent banners / privacy disclosures.
+analytics:
+  google_measurement_id: ""
+  honor_dnt: true
+  require_consent: true
+  consent_storage_key: "bt_consent_v1"
