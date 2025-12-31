@@ -29,3 +29,5 @@ github: [metadata]
 analytics:
   google_measurement_id: ""
   honor_dnt: true
+  require_consent: true
+  consent_storage_key: "bt_consent_v1"

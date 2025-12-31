@@ -1,0 +1,279 @@
+{% comment %}
+  Minimal GDPR/EEA-friendly consent banner (analytics opt-in).
+
+  Stores choices in localStorage (strictly necessary).
+  Exposes: window.BTConsent.{get,set,openBanner}
+  Dispatches: window event "bt:consent" with detail { analytics: boolean }
+{% endcomment %}
+
+<style>
+  .bt-consent {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 99999;
+    max-width: 980px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(5, 7, 16, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    padding: 16px;
+    display: none;
+  }
+  .bt-consent__row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .bt-consent__title {
+    font-weight: 700;
+    color: rgba(229, 231, 235, 0.95);
+    margin-bottom: 6px;
+  }
+  .bt-consent__text {
+    color: rgba(229, 231, 235, 0.72);
+    font-size: 0.95rem;
+    line-height: 1.45;
+    max-width: 68ch;
+  }
+  .bt-consent__actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .bt-consent__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(229, 231, 235, 0.92);
+    cursor: pointer;
+    font: inherit;
+  }
+  .bt-consent__btn:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+  .bt-consent__btn--primary {
+    border: 1px solid rgba(99, 102, 241, 0.55);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(34, 211, 238, 0.75));
+    color: #061018;
+    font-weight: 700;
+  }
+  .bt-consent__details {
+    margin-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: 12px;
+    display: none;
+  }
+  .bt-consent__toggleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+  }
+  .bt-consent__label {
+    color: rgba(229, 231, 235, 0.85);
+    font-weight: 600;
+  }
+  .bt-consent__hint {
+    color: rgba(229, 231, 235, 0.65);
+    font-size: 0.92rem;
+    margin-top: 4px;
+  }
+  .bt-consent__switch {
+    width: 44px;
+    height: 26px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+  .bt-consent__switch::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: rgba(229, 231, 235, 0.92);
+    transition: transform 0.16s ease;
+  }
+  .bt-consent__switch[data-on="true"] {
+    background: rgba(16, 185, 129, 0.35);
+    border-color: rgba(16, 185, 129, 0.55);
+  }
+  .bt-consent__switch[data-on="true"]::after {
+    transform: translateX(18px);
+  }
+</style>
+
+<div class="bt-consent" id="bt-consent" role="dialog" aria-modal="true" aria-label="Privacy preferences">
+  <div class="bt-consent__row">
+    <div>
+      <div class="bt-consent__title">Privacy preferences</div>
+      <div class="bt-consent__text">
+        We use analytics to understand traffic and improve the site. In the EU/EEA, analytics are disabled unless you opt in.
+        See <a href="{{ '/privacy' | relative_url }}">Privacy & Cookies</a>.
+      </div>
+    </div>
+    <div class="bt-consent__actions">
+      <button class="bt-consent__btn" type="button" data-bt-consent="reject">Reject</button>
+      <button class="bt-consent__btn" type="button" data-bt-consent="settings">Settings</button>
+      <button class="bt-consent__btn bt-consent__btn--primary" type="button" data-bt-consent="accept">Accept analytics</button>
+    </div>
+  </div>
+
+  <div class="bt-consent__details" id="bt-consent-details">
+    <div class="bt-consent__toggleRow">
+      <div>
+        <div class="bt-consent__label">Analytics</div>
+        <div class="bt-consent__hint">Helps us measure page views and navigation (Google Analytics).</div>
+      </div>
+      <div class="bt-consent__switch" role="switch" tabindex="0" aria-label="Analytics" data-bt-switch="analytics" data-on="false"></div>
+    </div>
+    <div class="bt-consent__actions" style="margin-top: 8px;">
+      <button class="bt-consent__btn" type="button" data-bt-consent="save">Save preferences</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var KEY = {{ site.analytics.consent_storage_key | default: "bt_consent_v1" | jsonify }};
+    var requireConsent = {{ site.analytics.require_consent | default: true | jsonify }};
+    var banner = document.getElementById("bt-consent");
+    var details = document.getElementById("bt-consent-details");
+    if (!banner) return;
+
+    function safeParse(json) {
+      try { return JSON.parse(json); } catch (e) { return null; }
+    }
+
+    function get() {
+      var raw = localStorage.getItem(KEY);
+      var parsed = raw ? safeParse(raw) : null;
+      // Shape: { v: 1, analytics: true/false }
+      if (!parsed || typeof parsed !== "object") return null;
+      if (typeof parsed.analytics !== "boolean") return null;
+      return parsed;
+    }
+
+    function dispatch(state) {
+      window.dispatchEvent(new CustomEvent("bt:consent", { detail: { analytics: !!state.analytics } }));
+    }
+
+    function set(state) {
+      var payload = { v: 1, analytics: !!state.analytics };
+      localStorage.setItem(KEY, JSON.stringify(payload));
+      dispatch(payload);
+      close();
+    }
+
+    function open() {
+      banner.style.display = "block";
+    }
+
+    function close() {
+      banner.style.display = "none";
+      details.style.display = "none";
+    }
+
+    function toggleDetails() {
+      details.style.display = (details.style.display === "block") ? "none" : "block";
+    }
+
+    function switchEl() {
+      return banner.querySelector('[data-bt-switch="analytics"]');
+    }
+
+    function setSwitch(isOn) {
+      var el = switchEl();
+      if (!el) return;
+      el.dataset.on = String(!!isOn);
+      el.setAttribute("aria-checked", String(!!isOn));
+    }
+
+    function getSwitch() {
+      var el = switchEl();
+      return el ? el.dataset.on === "true" : false;
+    }
+
+    // Public API for "Cookie settings" links
+    window.BTConsent = {
+      get: get,
+      set: set,
+      openBanner: function () {
+        var existing = get();
+        setSwitch(existing ? existing.analytics : false);
+        open();
+        details.style.display = "block";
+      }
+    };
+
+    // If consent already stored, broadcast it early.
+    var existing = get();
+    if (existing) {
+      dispatch(existing);
+      close();
+    } else if (requireConsent) {
+      // No stored choice: show banner (analytics stays off by default).
+      setSwitch(false);
+      open();
+    }
+
+    banner.addEventListener("click", function (e) {
+      var t = e.target;
+      if (!t) return;
+      var action = t.getAttribute("data-bt-consent");
+      if (!action) return;
+
+      if (action === "accept") return set({ analytics: true });
+      if (action === "reject") return set({ analytics: false });
+      if (action === "settings") return toggleDetails();
+      if (action === "save") return set({ analytics: getSwitch() });
+    });
+
+    banner.addEventListener("keydown", function (e) {
+      // Keyboard toggle for the switch
+      if (!e) return;
+      var target = e.target;
+      if (!target || target.getAttribute("data-bt-switch") !== "analytics") return;
+      if (e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      var next = !getSwitch();
+      setSwitch(next);
+    });
+
+    // Click-to-toggle switch
+    var sw = switchEl();
+    if (sw) {
+      sw.addEventListener("click", function () {
+        setSwitch(!getSwitch());
+      });
+    }
+
+    // Delegate: any element with [data-cookie-settings] opens preferences
+    document.addEventListener("click", function (e) {
+      var el = e.target && e.target.closest ? e.target.closest("[data-cookie-settings]") : null;
+      if (!el) return;
+      e.preventDefault();
+      window.BTConsent && window.BTConsent.openBanner && window.BTConsent.openBanner();
+    });
+  })();
+</script>
