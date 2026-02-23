@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 title: "Coins"
 description: "Browse calm, clarity-first crypto explainers and FAQs for major coins and tokens."
 permalink: /coins/

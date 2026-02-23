@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 title: Terms of Service - Cryptolandia
 ---
 

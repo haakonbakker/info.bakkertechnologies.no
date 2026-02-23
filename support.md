@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 title: "Cryptolandia Support & FAQ"
 description: "Get help with Cryptolandia, the iOS crypto tracker app. Support, FAQ, troubleshooting for prices/charts, and contact details."
 image: "/cryptolandia/images/logo.png"

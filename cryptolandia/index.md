@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: legacy
 title: "Cryptolandia – Crypto Tracker App for iPhone & iPad"
 description: "Cryptolandia is a privacy-first iOS crypto tracker app with live cryptocurrency prices, interactive charts, and curated crypto news—built for iPhone and iPad."
 image: "/cryptolandia/images/logo.png"

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include seo.html %}
+    <link rel="icon" href="{{ site.logo | default: '/cryptolandia/images/logo.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ site.logo | default: '/cryptolandia/images/logo.png' | relative_url }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Prevent breakpoint “jitter” between pages due to scrollbar width differences */
+        @supports (scrollbar-gutter: stable) {
+            html { scrollbar-gutter: stable; }
+        }
+        @supports not (scrollbar-gutter: stable) {
+            /* Fallback: always reserve scrollbar space */
+            html { overflow-y: scroll; }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e5e7eb;
+            background: radial-gradient(1200px 800px at 20% 0%, rgba(99, 102, 241, 0.22), transparent 60%),
+                        radial-gradient(900px 600px at 90% 10%, rgba(34, 211, 238, 0.14), transparent 55%),
+                        radial-gradient(1000px 700px at 50% 100%, rgba(16, 185, 129, 0.10), transparent 60%),
+                        linear-gradient(180deg, #050710 0%, #070a12 45%, #050710 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        :root {
+            --bg: #050710;
+            --panel: rgba(255, 255, 255, 0.06);
+            --panel-strong: rgba(255, 255, 255, 0.09);
+            --border: rgba(255, 255, 255, 0.10);
+            --border-strong: rgba(255, 255, 255, 0.16);
+            --text: #e5e7eb;
+            --muted: rgba(229, 231, 235, 0.72);
+            --muted-2: rgba(229, 231, 235, 0.56);
+            --link: #93c5fd;
+            --link-strong: #bfdbfe;
+            --accent: #6366f1;
+            --accent-2: #22d3ee;
+            --accent-3: #10b981;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+            --radius: 18px;
+            --radius-sm: 12px;
+            --maxw: 1120px;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--link-strong);
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: rgba(5, 7, 16, 0.68);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .site-header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 0;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .brand:hover {
+            text-decoration: none;
+        }
+
+        .brand__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.15);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+            transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        .nav-toggle:focus-visible {
+            outline: 2px solid rgba(147, 197, 253, 0.75);
+            outline-offset: 2px;
+        }
+
+        .nav-toggle__icon {
+            width: 20px;
+            height: 14px;
+            position: relative;
+        }
+
+        .nav-toggle__icon::before,
+        .nav-toggle__icon::after,
+        .nav-toggle__icon span {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: rgba(229, 231, 235, 0.92);
+            transition: transform 0.18s ease, top 0.18s ease, opacity 0.18s ease;
+        }
+
+        .nav-toggle__icon::before { top: 0; }
+        .nav-toggle__icon span { top: 6px; }
+        .nav-toggle__icon::after { top: 12px; }
+
+        .nav-toggle[aria-expanded="true"] .nav-toggle__icon::before {
+            top: 6px;
+            transform: rotate(45deg);
+        }
+        .nav-toggle[aria-expanded="true"] .nav-toggle__icon span {
+            opacity: 0;
+        }
+        .nav-toggle[aria-expanded="true"] .nav-toggle__icon::after {
+            top: 6px;
+            transform: rotate(-45deg);
+        }
+
+        .nav a {
+            color: var(--muted);
+            padding: 8px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.22);
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .button--primary {
+            border: 1px solid rgba(99, 102, 241, 0.55);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(34, 211, 238, 0.75));
+            color: #061018;
+            font-weight: 700;
+        }
+
+        .button--primary:hover {
+            border-color: rgba(191, 219, 254, 0.75);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(34, 211, 238, 0.75));
+            color: #061018;
+        }
+
+        .site-main {
+            flex: 1;
+            padding: 28px 0 64px;
+        }
+
+        .content {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .content__inner {
+            padding: 28px;
+        }
+
+        .content h1,
+        .content h2,
+        .content h3 {
+            letter-spacing: -0.02em;
+        }
+
+        .content h1 {
+            font-size: clamp(1.75rem, 1.2rem + 2vw, 2.4rem);
+            margin-bottom: 14px;
+        }
+
+        .content h2 {
+            font-size: clamp(1.25rem, 1.0rem + 1vw, 1.65rem);
+            margin-top: 26px;
+            margin-bottom: 12px;
+            color: rgba(229, 231, 235, 0.92);
+        }
+
+        .content h3 {
+            font-size: 1.1rem;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            color: rgba(229, 231, 235, 0.9);
+        }
+
+        .content p {
+            margin-bottom: 14px;
+            color: var(--muted);
+        }
+
+        .content ul,
+        .content ol {
+            margin-left: 1.2rem;
+            margin-bottom: 14px;
+            color: var(--muted);
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .content hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            margin: 22px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 14px;
+        }
+        .grid--2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .grid--3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(0, 0, 0, 0.25);
+            color: var(--text);
+            outline: none;
+        }
+        .input::placeholder {
+            color: rgba(229, 231, 235, 0.55);
+        }
+
+        .muted {
+            color: var(--muted-2);
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .site-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(5, 7, 16, 0.65);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .site-footer__inner {
+            padding: 22px 0;
+        }
+
+        .site-footer nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px 18px;
+        }
+
+        .site-footer nav a {
+            color: var(--muted-2);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        .site-footer nav a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        /* Optional helper for markdown pages that want wider/full-bleed sections */
+        .bleed {
+            width: 100%;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .site-header__inner {
+                padding: 12px 0;
+                position: relative;
+            }
+
+            .nav {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+                margin-top: 12px;
+                padding: 10px;
+                gap: 4px;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                background: rgba(5, 7, 16, 0.92);
+                border: 1px solid rgba(255, 255, 255, 0.10);
+                border-radius: 16px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+            }
+
+            .nav a {
+                padding: 10px 10px;
+                width: 100%;
+            }
+
+            .nav.is-open {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .content__inner {
+                padding: 18px;
+            }
+
+            .grid--2,
+            .grid--3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header__inner">
+                    <a class="brand" href="{{ '/' | relative_url }}">
+                        <span class="brand__dot" aria-hidden="true"></span>
+                        <span>{{ site.title }}</span>
+                    </a>
+                    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+                        <span class="nav-toggle__icon" aria-hidden="true"><span></span></span>
+                    </button>
+                    <nav id="primary-nav" class="nav" aria-label="Primary">
+                        <a href="{{ '/' | relative_url }}">Home</a>
+                        <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
+                        <a href="{{ '/coins' | relative_url }}">Coins</a>
+                        <a href="{{ '/support' | relative_url }}">Support</a>
+                        <a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy</a>
+                        <a href="{{ '/cryptolandia/terms' | relative_url }}">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="site-main">
+            <div class="container">
+                <div class="content">
+                    <div class="content__inner">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer__inner">
+                    <nav aria-label="Footer">
+                        <a href="{{ '/' | relative_url }}">Home</a>
+                        <a href="{{ '/support' | relative_url }}">Support</a>
+                        <a href="{{ '/cryptolandia' | relative_url }}">Cryptolandia</a>
+                        <a href="{{ '/coins' | relative_url }}">Coins</a>
+                        <a href="{{ '/cryptolandia/privacy' | relative_url }}">Privacy Policy</a>
+                        <a href="{{ '/cryptolandia/terms' | relative_url }}">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var toggle = document.querySelector(".nav-toggle");
+            var nav = document.getElementById("primary-nav");
+            if (!toggle || !nav) return;
+
+            function setOpen(isOpen) {
+                toggle.setAttribute("aria-expanded", String(isOpen));
+                toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+                nav.classList.toggle("is-open", isOpen);
+            }
+
+            toggle.addEventListener("click", function () {
+                var isOpen = toggle.getAttribute("aria-expanded") === "true";
+                setOpen(!isOpen);
+            });
+
+            // Close after selecting a link (mobile UX)
+            nav.addEventListener("click", function (e) {
+                var target = e.target;
+                if (target && target.tagName === "A") setOpen(false);
+            });
+
+            // Close on Escape for accessibility
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") setOpen(false);
+            });
+
+            // If JS is enabled, ensure default state is closed
+            setOpen(false);
+        })();
+    </script>
+</body>
+</html>
