@@ -28,4 +28,4 @@ defaults:
   - scope:
       path: "no"
     values:
-      lang: "no"
+      lang: "no" # must be quoted — YAML treats bare 'no' as boolean false

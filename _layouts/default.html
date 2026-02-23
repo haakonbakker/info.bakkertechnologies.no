@@ -9,9 +9,6 @@
     <link rel="alternate" hreflang="{{ page.lang | default: 'en' }}" href="{{ page.url | absolute_url }}">
     {% endif %}
     <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
@@ -26,6 +23,9 @@
                     {% for item in site.data.navigation[lang] %}
                     <a href="{{ item.url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">{{ item.title }}</a>
                     {% endfor %}
+                    {% if page.alternate_url %}
+                    <a href="{{ page.alternate_url }}" class="nav-lang">{% if page.lang == 'no' %}EN{% else %}NO{% endif %}</a>
+                    {% endif %}
                 </nav>
                 <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
                     <span></span>
