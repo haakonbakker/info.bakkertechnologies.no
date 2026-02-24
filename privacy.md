@@ -25,6 +25,7 @@ When you email support@bakkertechnologies.no, your message and email address are
 Each product has its own privacy policy:
 
 - [Cryptolandia Privacy Policy](/cryptolandia/privacy)
+- [The One Thing Privacy Policy](/theonething/privacy)
 
 ## Changes
 
