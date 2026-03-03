@@ -2,6 +2,7 @@
 layout: legacy
 title: Privacy Policy - The One Thing
 permalink: /the-one-thing/privacy/
+redirect_from: /theonething/privacy/
 ---
 
 # Privacy Policy for The One Thing
