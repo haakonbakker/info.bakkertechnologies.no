@@ -1,6 +1,7 @@
 ---
 layout: legacy
 title: Privacy Policy - The One Thing
+permalink: /the-one-thing/privacy/
 ---
 
 # Privacy Policy for The One Thing
@@ -75,7 +76,7 @@ Since all data is stored locally on your device, you can delete it at any time b
 
 If the app's functionality changes in a way that affects privacy, this Privacy Policy will be updated. You will always find the latest version at:
 
-{{ '/theonething/privacy' | absolute_url }}
+{{ '/the-one-thing/privacy' | absolute_url }}
 
 ---
 

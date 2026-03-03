@@ -1,0 +1,311 @@
+---
+layout: default
+title: "The One Thing — Focus on What Matters"
+description: "A minimal iOS app for defining and tracking your single most important task each day."
+permalink: /the-one-thing/
+---
+
+<style>
+  .tot-page {
+    padding-top: calc(var(--header-h) + 48px);
+    padding-bottom: 80px;
+  }
+
+  /* Hero */
+  .tot-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 56px;
+  }
+
+  .tot-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  .tot-hero h1 {
+    font-size: clamp(2rem, 1.4rem + 3vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .tot-hero h1 em {
+    font-style: normal;
+    color: #f59e0b;
+  }
+
+  .tot-hero p {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.15rem);
+    color: var(--color-text-muted);
+    max-width: 480px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .tot-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: var(--color-text);
+    color: var(--color-bg);
+    font-weight: 650;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: opacity 0.15s;
+    margin-top: 4px;
+  }
+
+  .tot-store-btn:hover {
+    opacity: 0.88;
+    color: var(--color-bg);
+    text-decoration: none;
+  }
+
+  /* Screenshots */
+  .tot-screenshots {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+    padding: 4px 0 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tot-screenshots::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tot-shot {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tot-shot img {
+    width: 220px;
+    border-radius: 26px;
+    box-shadow: 0 20px 56px rgba(0,0,0,0.6);
+    display: block;
+  }
+
+  .tot-shot.is-center img {
+    width: 248px;
+    box-shadow: 0 28px 72px rgba(0,0,0,0.65);
+  }
+
+  .tot-shot.is-side img {
+    opacity: 0.65;
+  }
+
+  .tot-shot-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-subtle);
+  }
+
+  /* Features */
+  .tot-features-section {
+    padding-top: 72px;
+  }
+
+  .tot-eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #f59e0b;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .tot-features-section h2 {
+    font-size: var(--size-h2);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+    margin-bottom: 32px;
+  }
+
+  .tot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tot-card {
+    background: var(--color-bg-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .tot-card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .tot-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .tot-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Privacy note */
+  .tot-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin-top: 48px;
+  }
+
+  .tot-privacy-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tot-privacy p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .tot-privacy a {
+    color: #f59e0b;
+  }
+
+  .tot-privacy a:hover {
+    color: #fbbf24;
+  }
+
+  @media (max-width: 640px) {
+    .tot-page {
+      padding-top: calc(var(--header-h) + 32px);
+    }
+
+    .tot-shot img {
+      width: 160px;
+      border-radius: 20px;
+    }
+
+    .tot-shot.is-center img {
+      width: 184px;
+    }
+
+    .tot-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .tot-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="tot-page">
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="tot-hero">
+      <img src="{{ '/images/the-one-thing/icon.png' | relative_url }}" alt="The One Thing app icon" class="tot-icon">
+      <h1>The <em>One Thing</em></h1>
+      <p>A minimal iOS app that helps you define your single most important task each day — and actually do it.</p>
+      <a href="https://apps.apple.com/app/the-one-thing/id6744042867" class="tot-store-btn" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download on the App Store
+      </a>
+    </div>
+
+    <!-- Screenshots -->
+    <div class="tot-screenshots">
+      <div class="tot-shot is-side">
+        <img src="{{ '/images/the-one-thing/screenshot-03-history.png' | relative_url }}" alt="History view showing past tasks">
+        <span class="tot-shot-label">History</span>
+      </div>
+      <div class="tot-shot is-center">
+        <img src="{{ '/images/the-one-thing/screenshot-01-today.png' | relative_url }}" alt="Today view with your one task">
+        <span class="tot-shot-label">Today</span>
+      </div>
+      <div class="tot-shot is-side">
+        <img src="{{ '/images/the-one-thing/screenshot-02-focus.png' | relative_url }}" alt="Focus timer screen">
+        <span class="tot-shot-label">Focus</span>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="tot-features-section">
+      <div class="tot-eyebrow">Why The One Thing</div>
+      <h2>Designed to keep you focused</h2>
+
+      <div class="tot-grid">
+        <div class="tot-card">
+          <div class="tot-card-icon">&#127919;</div>
+          <h3>One task at a time</h3>
+          <p>Define the single most important thing to accomplish today. Everything else is a distraction.</p>
+        </div>
+        <div class="tot-card">
+          <div class="tot-card-icon">&#9201;</div>
+          <h3>Built-in focus timer</h3>
+          <p>Lock in with a dedicated work session. Know when to start and when to stop.</p>
+        </div>
+        <div class="tot-card">
+          <div class="tot-card-icon">&#128200;</div>
+          <h3>Track your streak</h3>
+          <p>Review your history and build the daily habit of completing what actually matters.</p>
+        </div>
+        <div class="tot-card">
+          <div class="tot-card-icon">&#128274;</div>
+          <h3>100% private</h3>
+          <p>Everything stays on your device. No accounts, no tracking, no cloud — just your focus.</p>
+        </div>
+        <div class="tot-card">
+          <div class="tot-card-icon">&#9889;</div>
+          <h3>No clutter</h3>
+          <p>A task manager shouldn't overwhelm you. The One Thing stays minimal by design.</p>
+        </div>
+        <div class="tot-card">
+          <div class="tot-card-icon">&#127822;</div>
+          <h3>Native iOS</h3>
+          <p>Built with SwiftUI for iPhone and iPad. Fast, fluid, and feels at home on Apple hardware.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy callout -->
+    <div class="tot-privacy">
+      <span class="tot-privacy-icon">&#128274;</span>
+      <p>The One Thing collects zero data. Everything you do stays on your device, always. Read the full <a href="{{ '/the-one-thing/privacy' | relative_url }}">Privacy Policy</a> or <a href="{{ '/the-one-thing/terms' | relative_url }}">Terms of Service</a>.</p>
+    </div>
+
+  </div>
+</div>
