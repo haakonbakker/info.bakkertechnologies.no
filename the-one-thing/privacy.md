@@ -7,53 +7,50 @@ redirect_from: /theonething/privacy/
 
 # Privacy Policy for The One Thing
 
-_Last updated: 2026-02-24_
+_Last updated: 2026-03-04_
 
-The One Thing is committed to protecting your privacy. This Privacy Policy explains how the app handles your data.
-**In short: The One Thing does not collect, store, or share any personal information.**
-
----
-
-## Information We Do Not Collect
-
-The One Thing does **not** collect any of the following:
-
-- Personal data (such as name, email, phone number, or address)
-- Device identifiers
-- Usage analytics or behavior tracking
-- Location data
-- Cookies or tracking technologies
-
-Your interactions with the app remain entirely on your device.
+The One Thing is committed to protecting your privacy. This Privacy Policy explains what data is collected when you use the app and how it is used.
 
 ---
 
-## How the App Works
+## Data We Collect
 
-All data you create in The One Thing is stored locally on your device. This means:
+The One Thing collects anonymous usage data to help us understand how the app is used so we can improve it.
 
-- Your data is **not** transmitted to any server
-- Your data is **not** accessible to Bakker Technologies or any third party
-- Your data is **not** logged, stored externally, or associated with you in any way
+This may include:
+
+- App usage events (e.g. screens viewed, features used)
+- Device information (model, operating system version)
+- App version
+- Approximate location (country level, derived from IP address)
+- Session information (session duration, number of sessions)
+- An anonymous app instance identifier
+
+This data is **not** linked to your name, email, or any personally identifiable information.
 
 ---
 
-## Third-Party Services
+## How We Use This Data
 
-The One Thing does **not** use:
+Usage data is used solely to:
 
-- Analytics services
-- Advertising networks
-- User tracking SDKs
-- Social login integrations
+- Understand how users interact with the app
+- Identify areas for improvement
+- Monitor app stability and performance
 
-No third-party service receives personal data from the app.
+We do not use this data for advertising or sell it to third parties.
+
+---
+
+## Your App Data
+
+All personal data you create in The One Thing (your tasks, notes, and settings) is stored **locally on your device** and is never transmitted to our servers or any third party.
 
 ---
 
 ## Security
 
-While the app does not process personal information, it uses standard iOS security features to protect your locally stored data. If you enable Face ID or Touch ID inside the app, this authentication:
+The app uses standard iOS security features to protect your locally stored data. If you enable Face ID or Touch ID inside the app, this authentication:
 
 - Happens exclusively on your device
 - Is managed by iOS
@@ -63,13 +60,15 @@ While the app does not process personal information, it uses standard iOS securi
 
 ## Children's Privacy
 
-The One Thing does not collect personal information from anyone, including children under 13. The app is safe for users of all ages.
+The One Thing does not knowingly collect personal information from children under 13. The anonymous usage data we collect does not include any personally identifiable information.
 
 ---
 
 ## Data Deletion
 
-Since all data is stored locally on your device, you can delete it at any time by deleting the app. No data remains on any external server because none was ever sent.
+Your personal in-app data is stored locally. You can delete it at any time by deleting the app.
+
+Anonymous analytics data is managed by our analytics provider in accordance with their data retention policies.
 
 ---
 
@@ -78,6 +77,12 @@ Since all data is stored locally on your device, you can delete it at any time b
 If the app's functionality changes in a way that affects privacy, this Privacy Policy will be updated. You will always find the latest version at:
 
 {{ '/the-one-thing/privacy' | absolute_url }}
+
+---
+
+## Third-Party Services
+
+Anonymous usage analytics are processed by a third-party analytics provider. For more information, see [Google's Privacy Policy](https://policies.google.com/privacy).
 
 ---
 
