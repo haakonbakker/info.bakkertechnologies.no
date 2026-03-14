@@ -1,0 +1,301 @@
+---
+layout: default
+title: "Templator — Template-to-Todo Dispatcher"
+description: "Build reusable task templates and dispatch them to Reminders or Things 3 in one tap. Coming soon to the App Store."
+permalink: /templator/
+---
+
+<style>
+  .tmp-page {
+    padding-top: calc(var(--header-h) + 48px);
+    padding-bottom: 80px;
+  }
+
+  /* Hero */
+  .tmp-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 56px;
+  }
+
+  .tmp-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  .tmp-hero h1 {
+    font-size: clamp(2rem, 1.4rem + 3vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .tmp-hero h1 em {
+    font-style: normal;
+    color: #5957D6;
+  }
+
+  .tmp-hero p {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.15rem);
+    color: var(--color-text-muted);
+    max-width: 480px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .tmp-coming-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: rgba(89, 87, 214, 0.12);
+    border: 1px solid rgba(89, 87, 214, 0.3);
+    color: #5957D6;
+    font-weight: 650;
+    font-size: 0.95rem;
+    margin-top: 4px;
+  }
+
+  /* Screenshots */
+  .tmp-screenshots {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+    padding: 4px 0 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tmp-screenshots::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tmp-shot {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tmp-shot img {
+    width: 220px;
+    border-radius: 26px;
+    box-shadow: 0 20px 56px rgba(0,0,0,0.6);
+    display: block;
+  }
+
+  .tmp-shot.is-center img {
+    width: 248px;
+    box-shadow: 0 28px 72px rgba(0,0,0,0.65);
+  }
+
+  .tmp-shot.is-side img {
+    opacity: 0.65;
+  }
+
+  .tmp-shot-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-subtle);
+  }
+
+  /* Features */
+  .tmp-features-section {
+    padding-top: 72px;
+  }
+
+  .tmp-eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5957D6;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .tmp-features-section h2 {
+    font-size: var(--size-h2);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+    margin-bottom: 32px;
+  }
+
+  .tmp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tmp-card {
+    background: var(--color-bg-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .tmp-card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .tmp-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .tmp-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Privacy note */
+  .tmp-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(89, 87, 214, 0.08);
+    border: 1px solid rgba(89, 87, 214, 0.2);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin-top: 48px;
+  }
+
+  .tmp-privacy-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tmp-privacy p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .tmp-privacy a {
+    color: #5957D6;
+  }
+
+  .tmp-privacy a:hover {
+    color: #7a78e6;
+  }
+
+  @media (max-width: 640px) {
+    .tmp-page {
+      padding-top: calc(var(--header-h) + 32px);
+    }
+
+    .tmp-shot img {
+      width: 160px;
+      border-radius: 20px;
+    }
+
+    .tmp-shot.is-center img {
+      width: 184px;
+    }
+
+    .tmp-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .tmp-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="tmp-page">
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="tmp-hero">
+      <img src="{{ '/images/templator/icon.png' | relative_url }}" alt="Templator app icon" class="tmp-icon">
+      <h1><em>Templator</em></h1>
+      <p>Build reusable task templates and dispatch them to Reminders or Things 3 in one tap.</p>
+      <span class="tmp-coming-soon">Coming Soon to the App Store</span>
+    </div>
+
+    <!-- Screenshots -->
+    <div class="tmp-screenshots">
+      <div class="tmp-shot is-side">
+        <img src="{{ '/images/templator/screenshot-01-home.png' | relative_url }}" alt="Home view showing templates">
+        <span class="tmp-shot-label">Home</span>
+      </div>
+      <div class="tmp-shot is-center">
+        <img src="{{ '/images/templator/screenshot-02-dispatch.png' | relative_url }}" alt="Dispatch view for sending tasks">
+        <span class="tmp-shot-label">Dispatch</span>
+      </div>
+      <div class="tmp-shot is-side">
+        <img src="{{ '/images/templator/screenshot-03-editor.png' | relative_url }}" alt="Template editor">
+        <span class="tmp-shot-label">Editor</span>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="tmp-features-section">
+      <div class="tmp-eyebrow">Why Templator</div>
+      <h2>Templates that work for you</h2>
+
+      <div class="tmp-grid">
+        <div class="tmp-card">
+          <div class="tmp-card-icon">&#9889;</div>
+          <h3>One-tap dispatch</h3>
+          <p>Turn any template into real tasks instantly. Pick a template, tap dispatch, and get back to work.</p>
+        </div>
+        <div class="tmp-card">
+          <div class="tmp-card-icon">&#128260;</div>
+          <h3>Dynamic variables</h3>
+          <p>Use placeholders like <code>&#123;&#123;client&#125;&#125;</code> and <code>&#123;&#123;project&#125;&#125;</code> that fill in at dispatch time.</p>
+        </div>
+        <div class="tmp-card">
+          <div class="tmp-card-icon">&#128196;</div>
+          <h3>Sections &amp; structure</h3>
+          <p>Organize tasks into logical groups within each template. Keep complex workflows tidy.</p>
+        </div>
+        <div class="tmp-card">
+          <div class="tmp-card-icon">&#9989;</div>
+          <h3>Reminders + Things 3</h3>
+          <p>Dispatch to Apple Reminders or Things 3. Use whichever todo app fits your workflow.</p>
+        </div>
+        <div class="tmp-card">
+          <div class="tmp-card-icon">&#9729;&#65039;</div>
+          <h3>iCloud sync</h3>
+          <p>Your templates sync across all your devices via iCloud. Always up to date, no account needed.</p>
+        </div>
+        <div class="tmp-card">
+          <div class="tmp-card-icon">&#127775;</div>
+          <h3>Free to start, Pro to unlock</h3>
+          <p>Get started with the basics for free. Unlock unlimited templates and advanced features with Pro.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy callout -->
+    <div class="tmp-privacy">
+      <span class="tmp-privacy-icon">&#128274;</span>
+      <p>Your templates stay on your device and in your own iCloud. No accounts, no tracking beyond anonymous analytics. Read the full <a href="{{ '/templator/privacy' | relative_url }}">Privacy Policy</a> or <a href="{{ '/templator/terms' | relative_url }}">Terms of Service</a>.</p>
+    </div>
+
+  </div>
+</div>
