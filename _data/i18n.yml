@@ -25,7 +25,7 @@ en:
   view_app_store: "View on the App Store"
   discover: "Discover"
   status_live: "Available on the App Store"
-  status_archived: "Archived — no longer available"
+  status_archived: "Archived, no longer available"
   email: "support@bakkertechnologies.no"
 
 "no":
@@ -54,5 +54,5 @@ en:
   view_app_store: "Se i App Store"
   discover: "Utforsk"
   status_live: "Tilgjengelig i App Store"
-  status_archived: "Arkivert — ikke lenger tilgjengelig"
+  status_archived: "Arkivert, ikke lenger tilgjengelig"
   email: "support@bakkertechnologies.no"

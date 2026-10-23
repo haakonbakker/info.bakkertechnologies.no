@@ -24,7 +24,7 @@ todos:
 - Preserve the existing header/footer structure and links so navigation doesn’t break.
 
 - Replace the generic content in [`cryptolandia/index.md`](/Users/haakon.hoel.bakker/projects/info.bakkertechnologies.no/cryptolandia/index.md) with a marketing landing page (still using `layout: default`), including:
-- **Hero**: “Cryptolandia — Track crypto prices & news” + short value prop.
+- **Hero**: “Cryptolandia: Track crypto prices & news” + short value prop.
 - **Primary CTA**: “Download on the App Store” linking to `https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265` (use a styled button).
 - **Screenshot strip / feature highlights** using your images:
 - `cryptolandia/images/very_very_easy.jpeg`

@@ -14,7 +14,7 @@ Cryptolandia was a crypto tracker for iPhone and iPad, built around calm and cla
 
 ## The problem
 
-Most crypto trackers were cluttered and loud — dense interfaces, aggressive notifications and questionable data practices.
+Most crypto trackers were cluttered and loud, with dense interfaces, aggressive notifications and questionable data practices.
 
 ## The approach
 
@@ -22,7 +22,7 @@ A tracker that prioritised readability. Live prices with clear colour-coded chan
 
 ## The result
 
-A complete native iOS app — designed, built and shipped to the App Store end to end. The project sharpened the studio’s process for taking a product from concept to launch.
+A complete native iOS app, designed, built and shipped to the App Store end to end. The project sharpened the studio’s process for taking a product from concept to launch.
 
 <figure>
   <img src="{{ '/cryptolandia/images/multiple_views.jpeg' | relative_url }}" alt="Cryptolandia coin detail views with charts and statistics" loading="lazy">

@@ -9,7 +9,7 @@ image: "/cryptolandia/images/logo.png"
 
 Cryptolandia is no longer available for download, and is no longer being updated.
 
-If you still have the app installed and have a question — or a question about data and privacy — email **support@bakkertechnologies.no**.
+If you still have the app installed and have a question, including about data and privacy, email **support@bakkertechnologies.no**.
 
 Cryptolandia did not collect, store or share personal information. See the [privacy policy](/cryptolandia/privacy/) for details.
 

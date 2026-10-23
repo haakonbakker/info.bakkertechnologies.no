@@ -1,13 +1,13 @@
 en:
   label: "About"
   title: "Built by one person, on purpose."
-  lead: "Bakker Technologies is the independent studio of Haakon Bakker — a software engineer from the Oslo area with fifteen years of building software."
+  lead: "Bakker Technologies is the independent studio of Haakon Bakker, a software engineer from the Oslo area with fifteen years of building software."
   photo_alt: "Haakon Bakker, smiling, in front of a warm orange background"
   story_label: "Background"
   story:
-    - "I’ve been building software for fifteen years — in finance, sports and the arts, as part of product teams and on my own."
+    - "I’ve been building software for fifteen years, in finance, sports and the arts, as part of product teams and on my own."
     - "Bakker Technologies is where I do independent work: native iOS products of my own, like Templator and The One Thing, and selected consultancy for teams that need senior iOS or architecture help."
-    - "The studio is deliberately small. There are no account managers, no subcontractors and no hand-offs — the person you talk to is the person who designs, writes and ships the work."
+    - "The studio is deliberately small. There are no account managers, no subcontractors and no hand-offs. The person you talk to is the person who designs, writes and ships the work."
     - "Alongside the studio I work full-time as an engineer at Vipps MobilePay. Bakker Technologies is independent, and is not affiliated with or endorsed by my employer."
   values_label: "Principles"
   values:
@@ -26,7 +26,7 @@ en:
     - k: "Focus"
       v: "iOS and iPadOS, product engineering, architecture"
     - k: "Shipped"
-      v: "Templator, The One Thing — and Cryptolandia, now retired"
+      v: "Templator and The One Thing, plus Cryptolandia (now retired)"
     - k: "Languages"
       v: "Norwegian, English"
   closing_title: "Let’s work together."
@@ -34,13 +34,13 @@ en:
 "no":
   label: "Om"
   title: "Bygget av én person, med vilje."
-  lead: "Bakker Technologies er det uavhengige studioet til Haakon Bakker — en programvareutvikler fra Oslo-området med femten års erfaring."
+  lead: "Bakker Technologies er det uavhengige studioet til Haakon Bakker, en programvareutvikler fra Oslo-området med femten års erfaring."
   photo_alt: "Haakon Bakker, smilende, foran en varm oransje bakgrunn"
   story_label: "Bakgrunn"
   story:
-    - "Jeg har bygget programvare i femten år — innen finans, sport og kunst, både i produktteam og på egen hånd."
+    - "Jeg har bygget programvare i femten år, innen finans, sport og kunst, både i produktteam og på egen hånd."
     - "Bakker Technologies er der jeg gjør selvstendig arbeid: egne native iOS-produkter, som Templator og The One Thing, og utvalgte rådgivningsoppdrag for team som trenger senior iOS- eller arkitekturkompetanse."
-    - "Studioet er bevisst lite. Ingen kundeansvarlige, ingen underleverandører og ingen overleveringer — den du snakker med er den som designer, skriver og leverer arbeidet."
+    - "Studioet er bevisst lite. Ingen kundeansvarlige, ingen underleverandører og ingen overleveringer. Den du snakker med er den som designer, skriver og leverer arbeidet."
     - "Ved siden av studioet jobber jeg fulltid som utvikler i Vipps MobilePay. Bakker Technologies er uavhengig, og er verken tilknyttet eller anbefalt av arbeidsgiveren min."
   values_label: "Prinsipper"
   values:
@@ -59,7 +59,7 @@ en:
     - k: "Fokus"
       v: "iOS og iPadOS, produktutvikling, arkitektur"
     - k: "Lansert"
-      v: "Templator, The One Thing — og Cryptolandia, nå avviklet"
+      v: "Templator og The One Thing, samt Cryptolandia (nå avviklet)"
     - k: "Språk"
       v: "Norsk, engelsk"
   closing_title: "La oss jobbe sammen."

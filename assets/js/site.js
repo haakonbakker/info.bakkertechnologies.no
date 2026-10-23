@@ -1,4 +1,4 @@
-/* Bakker Technologies — progressive enhancement only. The site works without it. */
+/* Bakker Technologies: progressive enhancement only. The site works without it. */
 (function () {
   'use strict';
 

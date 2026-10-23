@@ -1,7 +1,7 @@
 ---
 layout: page
 lang: en
-title: "Privacy Policy — Bakker Technologies"
+title: "Privacy Policy"
 description: "Privacy policy for Bakker Technologies and its products."
 permalink: /privacy/
 alternate_url: "/no/personvern/"

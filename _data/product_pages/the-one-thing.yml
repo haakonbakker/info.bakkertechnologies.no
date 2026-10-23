@@ -2,7 +2,7 @@ en:
   chapters:
     - label: "Priorities"
       title: "One thing. Three at most."
-      text: "Write down the one thing that would make today a success — or up to three priorities, if the day really needs them. A short list you can finish beats a long one you can’t."
+      text: "Write down the one thing that would make today a success, or up to three priorities, if the day really needs them. A short list you can finish beats a long one you can’t."
       screen: today
     - label: "Time blocks"
       title: "Give it a time."
@@ -58,7 +58,7 @@ en:
         - "Focus minutes in the medium widget"
   privacy_label: "Privacy"
   privacy_title: "Your day stays on your device."
-  privacy_text: "Your priorities, notes and settings are stored locally on your iPhone or iPad and are never sent to our servers. There’s no account. Anonymous usage analytics help improve the app — they are never linked to you or used for advertising."
+  privacy_text: "Your priorities, notes and settings are stored locally on your iPhone or iPad and are never sent to our servers. There’s no account. Anonymous usage analytics help improve the app. They are never linked to you or used for advertising."
   privacy_link: "Privacy policy"
   terms_link: "Terms of service"
   closing_title: "The One Thing for iPhone and iPad."
@@ -68,7 +68,7 @@ en:
   chapters:
     - label: "Prioriteringer"
       title: "Én ting. Maks tre."
-      text: "Skriv ned den ene tingen som ville gjort dagen vellykket — eller opptil tre prioriteringer, hvis dagen virkelig trenger det. En kort liste du blir ferdig med slår en lang en du ikke blir ferdig med."
+      text: "Skriv ned den ene tingen som ville gjort dagen vellykket, eller opptil tre prioriteringer, hvis dagen virkelig trenger det. En kort liste du blir ferdig med slår en lang en du ikke blir ferdig med."
       screen: today
     - label: "Tidsblokker"
       title: "Gi den et tidspunkt."
@@ -97,7 +97,7 @@ en:
     - k: "Ukeplanlegging"
       v: "Se hele uken, flytt prioriteringer mellom dager, eller skyv én til i morgen."
     - k: "Overføring"
-      v: "Ta med gårsdagens uferdige prioriteringer — bevisst."
+      v: "Ta bevisst med deg gårsdagens uferdige prioriteringer."
     - k: "Widgeter på Hjem-skjermen"
       v: "Streaken og dagens sjekkliste, med et blikk."
     - k: "Varsler som ikke maser"
@@ -124,7 +124,7 @@ en:
         - "Fokusminutter i den mellomstore widgeten"
   privacy_label: "Personvern"
   privacy_title: "Dagen din blir på enheten din."
-  privacy_text: "Prioriteringer, notater og innstillinger lagres lokalt på iPhone eller iPad og sendes aldri til våre servere. Det finnes ingen konto. Anonym bruksstatistikk hjelper med å forbedre appen — den knyttes aldri til deg og brukes aldri til reklame."
+  privacy_text: "Prioriteringer, notater og innstillinger lagres lokalt på iPhone eller iPad og sendes aldri til våre servere. Det finnes ingen konto. Anonym bruksstatistikk hjelper med å forbedre appen. Den knyttes aldri til deg og brukes aldri til reklame."
   privacy_link: "Personvernerklæring (engelsk)"
   terms_link: "Vilkår for bruk (engelsk)"
   closing_title: "The One Thing for iPhone og iPad."

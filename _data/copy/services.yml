@@ -4,9 +4,9 @@ en:
   lead: "Two distinct offerings with one thing in common: you work directly with an engineer who has designed and shipped apps on the App Store, and who stays accountable for the result."
   offers:
     - id: product
-      label: "01 — Product development"
+      label: "01 · Product development"
       title: "iOS product development"
-      text: "You have an idea, a brief, or an existing app that needs rebuilding. The studio takes it from where it is to a native product in the App Store — and keeps improving it after launch."
+      text: "You have an idea, a brief, or an existing app that needs rebuilding. The studio takes it from where it is to a native product in the App Store, and keeps improving it after launch."
       for_title: "Who it’s for"
       for: "Founders launching a first app, companies adding iPhone and iPad to an existing product, and teams without in-house iOS expertise."
       outcomes_title: "What you get"
@@ -18,9 +18,9 @@ en:
       how_title: "How it works"
       how: "Usually a defined first release, followed by ongoing product work if it makes sense. You see working builds early and often."
     - id: consultancy
-      label: "02 — Consultancy"
+      label: "02 · Consultancy"
       title: "Technical consultancy"
-      text: "Your team is already building. What it needs is senior judgement — someone who can weigh the trade-offs, make the call, and then help get it done."
+      text: "Your team is already building. What it needs is senior judgement: someone who can weigh the trade-offs, make the call, and then help get it done."
       for_title: "Who it’s for"
       for: "Engineering teams and leaders who need depth on a specific problem, a second opinion on direction, or extra senior capacity for a period."
       outcomes_title: "What you get"
@@ -44,7 +44,7 @@ en:
       text: "App Store release, launch support and continued iteration."
   industries_label: "Experience"
   industries_title: "Finance, sports and the arts."
-  industries_text: "Fifteen years of shipping software across very different domains. Different problems sharpen the same skills — and the tools are chosen for the problem, not the other way around."
+  industries_text: "Fifteen years of shipping software across very different domains. Different problems sharpen the same skills, and the tools are chosen for the problem, not the other way around."
   closing_title: "Have a project in mind?"
   closing_text: "Tell me about it, and I’ll tell you honestly whether I can help."
 "no":
@@ -53,9 +53,9 @@ en:
   lead: "To ulike tjenester med én ting felles: du jobber direkte med en utvikler som har lansert egne produkter, og som står ansvarlig for resultatet."
   offers:
     - id: product
-      label: "01 — Produktutvikling"
+      label: "01 · Produktutvikling"
       title: "iOS-produktutvikling"
-      text: "Du har en idé, et oppdrag eller en eksisterende app som må bygges på nytt. Studioet tar den fra der den er til et native produkt i App Store — og fortsetter å forbedre den etter lansering."
+      text: "Du har en idé, et oppdrag eller en eksisterende app som må bygges på nytt. Studioet tar den fra der den er til et native produkt i App Store, og fortsetter å forbedre den etter lansering."
       for_title: "Hvem det passer for"
       for: "Gründere som lanserer sin første app, selskaper som utvider produktet sitt til iPhone og iPad, og team uten egen iOS-kompetanse."
       outcomes_title: "Hva du får"
@@ -67,9 +67,9 @@ en:
       how_title: "Slik foregår det"
       how: "Som regel en avgrenset første versjon, fulgt av løpende produktarbeid hvis det gir mening. Du ser fungerende versjoner tidlig og ofte."
     - id: consultancy
-      label: "02 — Rådgivning"
+      label: "02 · Rådgivning"
       title: "Teknisk rådgivning"
-      text: "Teamet ditt bygger allerede. Det som trengs er senior dømmekraft — noen som kan veie avveiningene, ta beslutningen, og så hjelpe til med å få det gjort."
+      text: "Teamet ditt bygger allerede. Det som trengs er senior dømmekraft: noen som kan veie avveiningene, ta beslutningen, og så hjelpe til med å få det gjort."
       for_title: "Hvem det passer for"
       for: "Utviklingsteam og ledere som trenger dybde på et konkret problem, en ekstra vurdering av retningen, eller mer senior kapasitet i en periode."
       outcomes_title: "Hva du får"
@@ -93,6 +93,6 @@ en:
       text: "Lansering i App Store, oppfølging og videre utvikling."
   industries_label: "Erfaring"
   industries_title: "Finans, sport og kunst."
-  industries_text: "Femten år med programvare på tvers av svært ulike domener. Ulike problemer skjerper de samme ferdighetene — og verktøyene velges etter problemet, ikke omvendt."
+  industries_text: "Femten år med programvare på tvers av svært ulike domener. Ulike problemer skjerper de samme ferdighetene, og verktøyene velges etter problemet, ikke omvendt."
   closing_title: "Har du et prosjekt i tankene?"
   closing_text: "Fortell meg om det, så får du et ærlig svar på om jeg kan hjelpe."

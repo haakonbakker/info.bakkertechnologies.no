@@ -1,7 +1,7 @@
 ---
 layout: page
 lang: en
-title: "Terms of Service — Bakker Technologies"
+title: "Terms of Service"
 description: "Terms of service for Bakker Technologies."
 permalink: /terms/
 alternate_url: "/no/vilkaar/"

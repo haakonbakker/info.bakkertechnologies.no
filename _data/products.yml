@@ -41,12 +41,12 @@
   en:
     category: "Productivity"
     tagline: "Build once. Dispatch forever."
-    summary: "Reusable checklist templates for the work you repeat — sent to Reminders, Things 3, Todoist or OmniFocus with one tap."
+    summary: "Reusable checklist templates for the work you repeat, sent to Reminders, Things 3, Todoist or OmniFocus with one tap."
     lead: "Templator turns the checklists you rebuild every week into templates. Fill in the details, review, and send the result straight to the to-do app you already use."
   "no":
     category: "Produktivitet"
     tagline: "Bygg én gang. Send ut igjen og igjen."
-    summary: "Gjenbrukbare sjekklistemaler for arbeidet du gjentar — sendt til Påminnelser, Things 3, Todoist eller OmniFocus med ett trykk."
+    summary: "Gjenbrukbare sjekklistemaler for arbeidet du gjentar, sendt til Påminnelser, Things 3, Todoist eller OmniFocus med ett trykk."
     lead: "Templator gjør sjekklistene du bygger på nytt hver uke om til maler. Fyll inn detaljene, se over, og send resultatet rett til oppgaveappen du allerede bruker."
 
 - id: the-one-thing
@@ -87,12 +87,12 @@
   en:
     category: "Productivity"
     tagline: "Decide what matters. Then do it."
-    summary: "A calm daily planner built around one priority — three at most — with time blocks and a focus timer that stays on your Lock Screen."
+    summary: "A calm daily planner built around one priority (three at most), with time blocks and a focus timer that stays on your Lock Screen."
     lead: "Most to-do lists grow until they stop meaning anything. The One Thing asks you to choose one priority for today, give it a time, and focus until it’s done."
   "no":
     category: "Produktivitet"
     tagline: "Bestem hva som betyr noe. Så gjør du det."
-    summary: "En rolig dagsplanlegger bygget rundt én prioritering — maks tre — med tidsblokker og en fokustimer som ligger på låseskjermen."
+    summary: "En rolig dagsplanlegger bygget rundt én prioritering (maks tre), med tidsblokker og en fokustimer som ligger på låseskjermen."
     lead: "De fleste gjøremålslister vokser til de slutter å bety noe. The One Thing ber deg velge én prioritering for i dag, gi den et tidspunkt, og fokusere til den er gjort."
 
 - id: cryptolandia
@@ -107,4 +107,4 @@
   en:
     summary: "A calm, privacy-first crypto tracker with live prices, charts and curated news. Designed and built end to end, shipped to the App Store, and since retired."
   "no":
-    summary: "En rolig kryptotracker med personvern i fokus — sanntidspriser, grafer og kuraterte nyheter. Designet og bygget fra bunnen av, lansert i App Store, og senere avviklet."
+    summary: "En rolig kryptotracker med personvern i fokus: sanntidspriser, grafer og kuraterte nyheter. Designet og bygget fra bunnen av, lansert i App Store, og senere avviklet."

@@ -31,7 +31,7 @@ defaults:
   - scope:
       path: "no"
     values:
-      lang: "no" # must be quoted — YAML treats bare 'no' as boolean false
+      lang: "no" # must be quoted; YAML treats bare 'no' as boolean false
       locale: "nb_NO"
 
 exclude:

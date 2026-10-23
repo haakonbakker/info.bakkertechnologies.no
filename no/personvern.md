@@ -25,9 +25,9 @@ Når du sender e-post til support@bakkertechnologies.no, brukes meldingen og e-p
 
 Hvert produkt har sin egen personvernerklæring:
 
-- [Templator — personvernerklæring](/templator/privacy/) (engelsk)
-- [The One Thing — personvernerklæring](/the-one-thing/privacy/) (engelsk)
-- [Cryptolandia — personvernerklæring](/cryptolandia/privacy/) (engelsk, avviklet app)
+- [Templator: personvernerklæring](/templator/privacy/) (engelsk)
+- [The One Thing: personvernerklæring](/the-one-thing/privacy/) (engelsk)
+- [Cryptolandia: personvernerklæring](/cryptolandia/privacy/) (engelsk, avviklet app)
 
 ## Endringer
 

@@ -1,6 +1,6 @@
 # bakkertechnologies.no
 
-Website for Bakker Technologies — an independent iOS studio and technical consultancy.
+Website for Bakker Technologies, an independent iOS studio and technical consultancy.
 Jekyll on GitHub Pages; no build step beyond `bundle exec jekyll serve` (or `./start-local.sh`).
 
 ## Structure
@@ -9,9 +9,9 @@ Jekyll on GitHub Pages; no build step beyond `bundle exec jekyll serve` (or `./s
 | --- | --- |
 | `assets/css/main.css` | The whole design system: tokens, components, page layouts, motion |
 | `assets/js/site.js` | Progressive enhancement only (header hairline, mobile menu, reveal, copy email) |
-| `_data/products.yml` | **Single source of truth for apps** — status, App Store URL, screenshots, summaries (EN/NO) |
+| `_data/products.yml` | **Single source of truth for apps**: status, App Store URL, screenshots, summaries (EN/NO) |
 | `_data/product_pages/<id>.yml` | Copy for each product landing page (chapters, details, pricing, privacy) |
-| `_data/copy/*.yml` | Copy for home, work, services, about, contact — `en` and `no` side by side |
+| `_data/copy/*.yml` | Copy for home, work, services, about, contact, with `en` and `no` side by side |
 | `_data/i18n.yml` | Interface strings and per-language URLs |
 | `_includes/pages/*.html` | One template per page, rendered for both languages |
 | `_includes/device.html` | CSS iPhone frame around a real screenshot |
@@ -31,7 +31,7 @@ so the language switch and `hreflang` tags point at its counterpart.
 4. Create `<id>/index.html` and `no/<id>/index.html` with `layout: product` and `product: <id>`.
 
 The Work page, footer and structured data pick the app up automatically.
-To retire an app, set `status: archived` — it moves to the Work page archive.
+To retire an app, set `status: archived` and it moves to the Work page archive.
 
 ## Design notes
 
@@ -40,4 +40,4 @@ To retire an app, set `status: archived` — it moves to the Work page archive.
 - Colour: light canvas `#F6F7F9`, ink `#0E1014`, accent `#1A56F0`; dark sections `#0D1117`.
   Product accents come from each app (`color`, `tint` in `products.yml`).
 - Motion: CSS only, opt-in via the `js` class, disabled under `prefers-reduced-motion`.
-- No cookies, analytics or third-party requests — see `/privacy/`.
+- No cookies, analytics or third-party requests (see `/privacy/`).

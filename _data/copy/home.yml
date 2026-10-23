@@ -2,7 +2,7 @@ en:
   hero:
     label: "Independent software studio · Oslo"
     title: "Software, made with intention."
-    lead: "Native iOS apps and senior technical consultancy. Designed, built and shipped by one experienced engineer — accountable from first sketch to App Store release."
+    lead: "Native iOS apps and senior technical consultancy. Designed, built and shipped by one experienced engineer, accountable from first sketch to App Store release."
     primary: "Explore the work"
     secondary: "Let’s talk"
   facts:
@@ -21,7 +21,7 @@ en:
     steps:
       - label: "01 Template"
         title: "Write it once"
-        text: "Sections, tasks, notes and due-date offsets — or start from 49 ready-made templates."
+        text: "Sections, tasks, notes and due-date offsets. Or start from 49 ready-made templates."
         chips: ["Weekly review", "Sprint kickoff", "Client onboarding"]
       - label: "02 Variables"
         title: "Fill in the blanks"
@@ -34,12 +34,12 @@ en:
     more: "Discover Templator"
   one_thing:
     title: "Decide what matters. Then do it."
-    text: "Most to-do lists grow until they stop meaning anything. The One Thing asks for one priority a day — three at most — gives each a time, and keeps a focus timer running until it’s done."
+    text: "Most to-do lists grow until they stop meaning anything. The One Thing asks for one priority a day (three at most), gives each a time, and keeps a focus timer running until it’s done."
     points:
       - title: "One priority. Three at most."
         text: "A deliberate limit that keeps the day honest."
       - title: "A time for everything"
-        text: "Morning, afternoon, evening — or a custom block."
+        text: "Morning, afternoon, evening, or a custom block."
       - title: "Focus on the Lock Screen"
         text: "The timer follows you to the Lock Screen and Dynamic Island."
     more: "Discover The One Thing"
@@ -60,7 +60,7 @@ en:
         for: "Founders and companies bringing a product to iPhone and iPad."
       - n: "02"
         title: "Technical consultancy"
-        text: "Senior engineering judgement embedded in your team — architecture, technical direction, code review and hands-on delivery where it counts."
+        text: "Senior engineering judgement embedded in your team: architecture, technical direction, code review and hands-on delivery where it counts."
         outcomes_label: "You get"
         outcomes:
           - "Architecture decisions made, and written down"
@@ -86,7 +86,7 @@ en:
   hero:
     label: "Uavhengig programvarestudio · Oslo"
     title: "Programvare, laget med omtanke."
-    lead: "Native iOS-apper og senior teknisk rådgivning. Designet, bygget og lansert av én erfaren utvikler — med ansvar fra første skisse til lansering i App Store."
+    lead: "Native iOS-apper og senior teknisk rådgivning. Designet, bygget og lansert av én erfaren utvikler, med ansvar fra første skisse til lansering i App Store."
     primary: "Se arbeidet"
     secondary: "Ta kontakt"
   facts:
@@ -105,7 +105,7 @@ en:
     steps:
       - label: "01 Mal"
         title: "Skriv den én gang"
-        text: "Seksjoner, oppgaver, notater og relative frister — eller start fra 49 ferdige maler."
+        text: "Seksjoner, oppgaver, notater og relative frister. Eller start fra 49 ferdige maler."
         chips: ["Ukentlig gjennomgang", "Sprintoppstart", "Kundeonboarding"]
       - label: "02 Variabler"
         title: "Fyll inn det som varierer"
@@ -118,12 +118,12 @@ en:
     more: "Utforsk Templator"
   one_thing:
     title: "Bestem hva som betyr noe. Så gjør du det."
-    text: "De fleste gjøremålslister vokser til de slutter å bety noe. The One Thing ber om én prioritering om dagen — maks tre — gir hver et tidspunkt, og holder en fokustimer i gang til den er gjort."
+    text: "De fleste gjøremålslister vokser til de slutter å bety noe. The One Thing ber om én prioritering om dagen (maks tre), gir hver et tidspunkt, og holder en fokustimer i gang til den er gjort."
     points:
       - title: "Én prioritering. Maks tre."
         text: "En bevisst grense som holder dagen ærlig."
       - title: "Et tidspunkt for alt"
-        text: "Morgen, ettermiddag, kveld — eller en egen tidsblokk."
+        text: "Morgen, ettermiddag, kveld, eller en egen tidsblokk."
       - title: "Fokus på låseskjermen"
         text: "Timeren følger deg til låseskjermen og Dynamic Island."
     more: "Utforsk The One Thing"
@@ -144,7 +144,7 @@ en:
         for: "Gründere og selskaper som tar et produkt til iPhone og iPad."
       - n: "02"
         title: "Teknisk rådgivning"
-        text: "Senior teknisk dømmekraft integrert i teamet ditt — arkitektur, teknisk retning, kodegjennomgang og praktisk utvikling der det teller."
+        text: "Senior teknisk dømmekraft integrert i teamet ditt: arkitektur, teknisk retning, kodegjennomgang og praktisk utvikling der det teller."
         outcomes_label: "Du får"
         outcomes:
           - "Arkitekturbeslutninger som tas, og skrives ned"
