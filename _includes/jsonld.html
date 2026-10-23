@@ -4,12 +4,14 @@
 {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  "name": {{ product.name | jsonify }},
+  "name": {{ product.store_name | default: product.name | jsonify }},
   "description": {{ product[page.lang].summary | jsonify }},
-  "operatingSystem": "iOS, iPadOS",
+  "operatingSystem": {% if product.platforms contains 'iPad' %}"iOS, iPadOS"{% else %}"iOS"{% endif %},
   "applicationCategory": "ProductivityApplication",
   "url": {{ page.url | absolute_url | jsonify }},
+  {%- if product.app_store %}
   "downloadUrl": {{ product.app_store | jsonify }},
+  {%- endif %}
   "image": {{ product.icon | append: '-256.webp' | absolute_url | jsonify }},
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "Bakker Technologies", "url": {{ '/' | absolute_url | jsonify }} }

@@ -3,6 +3,52 @@
 # Adding an app: add an entry here, screenshots under assets/img/<id>/,
 # and a page per language using `layout: product`.
 
+- id: fast-reminders
+  name: Fast Reminders
+  store_name: "Fast Reminders: Quick Add"   # full App Store name, for formal mentions
+  status: upcoming        # no App Store link yet; set `app_store` and `status: live` at launch
+  featured: false
+  platforms: "iPhone"
+  price:
+    en: "Free · Optional one-time Pro purchase"
+    "no": "Gratis · Valgfritt engangskjøp av Pro"
+  icon: /assets/img/fast-reminders/icon
+  color: "#0064E8"
+  tint: "#E5EFFD"
+  pages:
+    en: /fast-reminders/
+    "no": /no/fast-reminders/
+  privacy: /fast-reminders/privacy/
+  terms: /fast-reminders/terms/
+  work_screens: [capture, lists]
+  hero_screens: [recurring, capture, lists]
+  screens:
+    capture:
+      src: /assets/img/fast-reminders/capture
+      alt:
+        en: "Fast Reminders capture screen with “Call mum tomorrow at 6” typed, the date and time highlighted and shown as chips above the keyboard"
+        "no": "Fast Reminders med «Call mum tomorrow at 6» skrevet inn, der dato og tid er markert og vist som brikker over tastaturet"
+    recurring:
+      src: /assets/img/fast-reminders/recurring
+      alt:
+        en: "“Take vitamins every day at 8” recognized as a daily repeating reminder at 8:00"
+        "no": "«Take vitamins every day at 8» gjenkjent som en daglig påminnelse kl. 8:00"
+    lists:
+      src: /assets/img/fast-reminders/lists
+      alt:
+        en: "“Buy milk #groceries” with the Groceries list picked from the hashtag, under a confirmation with Undo for the previous reminder"
+        "no": "«Buy milk #groceries» der listen Groceries er valgt fra emneknaggen, under en bekreftelse med Angre for forrige påminnelse"
+  en:
+    category: "Productivity"
+    tagline: "Open. Type. Done."
+    summary: "The quickest way into Apple Reminders. Type the way you talk, in English or Norwegian, and it lands in the right list at the right time."
+    lead: "Fast Reminders opens with the keyboard already up. Type “Call John tomorrow at 10”, see what it understood, tap Add, and the field is ready for the next one."
+  "no":
+    category: "Produktivitet"
+    tagline: "Åpne. Skriv. Ferdig."
+    summary: "Den raskeste veien inn i Apples Påminnelser. Skriv som du snakker, på norsk eller engelsk, og påminnelsen havner i riktig liste til riktig tid."
+    lead: "Fast Reminders åpner med tastaturet klart. Skriv «Ring tannlegen i morgen kl. 9», se hva appen forsto, trykk Legg til, og feltet er klart for neste."
+
 - id: templator
   name: Templator
   status: live            # live | archived

@@ -1,0 +1,64 @@
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign c = site.data.copy.support[lang] -%}
+
+<header class="container page-hero">
+    <p class="label label--rule">{{ c.label }}</p>
+    <h1 class="display">{{ c.title }}</h1>
+    <p class="lead">{{ c.lead }}</p>
+    <div class="contact-mail">
+        <a class="contact-mail__addr" href="mailto:{{ t.email }}">{{ t.email }}</a>
+        <button class="btn btn--ghost btn--sm" type="button" data-copy="{{ t.email }}" data-copied-label="{{ c.copied }} ✓" hidden>{{ c.copy }}</button>
+        <span class="visually-hidden" role="status" data-copy-status></span>
+    </div>
+</header>
+
+<div class="container">
+    <div class="contact-grid section--tight" style="border-top:1px solid var(--line)">
+        <section aria-labelledby="include-title" data-reveal>
+            <h2 id="include-title">{{ c.include_title }}</h2>
+            <ul class="ticks">
+                {%- for i in c.include %}
+                <li><strong>{{ i.k }}:</strong> {{ i.v }}</li>
+                {%- endfor %}
+            </ul>
+        </section>
+        <section aria-labelledby="purchases-title" data-reveal>
+            <h2 id="purchases-title">{{ c.purchases_title }}</h2>
+            <ol class="timeline">
+                {%- for i in c.purchases %}
+                <li><strong>{{ i.k }}</strong>{{ i.v }}</li>
+                {%- endfor %}
+            </ol>
+        </section>
+    </div>
+
+    <section class="support-apps" aria-labelledby="apps-title">
+        <p class="label label--rule" id="apps-title">{{ c.apps_label }}</p>
+        <div>
+            {%- for product in site.data.products %}{% unless product.status == 'archived' %}
+            {%- assign faq = c.faq[product.id] %}
+            <article class="support-app" aria-labelledby="s-{{ product.id }}" data-reveal>
+                <div class="app-id">
+                    <img src="{{ product.icon }}-128.webp" width="56" height="56" alt="" loading="lazy">
+                    <div><h3 class="app-id__name" id="s-{{ product.id }}">{{ product.store_name | default: product.name }}</h3><span class="app-id__meta">{{ product.platforms }}{% if product.status == 'upcoming' %} · {{ t.status_upcoming }}{% endif %}</span></div>
+                </div>
+                <p class="links">
+                    <a class="link" href="{{ product.pages[lang] | default: product.pages.en }}"><span>{{ c.links.page }}</span>{% include arrow.html %}</a>
+                    <a class="link" href="{{ product.privacy }}"{% if lang == 'no' %} hreflang="en"{% endif %}><span>{{ c.links.privacy }}</span>{% include arrow.html %}</a>
+                    <a class="link" href="{{ product.terms }}"{% if lang == 'no' %} hreflang="en"{% endif %}><span>{{ c.links.terms }}</span>{% include arrow.html %}</a>
+                </p>
+                {%- if faq %}
+                <dl class="faq">
+                    {%- for f in faq %}
+                    <div><dt>{{ f.q }}</dt><dd>{{ f.a }}</dd></div>
+                    {%- endfor %}
+                </dl>
+                {%- endif %}
+            </article>
+            {%- endunless %}{% endfor %}
+        </div>
+    </section>
+
+    <p class="muted" style="padding-bottom: var(--section); font-size: var(--fs-small)">{{ c.privacy_note }}</p>
+</div>

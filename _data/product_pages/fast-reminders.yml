@@ -1,0 +1,163 @@
+en:
+  chapters:
+    - label: "Capture"
+      title: "The keyboard is already up."
+      text: "Open the app and start typing. There’s no list to scroll past and no form to fill in. Tap Add, or just press Return, and the field clears for the next thought."
+      ticks:
+        - "Undo brings the text back for editing"
+        - "Paste several lines to add them all at once"
+        - "Nothing typed is lost if a save fails"
+      screen: capture
+    - label: "Natural language"
+      title: "Type it the way you’d say it."
+      text: "Dates, times, repeats, lists and priorities are picked out as you type and highlighted, so you can see what will be saved. Misread something? Tap the × and the words go back into your reminder."
+      ticks:
+        - "English and Norwegian, both at once"
+        - "Free, offline and on the device"
+        - "Careful by design: “Read chapter 10” stays a title"
+      diagram: parse
+    - label: "One hand"
+      title: "Tonight, tomorrow, weekend. One tap."
+      text: "Scheduling buttons sit right above the keyboard. Buttons that no longer make sense, like Tonight at 23:00, hide themselves. Every daily, weekly, monthly and yearly repeat that Reminders supports is understood."
+      screen: recurring
+    - label: "Apple Reminders"
+      title: "Reminders stays in charge."
+      text: "Everything is saved straight into the lists you already have, with dates, alerts, repeats and priorities, and syncs wherever Reminders does. Add #groceries to pick a list. There’s no account, no server and no separate database."
+      screen: lists
+  diagram:
+    typed_label: "You type"
+    result_label: "Saved to Reminders"
+    rows:
+      - typed: "Call John [tomorrow at 10]"
+        title: "Call John"
+        chips: ["Tomorrow, 10:00"]
+      - typed: "Take vitamins [every day at 8]"
+        title: "Take vitamins"
+        chips: ["Daily, 08:00"]
+      - typed: "Buy milk [#groceries]"
+        title: "Buy milk"
+        chips: ["Groceries"]
+      - typed: "Ring tannlegen [i morgen kl. 9]"
+        title: "Ring tannlegen"
+        chips: ["Tomorrow, 09:00"]
+  details_label: "The details"
+  details_title: "Open it from anywhere."
+  details:
+    - k: "Action Button"
+      v: "Go from pocket to keyboard with one press."
+    - k: "Control Center and Lock Screen"
+      v: "A Control that opens straight into capture."
+    - k: "Widgets"
+      v: "Home Screen and Lock Screen widgets, including one with your quick buttons."
+    - k: "Siri and Shortcuts"
+      v: "“Add Reminder” saves from Shortcuts without opening the app."
+    - k: "Location reminders"
+      v: "“When I get home” or “when I leave work” sets an alert for that place."
+    - k: "Your colour"
+      v: "Match the app to your Home Screen with a tint of your choice."
+  plans_label: "Pricing"
+  plans_title: "Capturing is free. Forever."
+  plans:
+    - name: "Free"
+      text: "Everything you need to get thoughts into Reminders. No account required."
+      items:
+        - "Natural language in English and Norwegian"
+        - "Quick scheduling buttons"
+        - "All your lists, widgets, Controls and Shortcuts"
+        - "Location reminders for Home and Work"
+    - name: "Pro"
+      text: "Make it yours. One purchase, no subscription."
+      items:
+        - "Choose and order your own quick buttons"
+        - "Smart lists that route “groceries” to Shopping automatically"
+        - "Your own places, like the gym or the cabin"
+        - "Support an independent developer"
+  privacy_label: "Privacy"
+  privacy_title: "Nothing leaves your iPhone."
+  privacy_text: "Reminders go straight into Apple Reminders and sync through your own iCloud, as they always have. Fast Reminders has no account, no server and no analytics, and the studio can’t see what you write. Your location is only used when you choose Current Location for a reminder."
+  privacy_link: "Privacy policy"
+  terms_link: "Terms of service"
+  closing_title: "Fast Reminders for iPhone."
+  closing_text: "Free to download, with an optional one-time Pro purchase."
+
+"no":
+  chapters:
+    - label: "Fangst"
+      title: "Tastaturet er allerede oppe."
+      text: "Åpne appen og begynn å skrive. Ingen liste å bla forbi, ikke noe skjema å fylle ut. Trykk Legg til, eller bare Retur, og feltet tømmes for neste tanke."
+      ticks:
+        - "Angre henter teksten tilbake så du kan rette den"
+        - "Lim inn flere linjer for å legge til alt på én gang"
+        - "Ingenting du har skrevet går tapt om lagringen feiler"
+      screen: capture
+    - label: "Naturlig språk"
+      title: "Skriv det som du ville sagt det."
+      text: "Datoer, klokkeslett, gjentakelser, lister og prioritet plukkes ut og markeres mens du skriver, så du ser hva som blir lagret. Ble noe misforstått? Trykk × og ordene går tilbake i påminnelsen."
+      ticks:
+        - "Norsk og engelsk, samtidig"
+        - "Gratis, uten nett og på enheten"
+        - "Forsiktig med vilje: «Les kapittel 10» forblir en tittel"
+      diagram: parse
+    - label: "Én hånd"
+      title: "I kveld, i morgen, helg. Ett trykk."
+      text: "Knapper for tidspunkt ligger rett over tastaturet. Knapper som ikke lenger gir mening, som I kveld klokken 23, skjuler seg selv. Alle daglige, ukentlige, månedlige og årlige gjentakelser som Påminnelser støtter, blir forstått."
+      screen: recurring
+    - label: "Apple Påminnelser"
+      title: "Påminnelser bestemmer."
+      text: "Alt lagres rett i listene du allerede har, med dato, varsel, gjentakelse og prioritet, og synkroniseres overalt der Påminnelser gjør det. Skriv #handleliste for å velge liste. Ingen konto, ingen server, ingen egen database."
+      screen: lists
+  diagram:
+    typed_label: "Du skriver"
+    result_label: "Lagret i Påminnelser"
+    rows:
+      - typed: "Ring tannlegen [i morgen kl. 9]"
+        title: "Ring tannlegen"
+        chips: ["I morgen, 09:00"]
+      - typed: "Ta vitaminer [hver dag kl 8]"
+        title: "Ta vitaminer"
+        chips: ["Daglig, 08:00"]
+      - typed: "Kjøp melk [#handleliste]"
+        title: "Kjøp melk"
+        chips: ["Handleliste"]
+      - typed: "Call John [tomorrow at 10]"
+        title: "Call John"
+        chips: ["I morgen, 10:00"]
+  details_label: "Detaljene"
+  details_title: "Åpne fra hvor som helst."
+  details:
+    - k: "Handlingsknappen"
+      v: "Fra lomma til tastaturet med ett trykk."
+    - k: "Kontrollsenter og låseskjerm"
+      v: "En kontroll som åpner rett i skrivefeltet."
+    - k: "Widgeter"
+      v: "Widgeter for Hjem-skjermen og låseskjermen, blant annet én med hurtigknappene dine."
+    - k: "Siri og Snarveier"
+      v: "«Legg til påminnelse» lagrer fra Snarveier uten å åpne appen."
+    - k: "Stedsbaserte påminnelser"
+      v: "«Når jeg kommer hjem» eller «når jeg drar fra jobben» gir varsel på stedet."
+    - k: "Din farge"
+      v: "Tilpass appen til Hjem-skjermen med en farge du velger selv."
+  plans_label: "Pris"
+  plans_title: "Å legge til påminnelser er gratis. For alltid."
+  plans:
+    - name: "Gratis"
+      text: "Alt du trenger for å få tankene inn i Påminnelser. Ingen konto nødvendig."
+      items:
+        - "Naturlig språk på norsk og engelsk"
+        - "Hurtigknapper for tidspunkt"
+        - "Alle listene dine, widgeter, kontroller og Snarveier"
+        - "Stedsbaserte påminnelser for Hjem og Jobb"
+    - name: "Pro"
+      text: "Gjør appen til din. Ett kjøp, ikke noe abonnement."
+      items:
+        - "Velg og sorter dine egne hurtigknapper"
+        - "Smarte lister som sender «melk» til Handleliste automatisk"
+        - "Dine egne steder, som treningssenteret eller hytta"
+        - "Støtt en uavhengig utvikler"
+  privacy_label: "Personvern"
+  privacy_title: "Ingenting forlater iPhonen din."
+  privacy_text: "Påminnelsene går rett inn i Apples Påminnelser og synkroniseres gjennom din egen iCloud, slik de alltid har gjort. Fast Reminders har ingen konto, ingen server og ingen analyse, og studioet kan ikke se hva du skriver. Posisjonen din brukes bare når du velger Nåværende posisjon for en påminnelse."
+  privacy_link: "Personvernerklæring (engelsk)"
+  terms_link: "Vilkår for bruk (engelsk)"
+  closing_title: "Fast Reminders for iPhone."
+  closing_text: "Gratis å laste ned, med valgfritt engangskjøp av Pro."

@@ -3,6 +3,7 @@
 {%- assign c = site.data.copy.home[lang] -%}
 {%- assign tpl = site.data.products | where: 'id', 'templator' | first -%}
 {%- assign tot = site.data.products | where: 'id', 'the-one-thing' | first -%}
+{%- assign fr = site.data.products | where: 'id', 'fast-reminders' | first -%}
 
 <section class="hero" aria-labelledby="hero-title">
     <div class="container hero__grid">
@@ -94,6 +95,39 @@
                 <a class="btn" href="{{ tot.pages[lang] }}">{{ c.one_thing.more }}</a>
                 <a class="link" href="{{ tot.app_store }}" target="_blank" rel="noopener"><span>{{ t.view_app_store }}</span>{% include arrow.html ext=true %}</a>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="showcase showcase--fast-reminders section" id="fast-reminders" aria-labelledby="fr-title">
+    <div class="container fr__grid">
+        <div class="fr__copy" data-reveal>
+            <div class="app-id">
+                <img src="{{ fr.icon }}-128.webp" width="56" height="56" alt="" loading="lazy">
+                <div><span class="app-id__name">{{ fr.name }}</span><span class="app-id__meta">{{ c.fast_reminders.label }}</span></div>
+            </div>
+            <h2 class="h2" id="fr-title">{{ c.fast_reminders.title }}</h2>
+            <p class="lead">{{ c.fast_reminders.text }}</p>
+            <p class="label fr__examples-label">{{ c.fast_reminders.examples_label }}</p>
+            <ul class="fr__examples" role="list">
+                {%- for e in c.fast_reminders.examples %}
+                {%- assign open = e.typed | split: '[' %}
+                {%- assign rest = open[1] | split: ']' %}
+                <li><span>{{ open[0] | escape }}<span class="token token--hl">{{ rest[0] | escape }}</span>{{ rest[1] | escape }}</span><span class="chip">{{ e.chip | escape }}</span></li>
+                {%- endfor %}
+            </ul>
+            <div class="showcase__links">
+                <a class="btn" href="{{ fr.pages[lang] }}">{{ c.fast_reminders.more }}</a>
+                {%- if fr.app_store %}
+                <a class="link" href="{{ fr.app_store }}" target="_blank" rel="noopener"><span>{{ t.view_app_store }}</span>{% include arrow.html ext=true %}</a>
+                {%- else %}
+                <span class="status status--upcoming">{{ t.status_upcoming }}</span>
+                {%- endif %}
+            </div>
+        </div>
+        <div class="fr__stage" data-reveal>
+            {% include device.html screen=fr.screens.capture lang=lang class="device--main" sizes="300px" %}
+            {% include device.html screen=fr.screens.recurring lang=lang class="device--side" sizes="240px" %}
         </div>
     </div>
 </section>

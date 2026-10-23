@@ -27,6 +27,7 @@ Alt innhold på dette nettstedet, inkludert tekst, design og kode, eies av Bakke
 
 Hvert produkt har sine egne vilkår:
 
+- [Vilkår for bruk for Fast Reminders: Quick Add](/fast-reminders/terms/) (engelsk)
 - [Templator: vilkår for bruk](/templator/terms/) (engelsk)
 - [The One Thing: vilkår for bruk](/the-one-thing/terms/) (engelsk)
 - [Cryptolandia: vilkår for bruk](/cryptolandia/terms/) (engelsk, avviklet app)

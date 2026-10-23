@@ -12,7 +12,7 @@ layout: default
 <section class="p-hero" aria-labelledby="p-title">
     <div class="container">
         <img class="p-hero__icon" src="{{ product.icon }}-256.webp" width="88" height="88" alt="{% if lang == 'no' %}Appikonet til {{ product.name }}{% else %}{{ product.name }} app icon{% endif %}">
-        <p class="label">{{ product.name }} · {{ product.platforms }}</p>
+        <p class="label">{{ product.store_name | default: product.name }} · {{ product.platforms }}</p>
         <h1 class="display" id="p-title">{{ info.tagline }}</h1>
         <p class="lead">{{ info.lead }}</p>
         <div class="actions">

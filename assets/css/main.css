@@ -287,6 +287,19 @@ p { text-wrap: pretty; }
 .app-store img { height: 48px; width: auto; }
 .app-store:hover { opacity: 0.86; }
 .app-store:active { transform: scale(0.98); }
+/* Stands in for the App Store badge before launch; same 48px height */
+.soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+.soon::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--product, var(--accent)); }
 
 /* --- Brand -------------------------------------------------------------- */
 
@@ -764,6 +777,44 @@ p { text-wrap: pretty; }
   .showcase--one-thing { padding-bottom: calc(var(--section) * 0.75); }
 }
 
+/* --- Product showcase: Fast Reminders (mirrors The One Thing) ----------- */
+
+.showcase--fast-reminders {
+  --product: #0064E8;
+  background: linear-gradient(180deg, var(--canvas) 0%, #EAF1FD 55%, var(--canvas) 100%);
+}
+.fr__grid { display: grid; gap: 56px; align-items: center; }
+.fr__copy .h2 { margin-top: 32px; max-width: 12ch; }
+.fr__copy .lead { margin-top: 24px; }
+.fr__examples-label { margin-top: 40px; color: var(--product); }
+.fr__examples { list-style: none; padding: 0; margin-top: 16px; border-top: 1px solid var(--line); }
+.fr__examples li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-small);
+}
+.fr__examples .chip { margin: 0; padding: 3px 10px; font-size: 0.75rem; font-weight: 500; color: var(--product); border-color: color-mix(in srgb, var(--product) 28%, transparent); white-space: nowrap; }
+.fr__stage {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+  height: clamp(480px, 124vw, 640px);
+}
+.fr__stage .device--main { --w: clamp(210px, 58vw, 300px); position: absolute; right: 0; top: 0; }
+.fr__stage .device--side { --w: clamp(160px, 42vw, 240px); position: absolute; left: 0; top: 22%; z-index: 2; }
+
+@media (min-width: 960px) {
+  .fr__grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+  .fr__stage { height: 700px; }
+  .fr__stage .device--main { --w: 296px; }
+  .fr__stage .device--side { --w: 240px; top: 24%; }
+}
+
 /* --- Services ------------------------------------------------------------ */
 
 .services { display: grid; border-top: 1px solid var(--line); }
@@ -899,6 +950,7 @@ p { text-wrap: pretty; }
 .status { display: inline-flex; align-items: center; gap: 8px; }
 .status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #1E9E5A; }
 .status--archived::before { background: var(--ink-3); }
+.status--upcoming::before { background: #E8A317; }
 .work-item .actions { margin-top: 32px; }
 
 @media (min-width: 960px) {
@@ -918,7 +970,25 @@ p { text-wrap: pretty; }
 @media (min-width: 900px) {
   .archive { grid-template-columns: 1fr 2fr; gap: 48px; }
 }
-.archive > .label, .note > .label, .narrative > .label { align-self: start; padding-top: 6px; }
+.archive > .label, .note > .label, .narrative > .label, .support-apps > .label { align-self: start; padding-top: 6px; }
+
+/* Support: one block per app, laid out like the archive */
+.support-apps {
+  display: grid;
+  gap: 16px;
+  padding-block: 40px;
+  border-top: 1px solid var(--line);
+}
+.support-app { padding-bottom: 40px; }
+.support-app + .support-app { padding-top: 40px; border-top: 1px solid var(--line); }
+.support-app .app-id { display: flex; align-items: center; gap: 14px; }
+.support-app .links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 20px; }
+.faq { display: grid; gap: 20px; margin: 28px 0 0; }
+.faq dt { font-weight: 500; letter-spacing: -0.01em; }
+.faq dd { margin: 6px 0 0; color: var(--ink-2); font-size: var(--fs-small); max-width: 40rem; }
+@media (min-width: 900px) {
+  .support-apps { grid-template-columns: 1fr 2fr; gap: 48px; }
+}
 
 .note {
   display: grid;
@@ -1174,6 +1244,10 @@ p { text-wrap: pretty; }
   color: var(--product);
   white-space: nowrap;
 }
+/* Recognized phrase in prose type, rather than monospace like a {{variable}} */
+.token--hl { font-family: inherit; font-size: inherit; padding: 1px 5px; }
+.chips--inline { margin-top: 0; justify-content: flex-end; gap: 6px; }
+.chips--inline .chip { padding: 3px 10px; font-size: 0.75rem; font-weight: 500; color: var(--product); border-color: color-mix(in srgb, var(--product) 28%, transparent); }
 .filled { font-weight: 500; }
 .panel__title { font-weight: 600; letter-spacing: -0.02em; font-size: 1.0625rem; }
 

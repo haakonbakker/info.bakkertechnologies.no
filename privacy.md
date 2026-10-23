@@ -25,6 +25,7 @@ When you email support@bakkertechnologies.no, your message and email address are
 
 Each product has its own privacy policy:
 
+- [Fast Reminders: Quick Add Privacy Policy](/fast-reminders/privacy/)
 - [Templator Privacy Policy](/templator/privacy/)
 - [The One Thing Privacy Policy](/the-one-thing/privacy/)
 - [Cryptolandia Privacy Policy](/cryptolandia/privacy/) (retired app)

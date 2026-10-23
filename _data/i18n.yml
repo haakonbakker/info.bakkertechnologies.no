@@ -7,6 +7,7 @@ en:
   about_url: /about/
   privacy_url: /privacy/
   terms_url: /terms/
+  support_url: /support/
   skip: "Skip to content"
   menu_open: "Open menu"
   menu_close: "Close menu"
@@ -14,6 +15,7 @@ en:
   lang_label: "Language"
   cta_header: "Let’s talk"
   contact: "Contact"
+  support: "Support"
   brand_line: "Independent software studio. Native iOS products and senior technical consultancy, from Oslo, Norway."
   footer_studio: "Studio"
   footer_apps: "Apps"
@@ -25,6 +27,7 @@ en:
   view_app_store: "View on the App Store"
   discover: "Discover"
   status_live: "Available on the App Store"
+  status_upcoming: "Coming soon to the App Store"
   status_archived: "Archived, no longer available"
   email: "support@bakkertechnologies.no"
 
@@ -36,6 +39,7 @@ en:
   about_url: /no/om/
   privacy_url: /no/personvern/
   terms_url: /no/vilkaar/
+  support_url: /no/hjelp/
   skip: "Hopp til innhold"
   menu_open: "Åpne meny"
   menu_close: "Lukk meny"
@@ -43,6 +47,7 @@ en:
   lang_label: "Språk"
   cta_header: "Ta kontakt"
   contact: "Kontakt"
+  support: "Hjelp"
   brand_line: "Uavhengig programvarestudio. Native iOS-produkter og senior teknisk rådgivning, fra Oslo."
   footer_studio: "Studio"
   footer_apps: "Apper"
@@ -54,5 +59,6 @@ en:
   view_app_store: "Se i App Store"
   discover: "Utforsk"
   status_live: "Tilgjengelig i App Store"
+  status_upcoming: "Kommer snart til App Store"
   status_archived: "Arkivert, ikke lenger tilgjengelig"
   email: "support@bakkertechnologies.no"

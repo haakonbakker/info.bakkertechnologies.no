@@ -29,8 +29,11 @@ so the language switch and `hreflang` tags point at its counterpart.
 2. Add an entry to `_data/products.yml` (`status: live`), with `screens`, `hero_screens` and `work_screens`.
 3. Add `_data/product_pages/<id>.yml` with `en` and `no` copy.
 4. Create `<id>/index.html` and `no/<id>/index.html` with `layout: product` and `product: <id>`.
+5. Optionally add common questions under `faq.<id>` in `_data/copy/support.yml`.
 
-The Work page, footer and structured data pick the app up automatically.
+The Work page, Support page, footer and structured data pick the app up automatically.
+Before launch, use `status: upcoming` and leave out `app_store`: pages show "Coming soon" in place
+of the App Store badge. At launch, add `app_store` and set `status: live`.
 To retire an app, set `status: archived` and it moves to the Work page archive.
 
 ## Design notes

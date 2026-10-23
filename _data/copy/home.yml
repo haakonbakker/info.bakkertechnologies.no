@@ -43,6 +43,19 @@ en:
       - title: "Focus on the Lock Screen"
         text: "The timer follows you to the Lock Screen and Dynamic Island."
     more: "Discover The One Thing"
+  fast_reminders:
+    label: "New · iPhone"
+    title: "Open. Type. Done."
+    text: "The quickest way into Apple Reminders. The keyboard is up the moment the app opens. Type the way you talk, in English or Norwegian, and the dates, times, repeats and lists are understood as you go."
+    examples_label: "You type"
+    examples:
+      - typed: "Call John [tomorrow at 10]"
+        chip: "Tomorrow, 10:00"
+      - typed: "Take vitamins [every day at 8]"
+        chip: "Daily, 08:00"
+      - typed: "Buy milk [#groceries]"
+        chip: "Groceries"
+    more: "Discover Fast Reminders"
   services:
     label: "Services"
     title: "Two ways to work together."
@@ -127,6 +140,19 @@ en:
       - title: "Fokus på låseskjermen"
         text: "Timeren følger deg til låseskjermen og Dynamic Island."
     more: "Utforsk The One Thing"
+  fast_reminders:
+    label: "Ny · iPhone"
+    title: "Åpne. Skriv. Ferdig."
+    text: "Den raskeste veien inn i Apples Påminnelser. Tastaturet er klart i det øyeblikket appen åpnes. Skriv som du snakker, på norsk eller engelsk, og dato, tid, gjentakelser og lister blir forstått mens du skriver."
+    examples_label: "Du skriver"
+    examples:
+      - typed: "Ring tannlegen [i morgen kl. 9]"
+        chip: "I morgen, 09:00"
+      - typed: "Ta vitaminer [hver dag kl 8]"
+        chip: "Daglig, 08:00"
+      - typed: "Kjøp melk [#handleliste]"
+        chip: "Handleliste"
+    more: "Utforsk Fast Reminders"
   services:
     label: "Tjenester"
     title: "To måter å samarbeide på."

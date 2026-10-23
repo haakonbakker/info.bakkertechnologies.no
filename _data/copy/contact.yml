@@ -20,7 +20,7 @@ en:
       v: "If it looks like a fit, we set up a call to understand the details."
     - k: "A concrete proposal"
       v: "Scope, approach, timeline and cost, written down so it’s easy to decide."
-  apps_note: "Need help with Templator or The One Thing? Use the same address."
+  apps_note: "Need help with Fast Reminders, Templator or The One Thing? See <a class=\"link\" href=\"/support/\">Support</a>, or use the same address."
 "no":
   label: "Kontakt"
   title: "La oss snakke."
@@ -43,4 +43,4 @@ en:
       v: "Hvis det ser ut som en match, avtaler vi en samtale for å forstå detaljene."
     - k: "Et konkret forslag"
       v: "Omfang, tilnærming, tidslinje og pris, skrevet ned så det er enkelt å bestemme seg."
-  apps_note: "Trenger du hjelp med Templator eller The One Thing? Bruk samme adresse."
+  apps_note: "Trenger du hjelp med Fast Reminders, Templator eller The One Thing? Se <a class=\"link\" href=\"/no/hjelp/\">Hjelp</a>, eller bruk samme adresse."

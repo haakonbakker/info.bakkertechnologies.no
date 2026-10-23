@@ -9,7 +9,7 @@
 </header>
 
 <div class="container">
-    {%- for product in site.data.products %}{% if product.status == 'live' %}
+    {%- for product in site.data.products %}{% if product.status == 'live' or product.status == 'upcoming' %}
     {%- assign copy = product[lang] %}
     <article class="work-item{% cycle '', ' work-item--flip' %}" aria-labelledby="w-{{ product.id }}">
         <div class="work-item__visual work-item__visual--{{ product.id }}" data-reveal>
@@ -28,11 +28,13 @@
             <dl class="meta">
                 <dt>{{ c.meta_platforms }}</dt><dd>{{ product.platforms }}</dd>
                 <dt>{{ c.meta_price }}</dt><dd>{{ product.price[lang] }}</dd>
-                <dt>{{ c.meta_status }}</dt><dd><span class="status">{{ t.status_live }}</span></dd>
+                <dt>{{ c.meta_status }}</dt><dd>{% if product.status == 'upcoming' %}<span class="status status--upcoming">{{ t.status_upcoming }}</span>{% else %}<span class="status">{{ t.status_live }}</span>{% endif %}</dd>
             </dl>
             <div class="actions">
                 <a class="btn" href="{{ product.pages[lang] }}">{{ c.discover }} {{ product.name }}</a>
+                {%- if product.app_store %}
                 <a class="link" href="{{ product.app_store }}" target="_blank" rel="noopener"><span>{{ t.view_app_store }}</span>{% include arrow.html ext=true %}</a>
+                {%- endif %}
             </div>
         </div>
     </article>

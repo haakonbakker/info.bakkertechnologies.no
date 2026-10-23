@@ -1,0 +1,16 @@
+{%- comment -%}
+  Typed text → what was understood. In `typed`, [brackets] mark the recognized phrase.
+{%- endcomment -%}
+<div class="panel" role="img" aria-label="{% for r in include.d.rows %}{{ r.typed | remove: '[' | remove: ']' | escape }} → {{ r.title | escape }}, {{ r.chips | join: ', ' | escape }}{% unless forloop.last %}; {% endunless %}{% endfor %}">
+    <p class="label">{{ include.d.typed_label }}</p>
+    {%- for r in include.d.rows %}
+    {%- assign open = r.typed | split: '[' %}
+    {%- assign rest = open[1] | split: ']' %}
+    <div class="panel__row"><span>{{ open[0] | escape }}<span class="token token--hl">{{ rest[0] | escape }}</span>{{ rest[1] | escape }}</span></div>
+    {%- endfor %}
+    <span class="panel__arrow" aria-hidden="true">↓</span>
+    <p class="label">{{ include.d.result_label }}</p>
+    {%- for r in include.d.rows %}
+    <div class="panel__row filled"><span>{{ r.title | escape }}</span><span class="chips chips--inline">{% for c in r.chips %}<span class="chip">{{ c | escape }}</span>{% endfor %}</span></div>
+    {%- endfor %}
+</div>

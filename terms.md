@@ -27,6 +27,7 @@ All content on this website, including text, design, and code, is owned by Bakke
 
 Each product has its own terms of service:
 
+- [Fast Reminders: Quick Add Terms of Service](/fast-reminders/terms/)
 - [Templator Terms of Service](/templator/terms/)
 - [The One Thing Terms of Service](/the-one-thing/terms/)
 - [Cryptolandia Terms of Service](/cryptolandia/terms/) (retired app)

@@ -1,0 +1,73 @@
+en:
+  label: "Support"
+  title: "How can I help?"
+  lead: "Every app is supported by the person who built it. Email me with a question, a problem or an idea, and I’ll get back to you."
+  copy: "Copy address"
+  copied: "Copied"
+  include_title: "Helpful to include"
+  include:
+    - k: "The app"
+      v: "its name, and the version from the App Store or the app’s Settings."
+    - k: "Your device"
+      v: "the iPhone or iPad model and the iOS version."
+    - k: "What happened"
+      v: "what you did, what you expected, and a screenshot if you can."
+  apps_label: "Apps"
+  links:
+    page: "About the app"
+    privacy: "Privacy policy"
+    terms: "Terms of service"
+  faq:
+    fast-reminders:
+      - q: "My reminders aren’t being saved."
+        a: "Fast Reminders needs full access to Reminders. Open the Settings app, go to Privacy & Security, then Reminders, and choose Full Access for Fast Reminders."
+      - q: "It understood something I didn’t mean."
+        a: "Tap the × next to the chip above the keyboard. The words go back into the reminder’s title."
+      - q: "A reminder went to the wrong list."
+        a: "A list you pick above the keyboard always wins. After that come words in the text, like #groceries, then your smart lists, then the last list you used if Remember Last List is on, and finally the default list in the app’s Settings."
+  purchases_title: "Purchases and subscriptions"
+  purchases:
+    - k: "Restore a purchase"
+      v: "Open Settings in the app and tap Restore Purchases. Use the same Apple Account you bought it with."
+    - k: "Cancel a subscription"
+      v: "Open the Settings app, tap your name, then Subscriptions. Cancelling keeps Pro until the end of the period you paid for."
+    - k: "Ask for a refund"
+      v: "Refunds are handled by Apple at reportaproblem.apple.com."
+  privacy_note: "None of the apps require an account, and the studio never sees what you create in them. Each app’s privacy policy explains exactly what it uses."
+
+"no":
+  label: "Hjelp"
+  title: "Hva kan jeg hjelpe med?"
+  lead: "Hver app får hjelp fra den som bygget den. Send meg en e-post med et spørsmål, et problem eller en idé, så svarer jeg deg."
+  copy: "Kopier adresse"
+  copied: "Kopiert"
+  include_title: "Nyttig å ta med"
+  include:
+    - k: "Appen"
+      v: "navnet, og versjonen fra App Store eller appens innstillinger."
+    - k: "Enheten din"
+      v: "modellen på iPhone eller iPad, og iOS-versjonen."
+    - k: "Hva som skjedde"
+      v: "hva du gjorde, hva du forventet, og gjerne et skjermbilde."
+  apps_label: "Apper"
+  links:
+    page: "Om appen"
+    privacy: "Personvernerklæring (engelsk)"
+    terms: "Vilkår for bruk (engelsk)"
+  faq:
+    fast-reminders:
+      - q: "Påminnelsene blir ikke lagret."
+        a: "Fast Reminders trenger full tilgang til Påminnelser. Åpne Innstillinger-appen, gå til Personvern og sikkerhet, deretter Påminnelser, og velg Full tilgang for Fast Reminders."
+      - q: "Appen forsto noe jeg ikke mente."
+        a: "Trykk × ved siden av brikken over tastaturet. Ordene går tilbake i tittelen på påminnelsen."
+      - q: "En påminnelse havnet i feil liste."
+        a: "En liste du velger over tastaturet, vinner alltid. Deretter kommer ord i teksten, som #handleliste, så smarte lister, så sist brukte liste hvis Husk sist brukte liste er på, og til slutt standardlisten i appens innstillinger."
+  purchases_title: "Kjøp og abonnementer"
+  purchases:
+    - k: "Gjenopprett et kjøp"
+      v: "Åpne innstillingene i appen og trykk Gjenopprett kjøp. Bruk den samme Apple-kontoen som du kjøpte med."
+    - k: "Avslutt et abonnement"
+      v: "Åpne Innstillinger-appen, trykk på navnet ditt og deretter Abonnementer. Du beholder Pro ut perioden du har betalt for."
+    - k: "Be om refusjon"
+      v: "Refusjoner håndteres av Apple på reportaproblem.apple.com."
+  privacy_note: "Ingen av appene krever konto, og studioet ser aldri det du lager i dem. Personvernerklæringen for hver app forklarer nøyaktig hva den bruker."

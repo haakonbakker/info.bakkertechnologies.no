@@ -25,6 +25,7 @@ Når du sender e-post til support@bakkertechnologies.no, brukes meldingen og e-p
 
 Hvert produkt har sin egen personvernerklæring:
 
+- [Personvernerklæring for Fast Reminders: Quick Add](/fast-reminders/privacy/) (engelsk)
 - [Templator: personvernerklæring](/templator/privacy/) (engelsk)
 - [The One Thing: personvernerklæring](/the-one-thing/privacy/) (engelsk)
 - [Cryptolandia: personvernerklæring](/cryptolandia/privacy/) (engelsk, avviklet app)
