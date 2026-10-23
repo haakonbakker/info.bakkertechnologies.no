@@ -1,102 +1,122 @@
+{%- assign lang = page.lang | default: site.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == 'no' -%}{%- assign other = 'en' -%}{%- else -%}{%- assign other = 'no' -%}{%- endif -%}
+{%- assign alt_url = page.alternate_url | default: site.data.i18n[other].home -%}
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{% if lang == 'no' %}nb{% else %}en{% endif %}" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% seo %}
-    {% if page.alternate_url %}
-    <link rel="alternate" hreflang="{% if page.lang == 'no' %}en{% else %}no{% endif %}" href="{{ page.alternate_url | absolute_url }}">
-    <link rel="alternate" hreflang="{{ page.lang | default: 'en' }}" href="{{ page.url | absolute_url }}">
-    {% endif %}
-    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <script>document.documentElement.className = 'js';</script>
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/main.css?v={{ site.time | date: '%s' }}">
+    {% include seo.html %}
+    {%- if page.alternate_url %}
+    {%- if lang == 'no' %}{% assign en_url = page.alternate_url %}{% assign no_url = page.url %}{% else %}{% assign en_url = page.url %}{% assign no_url = page.alternate_url %}{% endif %}
+    <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
+    <link rel="alternate" hreflang="nb" href="{{ no_url | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ en_url | absolute_url }}">
+    {%- endif %}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <meta name="theme-color" content="#F6F7F9">
+    {%- if page.noindex %}
+    <meta name="robots" content="noindex">
+    {%- endif %}
+    {% include jsonld.html %}
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <a href="#main" class="skip-link">{{ t.skip }}</a>
 
     <header class="site-header" id="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="{% if page.lang == 'no' %}/no/{% else %}/{% endif %}" class="logo">Bakker Technologies</a>
-                <nav class="main-nav" id="main-nav" aria-label="Primary">
-                    {% assign lang = page.lang | default: 'en' %}
-                    {% for item in site.data.navigation[lang] %}
-                    <a href="{{ item.url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">{{ item.title }}</a>
-                    {% endfor %}
-                    {% if page.alternate_url %}
-                    <a href="{{ page.alternate_url }}" class="nav-lang">{% if page.lang == 'no' %}EN{% else %}NO{% endif %}</a>
-                    {% endif %}
-                </nav>
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
-                    <span></span>
+        <div class="container site-header__inner">
+            <a href="{{ t.home }}" class="brand">
+                {% include brand-mark.html %}
+                <span>Bakker Technologies</span>
+            </a>
+
+            <nav class="nav" aria-label="{{ t.nav_label }}">
+                {%- for item in site.data.navigation[lang] %}
+                <a href="{{ item.url }}" class="nav__link"{% if page.url == item.url or page.section == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+                {%- endfor %}
+            </nav>
+
+            <div class="header-tools">
+                <div class="lang" role="group" aria-label="{{ t.lang_label }}">
+                    {%- if lang == 'en' %}
+                    <span aria-current="true">EN</span><span class="lang__sep" aria-hidden="true">/</span><a href="{{ alt_url }}" hreflang="nb" lang="nb" aria-label="Norsk">NO</a>
+                    {%- else %}
+                    <a href="{{ alt_url }}" hreflang="en" lang="en" aria-label="English">EN</a><span class="lang__sep" aria-hidden="true">/</span><span aria-current="true">NO</span>
+                    {%- endif %}
+                </div>
+                <a href="{{ t.contact_url }}" class="btn btn--sm"{% if page.url == t.contact_url %} aria-current="page"{% endif %}>{{ t.cta_header }}</a>
+                <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="{{ t.menu_open }}" data-label-open="{{ t.menu_open }}" data-label-close="{{ t.menu_close }}">
+                    <span class="menu-btn__bars" aria-hidden="true"></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main id="main">
+    <nav class="mobile-nav" id="mobile-nav" aria-label="{{ t.nav_label }}">
+        {%- for item in site.data.navigation[lang] %}
+        <a href="{{ item.url }}" class="mobile-nav__link"{% if page.url == item.url or page.section == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endfor %}
+        <a href="{{ t.contact_url }}" class="mobile-nav__link"{% if page.url == t.contact_url %} aria-current="page"{% endif %}>{{ t.contact }}</a>
+        <div class="mobile-nav__foot">
+            <div class="lang" role="group" aria-label="{{ t.lang_label }}">
+                {%- if lang == 'en' %}
+                <span aria-current="true">English</span><span class="lang__sep" aria-hidden="true">/</span><a href="{{ alt_url }}" hreflang="nb" lang="nb">Norsk</a>
+                {%- else %}
+                <a href="{{ alt_url }}" hreflang="en" lang="en">English</a><span class="lang__sep" aria-hidden="true">/</span><span aria-current="true">Norsk</span>
+                {%- endif %}
+            </div>
+            <a href="{{ t.contact_url }}" class="btn btn--sm">{{ t.cta_header }}</a>
+        </div>
+    </nav>
+
+    <main id="main" tabindex="-1">
         {{ content }}
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
-                <nav class="footer-nav" aria-label="Footer">
-                    {% for item in site.data.navigation[lang] %}
-                    <a href="{{ item.url }}">{{ item.title }}</a>
-                    {% endfor %}
-                    <a href="{% if page.lang == 'no' %}/no/personvern{% else %}/privacy{% endif %}">{% if page.lang == 'no' %}Personvern{% else %}Privacy{% endif %}</a>
-                    <a href="{% if page.lang == 'no' %}/no/vilkaar{% else %}/terms{% endif %}">{% if page.lang == 'no' %}Vilkår{% else %}Terms{% endif %}</a>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="{{ t.home }}" class="brand">{% include brand-mark.html %}<span>Bakker Technologies</span></a>
+                    <p>{{ t.brand_line }}</p>
+                </div>
+                <nav class="footer-col" aria-labelledby="f-studio">
+                    <h2 id="f-studio">{{ t.footer_studio }}</h2>
+                    <ul>
+                        {%- for item in site.data.navigation[lang] %}
+                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {%- endfor %}
+                        <li><a href="{{ t.contact_url }}">{{ t.contact }}</a></li>
+                    </ul>
                 </nav>
-                <span class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Bakker Technologies</span>
+                <nav class="footer-col" aria-labelledby="f-apps">
+                    <h2 id="f-apps">{{ t.footer_apps }}</h2>
+                    <ul>
+                        {%- for product in site.data.products %}{% if product.status == 'live' %}
+                        <li><a href="{{ product.pages[lang] | default: product.pages.en }}">{{ product.name }}</a></li>
+                        {%- endif %}{% endfor %}
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-labelledby="f-legal">
+                    <h2 id="f-legal">{{ t.footer_legal }}</h2>
+                    <ul>
+                        <li><a href="{{ t.privacy_url }}">{{ t.privacy }}</a></li>
+                        <li><a href="{{ t.terms_url }}">{{ t.terms }}</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-base">
+                <span>&copy; {{ site.time | date: '%Y' }} Bakker Technologies · {{ t.location }}</span>
+                <a href="mailto:{{ t.email }}">{{ t.email }}</a>
             </div>
         </div>
     </footer>
 
-    <script>
-    (function() {
-        var header = document.getElementById('site-header');
-        function checkScroll() {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        }
-        window.addEventListener('scroll', checkScroll, { passive: true });
-        checkScroll();
-
-        var toggle = document.getElementById('menu-toggle');
-        var nav = document.getElementById('main-nav');
-        if (toggle && nav) {
-            function setOpen(open) {
-                toggle.setAttribute('aria-expanded', String(open));
-                toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-                nav.classList.toggle('is-open', open);
-                document.body.style.overflow = open ? 'hidden' : '';
-            }
-            toggle.addEventListener('click', function() {
-                setOpen(toggle.getAttribute('aria-expanded') !== 'true');
-            });
-            nav.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') setOpen(false);
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') setOpen(false);
-            });
-        }
-
-        var reveals = document.querySelectorAll('.reveal');
-        if (reveals.length && 'IntersectionObserver' in window) {
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-            reveals.forEach(function(el) { observer.observe(el); });
-        } else {
-            reveals.forEach(function(el) { el.classList.add('is-visible'); });
-        }
-    })();
-    </script>
+    <script src="/assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>

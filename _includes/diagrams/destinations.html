@@ -1,0 +1,5 @@
+<ul class="panel dest" role="list">
+    {%- for d in include.d.destinations %}
+    <li class="dest__item">{{ d.name }}<small>{{ d.note }}</small></li>
+    {%- endfor %}
+</ul>

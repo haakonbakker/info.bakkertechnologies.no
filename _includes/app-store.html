@@ -1,0 +1,4 @@
+{%- assign t = site.data.i18n[include.lang] -%}
+<a class="app-store" href="{{ include.product.app_store }}" target="_blank" rel="noopener">
+  <img src="/assets/img/app-store-badge.svg" width="144" height="48" alt="{{ t.app_store_badge_alt }}: {{ include.product.name }}">
+</a>

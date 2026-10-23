@@ -1,0 +1,11 @@
+{%- assign t = site.data.i18n[include.lang] -%}
+<section class="on-dark closing" aria-labelledby="closing-title">
+  <div class="container" data-reveal>
+    <h2 class="h1" id="closing-title">{{ include.title }}</h2>
+    <p class="lead">{{ include.text }}</p>
+    <div class="actions">
+      <a class="btn" href="{{ t.contact_url }}">{{ include.button | default: t.cta_header }}</a>
+    </div>
+    <p class="closing__mail"><a href="mailto:{{ t.email }}">{{ t.email }}</a></p>
+  </div>
+</section>

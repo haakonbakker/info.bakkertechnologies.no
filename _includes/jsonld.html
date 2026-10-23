@@ -1,0 +1,31 @@
+{%- if page.product -%}
+{%- assign product = site.data.products | where: 'id', page.product | first -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": {{ product.name | jsonify }},
+  "description": {{ product[page.lang].summary | jsonify }},
+  "operatingSystem": "iOS, iPadOS",
+  "applicationCategory": "ProductivityApplication",
+  "url": {{ page.url | absolute_url | jsonify }},
+  "downloadUrl": {{ product.app_store | jsonify }},
+  "image": {{ product.icon | append: '-256.webp' | absolute_url | jsonify }},
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "Bakker Technologies", "url": {{ '/' | absolute_url | jsonify }} }
+}
+</script>
+{%- elsif page.url == '/' or page.url == '/no/' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Bakker Technologies",
+  "url": {{ '/' | absolute_url | jsonify }},
+  "logo": {{ '/assets/img/apple-touch-icon.png' | absolute_url | jsonify }},
+  "email": "support@bakkertechnologies.no",
+  "address": { "@type": "PostalAddress", "addressLocality": "Oslo", "addressCountry": "NO" },
+  "founder": { "@type": "Person", "name": "Haakon Bakker" }
+}
+</script>
+{%- endif -%}

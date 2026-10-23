@@ -1,5 +1,5 @@
 ---
-layout: legacy
+layout: page
 title: Terms of Service - The One Thing
 permalink: /the-one-thing/terms/
 redirect_from: /theonething/terms/

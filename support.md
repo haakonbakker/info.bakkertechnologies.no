@@ -1,58 +1,16 @@
 ---
 layout: legacy
-title: "Cryptolandia Support & FAQ"
-description: "Get help with Cryptolandia, the iOS crypto tracker app. Support, FAQ, troubleshooting for prices/charts, and contact details."
+title: "Cryptolandia Support"
+description: "Support information for Cryptolandia, a retired iOS crypto tracker by Bakker Technologies."
 image: "/cryptolandia/images/logo.png"
 ---
 
-# Cryptolandia – Support
+# Cryptolandia support
 
-Welcome to the support page for **Cryptolandia**, the iOS app for tracking cryptocurrency prices, charts, and news.
+Cryptolandia is no longer available for download, and is no longer being updated.
 
-If you’re having trouble with the app, found a bug, or have ideas for new features, you’re in the right place.
+If you still have the app installed and have a question — or a question about data and privacy — email **support@bakkertechnologies.no**.
 
----
+Cryptolandia did not collect, store or share personal information. See the [privacy policy](/cryptolandia/privacy/) for details.
 
-## Contact
-
-If you need help, you can reach the developer here:
-
-- **Email:** support@bakkertechnologies.no
-
-I aim to respond to support requests as soon as possible.
-
----
-
-## FAQ
-
-### I found a bug – what should I do?
-Please open a new issue on GitHub or send an email with:
-
-- A short description of the problem  
-- Steps to reproduce it  
-- Your device model and iOS version  
-- Screenshots if possible
-
-### The prices or charts aren’t updating
-Try the following steps:
-
-1. Pull down to refresh the list.  
-2. Check your internet connection.  
-3. If the problem continues, contact support with details so I can investigate.
-
----
-
-## Privacy
-
-Cryptolandia does not collect, store, or share personal information.  
-
----
-
-## Version & Release Notes
-
-Latest app version: **1.0.0**  
-
----
-
-Thank you for using **Cryptolandia**!
-If you have feedback or feature ideas, I’d love to hear from you.
+Looking for help with **Templator** or **The One Thing**? Use the same address.

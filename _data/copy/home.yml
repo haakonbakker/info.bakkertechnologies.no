@@ -1,0 +1,167 @@
+en:
+  hero:
+    label: "Independent software studio · Oslo"
+    title: "Software, made with intention."
+    lead: "Native iOS apps and senior technical consultancy. Designed, built and shipped by one experienced engineer — accountable from first sketch to App Store release."
+    primary: "Explore the work"
+    secondary: "Let’s talk"
+  facts:
+    - value: "15 yrs"
+      label: "building software professionally"
+    - value: "1:1"
+      label: "you work directly with the engineer who builds it"
+    - value: "End to end"
+      label: "product, design, code and App Store release"
+    - value: "Oslo"
+      label: "based in Norway, working in English and Norwegian"
+  templator:
+    label: "Flagship app"
+    title: "Build once. Dispatch forever."
+    text: "Recurring work deserves a template, not a retyped checklist. Templator turns weekly reviews, sprint kickoffs and client onboarding into reusable templates, then sends them to the to-do app you already use."
+    steps:
+      - label: "01 Template"
+        title: "Write it once"
+        text: "Sections, tasks, notes and due-date offsets — or start from 49 ready-made templates."
+        chips: ["Weekly review", "Sprint kickoff", "Client onboarding"]
+      - label: "02 Variables"
+        title: "Fill in the blanks"
+        text: "Placeholders are asked for at dispatch, with date pickers, number pads and menus."
+        code: ["{{client}}", "{{deadline}}", "{{priority}}"]
+      - label: "03 Dispatch"
+        title: "Send it where you work"
+        text: "Review the list, switch off what this run doesn’t need, and send."
+        chips: ["Reminders", "Things 3", "Todoist", "OmniFocus"]
+    more: "Discover Templator"
+  one_thing:
+    title: "Decide what matters. Then do it."
+    text: "Most to-do lists grow until they stop meaning anything. The One Thing asks for one priority a day — three at most — gives each a time, and keeps a focus timer running until it’s done."
+    points:
+      - title: "One priority. Three at most."
+        text: "A deliberate limit that keeps the day honest."
+      - title: "A time for everything"
+        text: "Morning, afternoon, evening — or a custom block."
+      - title: "Focus on the Lock Screen"
+        text: "The timer follows you to the Lock Screen and Dynamic Island."
+    more: "Discover The One Thing"
+  services:
+    label: "Services"
+    title: "Two ways to work together."
+    lead: "Build a product with the studio, or bring senior engineering judgement into your team. Either way, you work directly with the person doing the work."
+    items:
+      - n: "01"
+        title: "iOS product development"
+        text: "From an idea or a brief to a native app in the App Store: product shaping, interface design, Swift and SwiftUI implementation, release and iteration."
+        outcomes_label: "You get"
+        outcomes:
+          - "A shippable product, not a prototype"
+          - "A codebase the next engineer can work in"
+          - "A clear path through review and launch"
+        for_label: "For"
+        for: "Founders and companies bringing a product to iPhone and iPad."
+      - n: "02"
+        title: "Technical consultancy"
+        text: "Senior engineering judgement embedded in your team — architecture, technical direction, code review and hands-on delivery where it counts."
+        outcomes_label: "You get"
+        outcomes:
+          - "Architecture decisions made, and written down"
+          - "Fewer surprises between plan and release"
+          - "Reviews and pairing that raise the bar"
+        for_label: "For"
+        for: "Engineering teams and leaders who need depth, not headcount."
+    engage_label: "Engagements"
+    engage: ["Defined project", "Ongoing product work", "Embedded with your team"]
+    more: "How the studio works"
+  studio:
+    label: "The studio"
+    title: "One engineer. Full ownership."
+    lead: "I’m Haakon Bakker. I’ve spent fifteen years building software for finance, sports and the arts."
+    text: "Bakker Technologies is how I work independently: a deliberately small studio, where the person you talk to is the person who designs, writes and ships the code. No account managers, no hand-offs."
+    caption: "Haakon Bakker, founder"
+    more: "More about the studio"
+  closing:
+    title: "Have something worth building?"
+    text: "Let’s talk about what you’re working on."
+
+"no":
+  hero:
+    label: "Uavhengig programvarestudio · Oslo"
+    title: "Programvare, laget med omtanke."
+    lead: "Native iOS-apper og senior teknisk rådgivning. Designet, bygget og lansert av én erfaren utvikler — med ansvar fra første skisse til lansering i App Store."
+    primary: "Se arbeidet"
+    secondary: "Ta kontakt"
+  facts:
+    - value: "15 år"
+      label: "med profesjonell programvareutvikling"
+    - value: "1:1"
+      label: "du jobber direkte med utvikleren som bygger det"
+    - value: "Hele veien"
+      label: "produkt, design, kode og lansering i App Store"
+    - value: "Oslo"
+      label: "basert i Norge, jobber på norsk og engelsk"
+  templator:
+    label: "Flaggskip-app"
+    title: "Bygg én gang. Send ut igjen og igjen."
+    text: "Gjentakende arbeid fortjener en mal, ikke en sjekkliste du skriver på nytt. Templator gjør ukentlige gjennomganger, sprintoppstarter og kundeonboarding om til gjenbrukbare maler, og sender dem til oppgaveappen du allerede bruker."
+    steps:
+      - label: "01 Mal"
+        title: "Skriv den én gang"
+        text: "Seksjoner, oppgaver, notater og relative frister — eller start fra 49 ferdige maler."
+        chips: ["Ukentlig gjennomgang", "Sprintoppstart", "Kundeonboarding"]
+      - label: "02 Variabler"
+        title: "Fyll inn det som varierer"
+        text: "Plassholdere fylles inn ved utsending, med datovelger, talltastatur og menyer."
+        code: ["{{kunde}}", "{{frist}}", "{{prioritet}}"]
+      - label: "03 Utsending"
+        title: "Send dit du jobber"
+        text: "Se over listen, slå av det du ikke trenger denne gangen, og send."
+        chips: ["Påminnelser", "Things 3", "Todoist", "OmniFocus"]
+    more: "Utforsk Templator"
+  one_thing:
+    title: "Bestem hva som betyr noe. Så gjør du det."
+    text: "De fleste gjøremålslister vokser til de slutter å bety noe. The One Thing ber om én prioritering om dagen — maks tre — gir hver et tidspunkt, og holder en fokustimer i gang til den er gjort."
+    points:
+      - title: "Én prioritering. Maks tre."
+        text: "En bevisst grense som holder dagen ærlig."
+      - title: "Et tidspunkt for alt"
+        text: "Morgen, ettermiddag, kveld — eller en egen tidsblokk."
+      - title: "Fokus på låseskjermen"
+        text: "Timeren følger deg til låseskjermen og Dynamic Island."
+    more: "Utforsk The One Thing"
+  services:
+    label: "Tjenester"
+    title: "To måter å samarbeide på."
+    lead: "Bygg et produkt med studioet, eller få senior teknisk dømmekraft inn i teamet ditt. Uansett jobber du direkte med den som gjør jobben."
+    items:
+      - n: "01"
+        title: "iOS-produktutvikling"
+        text: "Fra en idé eller et oppdrag til en native app i App Store: produktutforming, grensesnittdesign, utvikling i Swift og SwiftUI, lansering og videreutvikling."
+        outcomes_label: "Du får"
+        outcomes:
+          - "Et produkt klart for lansering, ikke en prototype"
+          - "En kodebase neste utvikler kan jobbe i"
+          - "En tydelig vei gjennom gjennomgang og lansering"
+        for_label: "For"
+        for: "Gründere og selskaper som tar et produkt til iPhone og iPad."
+      - n: "02"
+        title: "Teknisk rådgivning"
+        text: "Senior teknisk dømmekraft integrert i teamet ditt — arkitektur, teknisk retning, kodegjennomgang og praktisk utvikling der det teller."
+        outcomes_label: "Du får"
+        outcomes:
+          - "Arkitekturbeslutninger som tas, og skrives ned"
+          - "Færre overraskelser mellom plan og lansering"
+          - "Gjennomganger og parprogrammering som hever nivået"
+        for_label: "For"
+        for: "Utviklingsteam og ledere som trenger dybde, ikke flere hoder."
+    engage_label: "Samarbeidsformer"
+    engage: ["Avgrenset prosjekt", "Løpende produktarbeid", "Integrert i teamet"]
+    more: "Slik jobber studioet"
+  studio:
+    label: "Studioet"
+    title: "Én utvikler. Fullt eierskap."
+    lead: "Jeg heter Haakon Bakker. Jeg har bygget programvare i femten år, innen finans, sport og kunst."
+    text: "Bakker Technologies er hvordan jeg jobber selvstendig: et bevisst lite studio, der den du snakker med er den som designer, skriver og leverer koden. Ingen kundeansvarlige, ingen overleveringer."
+    caption: "Haakon Bakker, grunnlegger"
+    more: "Mer om studioet"
+  closing:
+    title: "Har du noe som er verdt å bygge?"
+    text: "La oss snakke om det du jobber med."

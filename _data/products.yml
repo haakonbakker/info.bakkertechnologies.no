@@ -1,0 +1,110 @@
+# Single source of truth for studio products.
+# Facts verified against the App Store listings (October 2026).
+# Adding an app: add an entry here, screenshots under assets/img/<id>/,
+# and a page per language using `layout: product`.
+
+- id: templator
+  name: Templator
+  status: live            # live | archived
+  featured: true
+  app_store: "https://apps.apple.com/app/templator/id6760451933"
+  platforms: "iPhone · iPad"
+  price:
+    en: "Free · Optional Pro upgrade"
+    "no": "Gratis · Valgfri Pro-oppgradering"
+  icon: /assets/img/templator/icon
+  color: "#5957D6"
+  tint: "#ECECFA"
+  pages:
+    en: /templator/
+    "no": /no/templator/
+  privacy: /templator/privacy/
+  terms: /templator/terms/
+  work_screens: [dispatch, editor]
+  hero_screens: [home, dispatch, editor]
+  screens:
+    home:
+      src: /assets/img/templator/home
+      alt:
+        en: "Templator home screen listing templates: Travel Packing, Sprint Kickoff and Weekly Review"
+        "no": "Templators hjemskjerm med malene Travel Packing, Sprint Kickoff og Weekly Review"
+    dispatch:
+      src: /assets/img/templator/dispatch
+      alt:
+        en: "Dispatch sheet for the Travel Packing template, with tasks grouped into Essentials and Clothing"
+        "no": "Utsendingsark for malen Travel Packing, med oppgaver gruppert i Essentials og Clothing"
+    editor:
+      src: /assets/img/templator/editor
+      alt:
+        en: "Template editor showing destination, reminder list and sections"
+        "no": "Malredigering med destinasjon, påminnelsesliste og seksjoner"
+  en:
+    category: "Productivity"
+    tagline: "Build once. Dispatch forever."
+    summary: "Reusable checklist templates for the work you repeat — sent to Reminders, Things 3, Todoist or OmniFocus with one tap."
+    lead: "Templator turns the checklists you rebuild every week into templates. Fill in the details, review, and send the result straight to the to-do app you already use."
+  "no":
+    category: "Produktivitet"
+    tagline: "Bygg én gang. Send ut igjen og igjen."
+    summary: "Gjenbrukbare sjekklistemaler for arbeidet du gjentar — sendt til Påminnelser, Things 3, Todoist eller OmniFocus med ett trykk."
+    lead: "Templator gjør sjekklistene du bygger på nytt hver uke om til maler. Fyll inn detaljene, se over, og send resultatet rett til oppgaveappen du allerede bruker."
+
+- id: the-one-thing
+  name: The One Thing
+  status: live
+  featured: true
+  app_store: "https://apps.apple.com/app/the-one-thing-priorities/id6757535269"
+  platforms: "iPhone · iPad"
+  price:
+    en: "Free · Optional Pro subscription"
+    "no": "Gratis · Valgfritt Pro-abonnement"
+  icon: /assets/img/the-one-thing/icon
+  color: "#0B7A68"
+  tint: "#E4F3EE"
+  pages:
+    en: /the-one-thing/
+    "no": /no/the-one-thing/
+  privacy: /the-one-thing/privacy/
+  terms: /the-one-thing/terms/
+  work_screens: [today, focus]
+  hero_screens: [history, today, focus]
+  screens:
+    today:
+      src: /assets/img/the-one-thing/today
+      alt:
+        en: "The One Thing Today view with three time-blocked priorities, a seven-day streak and a Start Focus button"
+        "no": "The One Things I dag-visning med tre tidsblokkerte prioriteringer, sju dagers streak og en Start fokus-knapp"
+    focus:
+      src: /assets/img/the-one-thing/focus
+      alt:
+        en: "Focus timer set to 25 minutes for the priority “Review client feedback on mobile nav”"
+        "no": "Fokustimer satt til 25 minutter for prioriteringen «Review client feedback on mobile nav»"
+    history:
+      src: /assets/img/the-one-thing/history
+      alt:
+        en: "History view with stats and a list of completed days"
+        "no": "Historikkvisning med statistikk og en liste over fullførte dager"
+  en:
+    category: "Productivity"
+    tagline: "Decide what matters. Then do it."
+    summary: "A calm daily planner built around one priority — three at most — with time blocks and a focus timer that stays on your Lock Screen."
+    lead: "Most to-do lists grow until they stop meaning anything. The One Thing asks you to choose one priority for today, give it a time, and focus until it’s done."
+  "no":
+    category: "Produktivitet"
+    tagline: "Bestem hva som betyr noe. Så gjør du det."
+    summary: "En rolig dagsplanlegger bygget rundt én prioritering — maks tre — med tidsblokker og en fokustimer som ligger på låseskjermen."
+    lead: "De fleste gjøremålslister vokser til de slutter å bety noe. The One Thing ber deg velge én prioritering for i dag, gi den et tidspunkt, og fokusere til den er gjort."
+
+- id: cryptolandia
+  name: Cryptolandia
+  status: archived
+  featured: false
+  platforms: "iPhone · iPad"
+  pages:
+    en: /cryptolandia/
+  privacy: /cryptolandia/privacy/
+  terms: /cryptolandia/terms/
+  en:
+    summary: "A calm, privacy-first crypto tracker with live prices, charts and curated news. Designed and built end to end, shipped to the App Store, and since retired."
+  "no":
+    summary: "En rolig kryptotracker med personvern i fokus — sanntidspriser, grafer og kuraterte nyheter. Designet og bygget fra bunnen av, lansert i App Store, og senere avviklet."

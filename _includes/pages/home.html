@@ -1,0 +1,150 @@
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign c = site.data.copy.home[lang] -%}
+{%- assign tpl = site.data.products | where: 'id', 'templator' | first -%}
+{%- assign tot = site.data.products | where: 'id', 'the-one-thing' | first -%}
+
+<section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+        <div class="hero__copy">
+            <p class="label label--rule">{{ c.hero.label }}</p>
+            <h1 class="display" id="hero-title">{{ c.hero.title }}</h1>
+            <p class="lead">{{ c.hero.lead }}</p>
+            <div class="actions">
+                <a class="btn" href="{{ t.work_url }}">{{ c.hero.primary }}</a>
+                <a class="btn btn--ghost" href="{{ t.contact_url }}">{{ c.hero.secondary }}</a>
+            </div>
+        </div>
+        <div class="hero__visual">
+            {% include device.html screen=tot.screens.today lang=lang class="device--a" eager=true sizes="(min-width: 960px) 290px, 52vw" %}
+            {% include device.html screen=tpl.screens.dispatch lang=lang class="device--b" eager=true sizes="(min-width: 960px) 312px, 52vw" %}
+        </div>
+    </div>
+</section>
+
+<section class="section--tight" aria-label="{% if lang == 'no' %}Fakta om studioet{% else %}Studio facts{% endif %}">
+    <div class="container">
+        <ul class="facts" role="list" >
+            {%- for f in c.facts %}
+            <li class="fact" data-reveal><strong class="fact__value">{{ f.value }}</strong> <span class="fact__label">{{ f.label }}</span></li>
+            {%- endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="on-dark showcase showcase--templator section" id="templator" aria-labelledby="templator-title">
+    <div class="container">
+        <div class="showcase__intro" data-reveal>
+            <div>
+                <div class="app-id">
+                    <img src="{{ tpl.icon }}-128.webp" width="56" height="56" alt="" loading="lazy">
+                    <div><span class="app-id__name">{{ tpl.name }}</span><span class="app-id__meta">{{ c.templator.label }} · {{ tpl.platforms }}</span></div>
+                </div>
+                <h2 class="h2" id="templator-title" style="margin-top:32px">{{ c.templator.title }}</h2>
+            </div>
+            <p class="lead">{{ c.templator.text }}</p>
+        </div>
+
+        <div class="showcase__stage" data-reveal>
+            {% include device.html screen=tpl.screens.home lang=lang class="device--l" sizes="250px" decorative=true %}
+            {% include device.html screen=tpl.screens.dispatch lang=lang class="device--main" sizes="290px" %}
+            {% include device.html screen=tpl.screens.editor lang=lang class="device--r" sizes="250px" decorative=true %}
+        </div>
+
+        <ol class="flow" role="list">
+            {%- for s in c.templator.steps %}
+            <li class="flow__step" data-reveal>
+                <span class="label">{{ s.label }}</span>
+                <h3>{{ s.title }}</h3>
+                <p>{{ s.text }}</p>
+                <div class="chips">
+                    {%- for chip in s.chips %}<span class="chip">{{ chip }}</span>{% endfor -%}
+                    {%- for chip in s.code %}<span class="chip chip--code">{{ chip }}</span>{% endfor -%}
+                </div>
+            </li>
+            {%- endfor %}
+        </ol>
+
+        <div class="showcase__links">
+            <a class="btn" href="{{ tpl.pages[lang] }}">{{ c.templator.more }}</a>
+            <a class="link" href="{{ tpl.app_store }}" target="_blank" rel="noopener"><span>{{ t.view_app_store }}</span>{% include arrow.html ext=true %}</a>
+        </div>
+    </div>
+</section>
+
+<section class="showcase showcase--one-thing section" id="the-one-thing" aria-labelledby="tot-title">
+    <div class="container one-thing__grid">
+        <div class="one-thing__stage" data-reveal>
+            {% include device.html screen=tot.screens.today lang=lang class="device--main" sizes="310px" %}
+            {% include device.html screen=tot.screens.focus lang=lang class="device--side" sizes="250px" %}
+        </div>
+        <div class="one-thing__copy" data-reveal>
+            <div class="app-id">
+                <img src="{{ tot.icon }}-128.webp" width="56" height="56" alt="" loading="lazy">
+                <div><span class="app-id__name">{{ tot.name }}</span><span class="app-id__meta">{{ tot.platforms }}</span></div>
+            </div>
+            <h2 class="h2" id="tot-title">{{ c.one_thing.title }}</h2>
+            <p class="lead">{{ c.one_thing.text }}</p>
+            <ol class="points" role="list">
+                {%- for p in c.one_thing.points %}
+                <li><span class="points__n">0{{ forloop.index }}</span><strong>{{ p.title }}</strong><span>{{ p.text }}</span></li>
+                {%- endfor %}
+            </ol>
+            <div class="showcase__links">
+                <a class="btn" href="{{ tot.pages[lang] }}">{{ c.one_thing.more }}</a>
+                <a class="link" href="{{ tot.app_store }}" target="_blank" rel="noopener"><span>{{ t.view_app_store }}</span>{% include arrow.html ext=true %}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="services-title">
+    <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+            <div>
+                <p class="label label--rule">{{ c.services.label }}</p>
+                <h2 class="h2" id="services-title" style="margin-top:20px">{{ c.services.title }}</h2>
+            </div>
+            <p class="lead">{{ c.services.lead }}</p>
+        </div>
+        <div class="services">
+            {%- for s in c.services.items %}
+            <article class="service" data-reveal>
+                <span class="service__n">{{ s.n }}</span>
+                <h3>{{ s.title }}</h3>
+                <p>{{ s.text }}</p>
+                <dl>
+                    <div><dt>{{ s.outcomes_label }}</dt><dd><ul class="ticks">{% for o in s.outcomes %}<li>{{ o }}</li>{% endfor %}</ul></dd></div>
+                    <div><dt>{{ s.for_label }}</dt><dd>{{ s.for }}</dd></div>
+                </dl>
+            </article>
+            {%- endfor %}
+        </div>
+        <div class="engage" data-reveal>
+            <span class="label">{{ c.services.engage_label }}</span>
+            <div class="chips">{% for e in c.services.engage %}<span class="chip">{{ e }}</span>{% endfor %}</div>
+            <a class="link" href="{{ t.services_url }}"><span>{{ c.services.more }}</span>{% include arrow.html %}</a>
+        </div>
+    </div>
+</section>
+
+<section class="section surface" aria-labelledby="studio-title">
+    <div class="container studio">
+        <figure class="portrait" data-reveal>
+            <img src="/assets/img/studio/haakon-portrait-640.webp"
+                 srcset="/assets/img/studio/haakon-portrait-640.webp 640w, /assets/img/studio/haakon-portrait-1200.webp 1200w"
+                 sizes="(min-width: 900px) 460px, 100vw" width="640" height="800" loading="lazy" decoding="async"
+                 alt="{% if lang == 'no' %}Portrett av Haakon Bakker{% else %}Portrait of Haakon Bakker{% endif %}">
+            <figcaption>{{ c.studio.caption }}</figcaption>
+        </figure>
+        <div class="studio__copy" data-reveal>
+            <p class="label label--rule">{{ c.studio.label }}</p>
+            <h2 class="h2" id="studio-title">{{ c.studio.title }}</h2>
+            <p class="lead">{{ c.studio.lead }}</p>
+            <p>{{ c.studio.text }}</p>
+            <a class="link" href="{{ t.about_url }}"><span>{{ c.studio.more }}</span>{% include arrow.html %}</a>
+        </div>
+    </div>
+</section>
+
+{% include closing.html lang=lang title=c.closing.title text=c.closing.text %}

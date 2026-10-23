@@ -1,5 +1,5 @@
 ---
-layout: legacy
+layout: page
 title: Privacy Policy - The One Thing
 permalink: /the-one-thing/privacy/
 redirect_from: /theonething/privacy/

@@ -1,0 +1,118 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign product = site.data.products | where: 'id', page.product | first -%}
+{%- assign info = product[lang] -%}
+{%- assign c = site.data.product_pages[page.product][lang] -%}
+
+<div class="product product--{{ product.id }}" style="--product: {{ product.color }}; --product-tint: {{ product.tint }};">
+
+<section class="p-hero" aria-labelledby="p-title">
+    <div class="container">
+        <img class="p-hero__icon" src="{{ product.icon }}-256.webp" width="88" height="88" alt="{% if lang == 'no' %}Appikonet til {{ product.name }}{% else %}{{ product.name }} app icon{% endif %}">
+        <p class="label">{{ product.name }} · {{ product.platforms }}</p>
+        <h1 class="display" id="p-title">{{ info.tagline }}</h1>
+        <p class="lead">{{ info.lead }}</p>
+        <div class="actions">
+            {% include app-store.html product=product lang=lang %}
+        </div>
+        <p class="p-hero__note">{{ product.price[lang] }}</p>
+        <div class="p-hero__stage">
+            {%- for key in product.hero_screens %}
+            {%- assign scr = product.screens[key] %}
+            {%- if forloop.index == 1 %}
+            {% include device.html screen=scr lang=lang class="device--l" sizes="260px" %}
+            {%- elsif forloop.index == 2 %}
+            {% include device.html screen=scr lang=lang class="device--main" eager=true sizes="(min-width: 960px) 310px, 58vw" %}
+            {%- else %}
+            {% include device.html screen=scr lang=lang class="device--r" sizes="260px" %}
+            {%- endif %}
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    {%- for ch in c.chapters %}
+    <section class="chapter" aria-labelledby="ch-{{ forloop.index }}">
+        <div class="chapter__copy" data-reveal>
+            <p class="label label--rule">{{ ch.label }}</p>
+            <h2 class="h2" id="ch-{{ forloop.index }}">{{ ch.title }}</h2>
+            <p>{% include tokenize.html text=ch.text %}</p>
+            {%- if ch.ticks %}
+            <ul class="ticks">{% for x in ch.ticks %}<li>{{ x }}</li>{% endfor %}</ul>
+            {%- endif %}
+        </div>
+        <div class="chapter__visual" data-reveal>
+            {%- if ch.screen %}
+            {%- assign scr = product.screens[ch.screen] %}
+            {% include device.html screen=scr lang=lang sizes="300px" %}
+            {%- else %}
+            {%- capture diagram %}diagrams/{{ ch.diagram }}.html{% endcapture %}
+            {% include {{ diagram }} d=c.diagram %}
+            {%- endif %}
+        </div>
+    </section>
+    {%- endfor %}
+</div>
+
+<section class="section surface" aria-labelledby="details-title">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <p class="label label--rule">{{ c.details_label }}</p>
+            <h2 class="h2" id="details-title">{{ c.details_title }}</h2>
+        </div>
+        <dl class="details" data-reveal>
+            {%- for d in c.details %}
+            <div><dt>{{ d.k }}</dt><dd>{{ d.v }}</dd></div>
+            {%- endfor %}
+        </dl>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="plans-title">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <p class="label label--rule">{{ c.plans_label }}</p>
+            <h2 class="h2" id="plans-title">{{ c.plans_title }}</h2>
+        </div>
+        <div class="plans" data-reveal>
+            {%- for p in c.plans %}
+            <article class="plan{% if forloop.last %} plan--pro{% endif %}">
+                <h3>{{ p.name }}</h3>
+                <p>{{ p.text }}</p>
+                <ul class="ticks">{% for x in p.items %}<li>{{ x }}</li>{% endfor %}</ul>
+            </article>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section--flush-top" aria-labelledby="privacy-title">
+    <div class="container"><div class="privacy-band">
+        <div data-reveal>
+            <p class="label label--rule">{{ c.privacy_label }}</p>
+            <h2 class="h2" id="privacy-title" style="margin-top:20px">{{ c.privacy_title }}</h2>
+        </div>
+        <div class="stack" data-reveal>
+            <p>{{ c.privacy_text }}</p>
+            <p class="links">
+                <a class="link" href="{{ product.privacy }}"{% if lang == 'no' %} hreflang="en"{% endif %}><span>{{ c.privacy_link }}</span>{% include arrow.html %}</a>
+                <a class="link" href="{{ product.terms }}"{% if lang == 'no' %} hreflang="en"{% endif %}><span>{{ c.terms_link }}</span>{% include arrow.html %}</a>
+            </p>
+        </div>
+    </div></div>
+</section>
+
+<section class="section surface p-closing" aria-labelledby="p-closing-title">
+    <div class="container" data-reveal>
+        <img class="p-closing__icon" src="{{ product.icon }}-256.webp" width="72" height="72" alt="" loading="lazy">
+        <h2 class="h2" id="p-closing-title">{{ c.closing_title }}</h2>
+        <p class="lead" style="margin: 20px auto 0">{{ c.closing_text }}</p>
+        <div class="actions">{% include app-store.html product=product lang=lang %}</div>
+    </div>
+</section>
+
+</div>

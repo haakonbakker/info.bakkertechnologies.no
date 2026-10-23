@@ -1,0 +1,20 @@
+{%- comment -%}
+  iPhone mockup around a real screenshot.
+  include.screen  — product screen object from _data/products.yml (src + alt)
+  include.lang    — en | no
+  include.class   — modifier classes
+  include.eager   — true for above-the-fold images
+  include.sizes   — sizes attribute (CSS width the device renders at)
+  include.decorative — true to hide from assistive tech (duplicate imagery)
+{%- endcomment -%}
+{%- assign lang = include.lang | default: 'en' -%}
+<div class="device {{ include.class }}"{% if include.decorative %} aria-hidden="true"{% endif %}>
+  <div class="device__screen">
+    <img src="{{ include.screen.src }}-400.webp"
+         srcset="{{ include.screen.src }}-400.webp 400w, {{ include.screen.src }}-800.webp 800w"
+         sizes="{{ include.sizes | default: '300px' }}"
+         width="400" height="869"
+         alt="{% if include.decorative %}{% else %}{{ include.screen.alt[lang] }}{% endif %}"
+         {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+  </div>
+</div>

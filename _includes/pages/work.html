@@ -1,0 +1,69 @@
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign c = site.data.copy.work[lang] -%}
+
+<header class="container page-hero">
+    <p class="label label--rule">{{ c.label }}</p>
+    <h1 class="h1">{{ c.title }}</h1>
+    <p class="lead">{{ c.lead }}</p>
+</header>
+
+<div class="container">
+    {%- for product in site.data.products %}{% if product.status == 'live' %}
+    {%- assign copy = product[lang] %}
+    <article class="work-item{% cycle '', ' work-item--flip' %}" aria-labelledby="w-{{ product.id }}">
+        <div class="work-item__visual work-item__visual--{{ product.id }}" data-reveal>
+            {%- for key in product.work_screens %}
+            {%- assign scr = product.screens[key] %}
+            {% include device.html screen=scr lang=lang sizes="(min-width: 960px) 236px, 42vw" %}
+            {%- endfor %}
+        </div>
+        <div class="work-item__body" data-reveal>
+            <div class="app-id">
+                <img src="{{ product.icon }}-128.webp" width="56" height="56" alt="" loading="lazy">
+                <div><span class="app-id__name" id="w-{{ product.id }}">{{ product.name }}</span><span class="app-id__meta">{{ copy.category }}</span></div>
+            </div>
+            <h2 class="h2">{{ copy.tagline }}</h2>
+            <p>{{ copy.summary }}</p>
+            <dl class="meta">
+                <dt>{{ c.meta_platforms }}</dt><dd>{{ product.platforms }}</dd>
+                <dt>{{ c.meta_price }}</dt><dd>{{ product.price[lang] }}</dd>
+                <dt>{{ c.meta_status }}</dt><dd><span class="status">{{ t.status_live }}</span></dd>
+            </dl>
+            <div class="actions">
+                <a class="btn" href="{{ product.pages[lang] }}">{{ c.discover }} {{ product.name }}</a>
+                <a class="link" href="{{ product.app_store }}" target="_blank" rel="noopener"><span>{{ t.view_app_store }}</span>{% include arrow.html ext=true %}</a>
+            </div>
+        </div>
+    </article>
+    {%- endif %}{% endfor %}
+
+    <section class="archive" aria-labelledby="archive-title">
+        <p class="label label--rule" id="archive-title">{{ c.archive_label }}</p>
+        <div>
+            {%- for product in site.data.products %}{% if product.status == 'archived' %}
+            <div class="archive__item" data-reveal>
+                <h3>{{ product.name }}</h3>
+                <p style="margin-top:8px">{{ product[lang].summary }}</p>
+                <dl class="meta" style="margin-top:20px">
+                    <dt>{{ c.meta_platforms }}</dt><dd>{{ product.platforms }}</dd>
+                    <dt>{{ c.meta_status }}</dt><dd><span class="status status--archived">{{ t.status_archived }}</span></dd>
+                </dl>
+                {%- if product.pages.en %}
+                <p style="margin-top:20px"><a class="link" href="{{ product.pages.en }}"{% if lang == 'no' %} hreflang="en"{% endif %}><span>{{ c.archive_link }}</span>{% include arrow.html %}</a></p>
+                {%- endif %}
+            </div>
+            {%- endif %}{% endfor %}
+        </div>
+    </section>
+
+    <section class="note" aria-labelledby="note-title">
+        <p class="label label--rule">{{ c.note_label }}</p>
+        <div class="stack" data-reveal>
+            <h2 class="h3" id="note-title">{{ c.note_title }}</h2>
+            <p class="muted">{{ c.note_text }}</p>
+        </div>
+    </section>
+</div>
+
+{% include closing.html lang=lang title=c.closing_title text=c.closing_text %}

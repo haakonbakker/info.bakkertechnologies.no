@@ -1,0 +1,5 @@
+<ul class="panel blocks" role="list">
+    {%- for b in include.d.blocks %}
+    <li class="block{% if b.active %} block--on{% endif %}"><span class="block__t">{{ b.time }}</span><span class="block__task">{{ b.task }}</span></li>
+    {%- endfor %}
+</ul>

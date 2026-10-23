@@ -1,0 +1,46 @@
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign c = site.data.copy.about[lang] -%}
+
+<header class="container page-hero">
+    <p class="label label--rule">{{ c.label }}</p>
+    <h1 class="h1">{{ c.title }}</h1>
+    <p class="lead">{{ c.lead }}</p>
+</header>
+
+<div class="container">
+    <figure class="about-figure">
+        <picture>
+            <source media="(min-width: 700px)" srcset="/assets/img/studio/haakon-wide-1280.webp 1280w, /assets/img/studio/haakon-wide-2400.webp 2400w" sizes="(min-width: 1340px) 1240px, 92vw" width="1280" height="853">
+            <img src="/assets/img/studio/haakon-portrait-640.webp" srcset="/assets/img/studio/haakon-portrait-640.webp 640w, /assets/img/studio/haakon-portrait-1200.webp 1200w" sizes="92vw" width="640" height="800" alt="{{ c.photo_alt }}" fetchpriority="high" decoding="async">
+        </picture>
+    </figure>
+
+    <section class="narrative" aria-labelledby="story-title">
+        <p class="label label--rule" id="story-title">{{ c.story_label }}</p>
+        <div class="narrative__body" data-reveal>
+            {%- for p in c.story %}
+            <p{% if forloop.first %} class="lead"{% endif %}>{{ p }}</p>
+            {%- endfor %}
+        </div>
+    </section>
+
+    <section class="narrative" aria-labelledby="values-title" style="padding-top:0">
+        <p class="label label--rule" id="values-title">{{ c.values_label }}</p>
+        <ul class="values" role="list" data-reveal>
+            {%- for v in c.values %}
+            <li><h2 class="h3">{{ v.title }}</h2><p>{{ v.text }}</p></li>
+            {%- endfor %}
+        </ul>
+    </section>
+
+    <section class="narrative" aria-labelledby="facts-title" style="padding-top:0">
+        <p class="label label--rule" id="facts-title">{{ c.facts_label }}</p>
+        <dl class="facts-list" data-reveal>
+            {%- for f in c.facts %}
+            <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>
+            {%- endfor %}
+        </dl>
+    </section>
+</div>
+
+{% include closing.html lang=lang title=c.closing_title text=c.closing_text %}

@@ -1,0 +1,60 @@
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign c = site.data.copy.services[lang] -%}
+
+<header class="container page-hero">
+    <p class="label label--rule">{{ c.label }}</p>
+    <h1 class="h1">{{ c.title }}</h1>
+    <p class="lead">{{ c.lead }}</p>
+</header>
+
+<div class="container">
+    {%- for o in c.offers %}
+    <section class="offer" id="{{ o.id }}" aria-labelledby="offer-{{ o.id }}">
+        <div class="offer__head" data-reveal>
+            <p class="label">{{ o.label }}</p>
+            <h2 class="h2" id="offer-{{ o.id }}">{{ o.title }}</h2>
+            <p>{{ o.text }}</p>
+        </div>
+        <div class="offer__body" data-reveal>
+            <div class="offer__block">
+                <h3>{{ o.for_title }}</h3>
+                <p>{{ o.for }}</p>
+            </div>
+            <div class="offer__block">
+                <h3>{{ o.how_title }}</h3>
+                <p>{{ o.how }}</p>
+            </div>
+            <div class="offer__block offer__block--wide">
+                <h3>{{ o.outcomes_title }}</h3>
+                <ul class="ticks">{% for x in o.outcomes %}<li>{{ x }}</li>{% endfor %}</ul>
+            </div>
+        </div>
+    </section>
+    {%- endfor %}
+</div>
+
+<section class="section surface" aria-labelledby="approach-title">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <p class="label label--rule">{{ c.approach_label }}</p>
+            <h2 class="h2" id="approach-title">{{ c.approach_title }}</h2>
+        </div>
+        <ol class="steps" data-reveal>
+            {%- for s in c.steps %}
+            <li><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>
+            {%- endfor %}
+        </ol>
+    </div>
+</section>
+
+<div class="container">
+    <section class="note" aria-labelledby="ind-title" style="border-top:0">
+        <p class="label label--rule">{{ c.industries_label }}</p>
+        <div class="stack" data-reveal>
+            <h2 class="h3" id="ind-title">{{ c.industries_title }}</h2>
+            <p class="muted">{{ c.industries_text }}</p>
+        </div>
+    </section>
+</div>
+
+{% include closing.html lang=lang title=c.closing_title text=c.closing_text %}

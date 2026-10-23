@@ -1,0 +1,6 @@
+{%- comment -%} Renders text, wrapping {{variables}} in .token. {%- endcomment -%}
+{%- assign open = "{{" -%}{%- assign close = "}}" -%}
+{%- assign parts = include.text | split: open -%}
+{%- for part in parts -%}
+{%- if forloop.first -%}{{ part | escape }}{%- else -%}{%- assign bits = part | split: close -%}<span class="token">{{ open }}{{ bits[0] | escape }}{{ close }}</span>{{ bits[1] | escape }}{%- endif -%}
+{%- endfor -%}

@@ -5,13 +5,12 @@
   - Guide/compare pages: optional custom meta + canonical + FAQ JSON-LD
 {% endcomment %}
 
-{% assign app_store_url = "https://apps.apple.com/us/app/cryptolandia-crypto-ticker/id6756105265" %}
 
 {% if page.coin_id %}
   {% assign coin = site.data.coins | where: "id", page.coin_id | first %}
   {% if coin %}
     {% assign canonical_url = page.url | absolute_url %}
-    {% assign meta_title = coin.name | append: " (" | append: coin.symbol | append: ") — Calm overview & tracking in Cryptolandia" %}
+    {% assign meta_title = coin.name | append: " (" | append: coin.symbol | append: ") — Overview & FAQ" %}
     {% assign meta_description = coin.metaDescription | default: coin.oneLiner %}
 
     <title>{{ meta_title }}</title>
@@ -104,6 +103,8 @@
   </script>
 
 {% else %}
-  {% seo %}
+  {%- comment -%} Titles: "Page — Bakker Technologies"; set title_full: true to use the title verbatim. {%- endcomment -%}
+  <title>{% if page.title_full %}{{ page.title | escape }}{% elsif page.title %}{{ page.title | escape }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% seo title=false %}
 {% endif %}
 

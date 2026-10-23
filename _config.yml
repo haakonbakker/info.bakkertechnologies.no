@@ -1,13 +1,14 @@
 title: "Bakker Technologies"
 tagline: "iOS Product Development & Consultancy"
-description: "iOS product development and technical consultancy from Norway. I design, build, and ship mobile products."
+description: "Independent software studio from Oslo, Norway. Native iOS apps and senior technical consultancy."
 baseurl: ""
 url: "https://bakkertechnologies.no"
 lang: "en"
 permalink: pretty
 
 logo: "/favicon.svg"
-image: "/images/haakon-bakker.jpg"
+image: "/assets/img/og/home.jpg"
+locale: "en_US"
 
 author:
   name: "Haakon Bakker"
@@ -26,7 +27,17 @@ defaults:
       path: ""
     values:
       lang: "en"
+      locale: "en_US"
   - scope:
       path: "no"
     values:
       lang: "no" # must be quoted — YAML treats bare 'no' as boolean false
+      locale: "nb_NO"
+
+exclude:
+  - README.md
+  - start-local.sh
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .cursor

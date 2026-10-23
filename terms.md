@@ -4,6 +4,7 @@ lang: en
 title: "Terms of Service — Bakker Technologies"
 description: "Terms of service for Bakker Technologies."
 permalink: /terms/
+alternate_url: "/no/vilkaar/"
 ---
 
 # Terms of Service
@@ -26,7 +27,9 @@ All content on this website, including text, design, and code, is owned by Bakke
 
 Each product has its own terms of service:
 
-- [Cryptolandia Terms of Service](/cryptolandia/terms)
+- [Templator Terms of Service](/templator/terms/)
+- [The One Thing Terms of Service](/the-one-thing/terms/)
+- [Cryptolandia Terms of Service](/cryptolandia/terms/) (retired app)
 
 ## Governing Law
 

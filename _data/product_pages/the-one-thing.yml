@@ -1,0 +1,131 @@
+en:
+  chapters:
+    - label: "Priorities"
+      title: "One thing. Three at most."
+      text: "Write down the one thing that would make today a success — or up to three priorities, if the day really needs them. A short list you can finish beats a long one you can’t."
+      screen: today
+    - label: "Time blocks"
+      title: "Give it a time."
+      text: "Place each priority in the morning, afternoon or evening, or set your own start and end. Calendar integration helps it fit around the rest of your day."
+      diagram: timeblocks
+    - label: "Focus"
+      title: "Then stay with it."
+      text: "Start a focus timer for any priority. The countdown runs on your Lock Screen and in the Dynamic Island, with pause and finish controls right there. Stray thoughts go into a distraction dump instead of your head."
+      screen: focus
+    - label: "Momentum"
+      title: "Watch the habit form."
+      text: "Mark priorities done, keep your streak, and look back over your history. The weekly view lets you move priorities between days and roll unfinished ones forward."
+      screen: history
+  diagram:
+    blocks:
+      - time: "Morning"
+        task: "Finish homepage hero section"
+      - time: "Afternoon"
+        task: "Review client feedback"
+        active: true
+      - time: "Evening"
+        task: "Prep workshop slides"
+  details_label: "The details"
+  details_title: "Calm by design."
+  details:
+    - k: "Weekly planning"
+      v: "See the whole week, move priorities between days, or push one to tomorrow."
+    - k: "Rollover"
+      v: "Bring yesterday’s unfinished priorities with you, deliberately."
+    - k: "Home Screen widgets"
+      v: "Your streak and today’s checklist, at a glance."
+    - k: "Gentle notifications"
+      v: "A morning nudge, time-block reminders and an evening review."
+    - k: "Seven languages"
+      v: "English, Norwegian, Swedish, Danish, Dutch, French and Spanish."
+    - k: "iPhone and iPad"
+      v: "Native on both, with a tab bar layout on iPad."
+  plans_label: "Pricing"
+  plans_title: "Free for the essentials."
+  plans:
+    - name: "Free"
+      text: "Everything you need to plan a focused day."
+      items:
+        - "Up to 3 priorities a day"
+        - "7 days of history"
+        - "Time blocks, focus timer and streaks"
+    - name: "Pro"
+      text: "Monthly or yearly subscription. The yearly plan starts with a 7-day free trial."
+      items:
+        - "Unlimited priorities a day"
+        - "Unlimited history"
+        - "Weekly summaries"
+        - "Focus minutes in the medium widget"
+  privacy_label: "Privacy"
+  privacy_title: "Your day stays on your device."
+  privacy_text: "Your priorities, notes and settings are stored locally on your iPhone or iPad and are never sent to our servers. There’s no account. Anonymous usage analytics help improve the app — they are never linked to you or used for advertising."
+  privacy_link: "Privacy policy"
+  terms_link: "Terms of service"
+  closing_title: "The One Thing for iPhone and iPad."
+  closing_text: "Free to download, with an optional Pro subscription."
+
+"no":
+  chapters:
+    - label: "Prioriteringer"
+      title: "Én ting. Maks tre."
+      text: "Skriv ned den ene tingen som ville gjort dagen vellykket — eller opptil tre prioriteringer, hvis dagen virkelig trenger det. En kort liste du blir ferdig med slår en lang en du ikke blir ferdig med."
+      screen: today
+    - label: "Tidsblokker"
+      title: "Gi den et tidspunkt."
+      text: "Legg hver prioritering til morgen, ettermiddag eller kveld, eller velg egen start og slutt. Kalenderintegrasjon hjelper den å passe inn med resten av dagen."
+      diagram: timeblocks
+    - label: "Fokus"
+      title: "Bli med den til den er gjort."
+      text: "Start en fokustimer for hvilken som helst prioritering. Nedtellingen vises på låseskjermen og i Dynamic Island, med pause og fullfør rett der. Løse tanker havner i en distraksjonsliste i stedet for i hodet."
+      screen: focus
+    - label: "Fremdrift"
+      title: "Se vanen ta form."
+      text: "Marker prioriteringer som gjort, hold streaken, og se tilbake på historikken. Ukevisningen lar deg flytte prioriteringer mellom dager og ta med uferdige videre."
+      screen: history
+  diagram:
+    blocks:
+      - time: "Morgen"
+        task: "Ferdigstill toppseksjonen på forsiden"
+      - time: "Ettermiddag"
+        task: "Gå gjennom tilbakemeldinger fra kunden"
+        active: true
+      - time: "Kveld"
+        task: "Forbered workshop-lysbilder"
+  details_label: "Detaljene"
+  details_title: "Rolig, med vilje."
+  details:
+    - k: "Ukeplanlegging"
+      v: "Se hele uken, flytt prioriteringer mellom dager, eller skyv én til i morgen."
+    - k: "Overføring"
+      v: "Ta med gårsdagens uferdige prioriteringer — bevisst."
+    - k: "Widgeter på Hjem-skjermen"
+      v: "Streaken og dagens sjekkliste, med et blikk."
+    - k: "Varsler som ikke maser"
+      v: "En dytt om morgenen, påminnelser for tidsblokker og en kveldsgjennomgang."
+    - k: "Sju språk"
+      v: "Norsk, engelsk, svensk, dansk, nederlandsk, fransk og spansk."
+    - k: "iPhone og iPad"
+      v: "Native på begge, med fanelinje på iPad."
+  plans_label: "Pris"
+  plans_title: "Gratis for det viktigste."
+  plans:
+    - name: "Gratis"
+      text: "Alt du trenger for å planlegge en fokusert dag."
+      items:
+        - "Opptil 3 prioriteringer per dag"
+        - "7 dagers historikk"
+        - "Tidsblokker, fokustimer og streaks"
+    - name: "Pro"
+      text: "Månedlig eller årlig abonnement. Årsabonnementet starter med 7 dagers gratis prøveperiode."
+      items:
+        - "Ubegrenset med prioriteringer per dag"
+        - "Ubegrenset historikk"
+        - "Ukentlige oppsummeringer"
+        - "Fokusminutter i den mellomstore widgeten"
+  privacy_label: "Personvern"
+  privacy_title: "Dagen din blir på enheten din."
+  privacy_text: "Prioriteringer, notater og innstillinger lagres lokalt på iPhone eller iPad og sendes aldri til våre servere. Det finnes ingen konto. Anonym bruksstatistikk hjelper med å forbedre appen — den knyttes aldri til deg og brukes aldri til reklame."
+  privacy_link: "Personvernerklæring (engelsk)"
+  terms_link: "Vilkår for bruk (engelsk)"
+  closing_title: "The One Thing for iPhone og iPad."
+  closing_text: "Gratis å laste ned, med valgfritt Pro-abonnement."

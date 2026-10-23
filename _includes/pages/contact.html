@@ -1,0 +1,36 @@
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign c = site.data.copy.contact[lang] -%}
+
+<header class="container page-hero">
+    <p class="label label--rule">{{ c.label }}</p>
+    <h1 class="display">{{ c.title }}</h1>
+    <p class="lead">{{ c.lead }}</p>
+    <div class="contact-mail">
+        <a class="contact-mail__addr" href="mailto:{{ t.email }}">{{ t.email }}</a>
+        <button class="btn btn--ghost btn--sm" type="button" data-copy="{{ t.email }}" data-copied-label="{{ c.copied }} ✓" hidden>{{ c.copy }}</button>
+        <span class="visually-hidden" role="status" data-copy-status></span>
+    </div>
+</header>
+
+<div class="container">
+    <div class="contact-grid section--tight" style="border-top:1px solid var(--line)">
+        <section aria-labelledby="include-title" data-reveal>
+            <h2 id="include-title">{{ c.include_title }}</h2>
+            <ul class="ticks">
+                {%- for i in c.include %}
+                <li><strong>{{ i.k }}</strong> {{ i.v }}</li>
+                {%- endfor %}
+            </ul>
+        </section>
+        <section aria-labelledby="next-title" data-reveal>
+            <h2 id="next-title">{{ c.next_title }}</h2>
+            <ol class="timeline">
+                {%- for i in c.next %}
+                <li><strong>{{ i.k }}</strong>{{ i.v }}</li>
+                {%- endfor %}
+            </ol>
+        </section>
+    </div>
+    <p class="muted" style="padding-bottom: var(--section); font-size: var(--fs-small)">{{ c.apps_note }}</p>
+</div>

@@ -1,0 +1,11 @@
+<div class="panel" role="img" aria-label="{% for r in include.d.rows %}{{ r.before | escape }} → {{ r.after | escape }}{% unless forloop.last %}; {% endunless %}{% endfor %}">
+    <p class="label">{{ include.d.template_label }}</p>
+    {%- for r in include.d.rows %}
+    <div class="panel__row"><span>{% include tokenize.html text=r.before %}</span></div>
+    {%- endfor %}
+    <span class="panel__arrow" aria-hidden="true">↓</span>
+    <p class="label">{{ include.d.result_label }}</p>
+    {%- for r in include.d.rows %}
+    <div class="panel__row filled"><span>{{ r.after | escape }}</span></div>
+    {%- endfor %}
+</div>

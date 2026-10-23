@@ -1,19 +1,15 @@
 en:
-  - title: Services
-    url: /services
   - title: Work
-    url: /work
+    url: /work/
+  - title: Services
+    url: /services/
   - title: About
-    url: /about
-  - title: Contact
-    url: /contact
+    url: /about/
 
 "no":
-  - title: Tjenester
-    url: /no/tjenester
   - title: Arbeid
-    url: /no/arbeid
+    url: /no/arbeid/
+  - title: Tjenester
+    url: /no/tjenester/
   - title: Om
-    url: /no/om
-  - title: Kontakt
-    url: /no/kontakt
+    url: /no/om/

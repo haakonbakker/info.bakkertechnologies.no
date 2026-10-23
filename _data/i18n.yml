@@ -1,0 +1,58 @@
+# Interface strings shared across layouts and includes.
+en:
+  home: /
+  contact_url: /contact/
+  work_url: /work/
+  services_url: /services/
+  about_url: /about/
+  privacy_url: /privacy/
+  terms_url: /terms/
+  skip: "Skip to content"
+  menu_open: "Open menu"
+  menu_close: "Close menu"
+  nav_label: "Primary"
+  lang_label: "Language"
+  cta_header: "Let’s talk"
+  contact: "Contact"
+  brand_line: "Independent software studio. Native iOS products and senior technical consultancy, from Oslo, Norway."
+  footer_studio: "Studio"
+  footer_apps: "Apps"
+  footer_legal: "Legal"
+  privacy: "Privacy"
+  terms: "Terms"
+  location: "Oslo, Norway"
+  app_store_badge_alt: "Download on the App Store"
+  view_app_store: "View on the App Store"
+  discover: "Discover"
+  status_live: "Available on the App Store"
+  status_archived: "Archived — no longer available"
+  email: "support@bakkertechnologies.no"
+
+"no":
+  home: /no/
+  contact_url: /no/kontakt/
+  work_url: /no/arbeid/
+  services_url: /no/tjenester/
+  about_url: /no/om/
+  privacy_url: /no/personvern/
+  terms_url: /no/vilkaar/
+  skip: "Hopp til innhold"
+  menu_open: "Åpne meny"
+  menu_close: "Lukk meny"
+  nav_label: "Hovedmeny"
+  lang_label: "Språk"
+  cta_header: "Ta kontakt"
+  contact: "Kontakt"
+  brand_line: "Uavhengig programvarestudio. Native iOS-produkter og senior teknisk rådgivning, fra Oslo."
+  footer_studio: "Studio"
+  footer_apps: "Apper"
+  footer_legal: "Juridisk"
+  privacy: "Personvern"
+  terms: "Vilkår"
+  location: "Oslo, Norge"
+  app_store_badge_alt: "Last ned fra App Store"
+  view_app_store: "Se i App Store"
+  discover: "Utforsk"
+  status_live: "Tilgjengelig i App Store"
+  status_archived: "Arkivert — ikke lenger tilgjengelig"
+  email: "support@bakkertechnologies.no"

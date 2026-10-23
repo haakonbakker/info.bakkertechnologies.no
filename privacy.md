@@ -4,6 +4,7 @@ lang: en
 title: "Privacy Policy — Bakker Technologies"
 description: "Privacy policy for Bakker Technologies and its products."
 permalink: /privacy/
+alternate_url: "/no/personvern/"
 ---
 
 # Privacy Policy
@@ -24,8 +25,9 @@ When you email support@bakkertechnologies.no, your message and email address are
 
 Each product has its own privacy policy:
 
-- [Cryptolandia Privacy Policy](/cryptolandia/privacy)
-- [The One Thing Privacy Policy](/theonething/privacy)
+- [Templator Privacy Policy](/templator/privacy/)
+- [The One Thing Privacy Policy](/the-one-thing/privacy/)
+- [Cryptolandia Privacy Policy](/cryptolandia/privacy/) (retired app)
 
 ## Changes
 

@@ -27,7 +27,9 @@ Alt innhold på dette nettstedet, inkludert tekst, design og kode, eies av Bakke
 
 Hvert produkt har sine egne vilkår:
 
-- [Cryptolandia vilkår for bruk](/cryptolandia/terms)
+- [Templator — vilkår for bruk](/templator/terms/) (engelsk)
+- [The One Thing — vilkår for bruk](/the-one-thing/terms/) (engelsk)
+- [Cryptolandia — vilkår for bruk](/cryptolandia/terms/) (engelsk, avviklet app)
 
 ## Gjeldende lov
 
